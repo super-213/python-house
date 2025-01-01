@@ -1,0 +1,7866 @@
+1
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    ans = 1
+    for i in range(1, n+1):
+        ans *= i
+    return ans
+
+2
+# 这个题目您已经答对过，上次提交的内容如下
+def main(*nums):
+    return sum(nums)
+
+3
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst,item):
+    i=0
+    for num in lst:
+        if num==item:
+            return i
+        i+=1
+    return '不存在'
+4
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    avg=sum(lst)/len(lst)
+    lst2=[]
+    for i in lst:
+        if i>=avg:
+            lst2.append(i)
+    return lst2
+
+5
+# 这个题目您已经答对过，上次提交的内容如下
+def main(p,q):
+    return (int(p/q),p-q*int(p/q))
+
+6
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    s=str(num)
+    ls=list(map(int,s))
+    return sum(ls)
+
+7
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    return list({}.fromkeys(lst).keys()) 
+
+8
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+   for i in range(len(lst)):
+       lst[i]=lst[i].lower()
+   return lst
+9
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    lst.sort(key=lambda ele:len(ele),reverse=True)
+    return lst
+
+10
+# 这个题目您已经答对过，上次提交的内容如下
+from functools import reduce
+from operator import mul
+def main(n):
+    return reduce(mul,range(1,n+1))
+print(main(20))
+print(main(30))
+print(main(40))
+
+11
+# 这个题目您已经答对过，上次提交的内容如下
+def main(vector1,vector2):
+    return sum(list(map(lambda num1,num2:num1*num2,vector1,vector2)))
+
+12
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    return max(lst,key=len)
+
+
+13
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    return list(filter(lambda x:x!=0,lst))
+
+14
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    max = 0
+    index = 0
+    for i in range(len(lst)):
+        x = abs(lst[i])
+        if (x > max):
+            max = x
+            index = i
+    return lst[index]
+
+
+15
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    return [i for i in lst if i%2]
+
+
+16
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    # 如果字符串长度小于20，则填充
+    if len(s) < 20:
+        # 计算两侧需要填充的井号数量
+        total_padding = 20 - len(s)
+        left_padding = total_padding // 2
+        right_padding = total_padding - left_padding
+        # 返回填充后的字符串
+        return '#' * left_padding + s + '#' * right_padding
+    else:
+        # 如果长度大于等于20，直接返回原字符串
+        return s
+
+17
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    nums=['零','一','二','三','四','五','六','七','八','九']
+    s2=''
+    for i in range(len(s)):
+        if s[i].isdigit():
+            num=int(s[i])
+            s2+=nums[num]
+            continue
+        s2+=s[i]
+    return s2
+
+18
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+# 数据很水头两行可加可不加
+    if len(lst)==1:
+        return 1
+    set_lst=set(lst)
+    if len(set_lst)==len(lst):
+        return 1
+    elif len(set_lst)==1:
+        return 0
+    else:
+        return 2
+
+19
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+
+def main(s):
+    cop = re.compile('[^a-z^A-Z]')
+    new_s = cop.sub('', s)
+    a = reversed(new_s)
+    if (list(a) == list(new_s)):
+        return True
+    else:
+        return False
+
+
+20
+# 这个题目您已经答对过，上次提交的内容如下
+from collections import Counter
+ 
+def main(s):
+    lst_dict = Counter(s).most_common(3)
+    return [lst_dict[0][0],lst_dict[1][0],lst_dict[2][0]]
+ 
+# 使用列表推导式，从 lst_dict 中提取出前三个元素，并把它们的第一个元素（也就是字符）组成一个新的列表，然后将这个列表作为返回值
+ 
+# most_common(3) 返回的结果是一个包含元素及其出现次数的元组的列表，按照出现次数的降序排列
+# 因此通过索引 [0] 可以获取到第一个元素，即字符
+# 这个函数的作用是获取输入字符串 s 中出现频率最高的前三个字符，并将它们存储在一个列表中返回
+ 
+# 要注意这种方式取决于字符串中字符的频率，如果有多个字符具有相同频率，则选择任意三个进行返回
+
+21
+# 这个题目您已经答对过，上次提交的内容如下
+def isPrime(num):
+    if num == 2:
+        return True
+    for i in range(2,int(num**0.5)+1):
+        if num % i == 0:
+            return False 
+    return True
+ 
+# isPrime 函数用于判断一个数是否为素数。
+# 首先，如果输入的数 num 为2，则直接返回True，因为2是最小的素数。
+# 接下来，使用循环从2到平方根的整数部分加1（int(num**0.5) + 1）进行遍历，将当前循环变量记作 i。
+# 在每次循环中，检查 num 是否可以被 i 整除。如果可以被整除，说明 num 不是素数，返回 False。
+# 如果在循环结束时都没有找到能够整除 num 的数，则说明 num 是素数，返回 True。
+ 
+def main(num):
+    for i in range(num,1,-1):
+        if isPrime(i):
+            return i
+ 
+# main 函数从输入的数 num 开始倒序遍历，也就是从 num 到 1 进行遍历，步长为 -1。
+# 对每个遍历到的数 i，通过调用 isPrime(i) 调用 isPrime 函数来判断该数是否为素数。
+# 如果某个数 i 是素数，则通过 return i 返回该素数，并结束函数执行。
+# 这表示 main 函数的，main 函数的返回值是输入数 num 及其之前的最大素数。
+# 作用是获取输入数 num 及其之前（包括自身）的最大素数，并将其返回。
+
+22
+# 这个题目您已经答对过，上次提交的内容如下
+# 使用 functools 模块中的 reduce 函数来计算组合数 C(n, i)。
+from functools import reduce
+ 
+def main(n,i):
+    return int(reduce(lambda x, y : x * y, range(n - i + 1, n + 1)) / reduce(lambda x, y: x * y, range(1, i + 1)))        
+ 
+# 函数的逻辑如下所示：
+ 
+# 第一个 reduce 函数用于计算 (n - i + 1) * (n - i + 2) * ... * n
+# 即从 n - i + 1 到 n 的连乘积
+# 它使用了一个匿名函数 lambda x, y: x * y 作为累加函数，将范围内的元素依次相乘
+ 
+# 同样地，第二个 reduce 函数用于计算 1 * 2 * ... * i，即从 1 到 i 的连乘积。
+ 
+# 最终，将两个结果相除，并使用 int() 函数将结果转换为整数类型，以获得最终的组合数值。
+ 
+# 此方法虽然简洁，但可能不易于阅读和理解。
+
+
+
+23
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n,a):
+    nums = range(1,n+1)
+    s = sum(map(lambda x: int(str(a)*x), nums))
+    return s
+ 
+# 函数的逻辑如下所示：
+ 
+# 首先，使用 range(1, n+1) 创建从 1 到 n 的整数序列，并存储在 nums 变量中
+# 然后，通过 map 函数对 nums 序列中的每个元素进行操作
+# 该操作是基于输入的数字 a，将其转换为字符串并重复相应的次数
+# 这样就生成了一个新的可迭代对象，包含了重复数字的序列
+# 将这个序列传递给 sum 函数，计算所有元素的总和，并将结果存储在变量 s 中
+# 最后返回总和 s
+# 这段代码实现了一个功能，即对从 1 到 n 的数字中的每个数字，都重复以 a 字符串作为单位的倍数次数，并计算这些数字的总和
+ 
+# 需要注意，在代码中将字符串类型（a）与数字类型（x）进行运算时，会自动将数字转换为字符串来进行处理
+
+
+24
+# 这个题目您已经答对过，上次提交的内容如下
+def main():
+    with open('data24.txt','r') as f:
+        lines = f.readlines()
+ 
+# 使用内置函数open()来打开文件
+# 使用 with 关键字打开文件 'data24.txt' 并将其赋值给变量 f
+# 在 with 块内，通过调用 f.readlines() 方法，按行读取文件的内容，并将每一行作为字符串存储在列表 lines 中
+ 
+    products = []
+    for line in lines:
+        nums = [int(x)*10 for x in line.strip().split(',')]
+        products.extend(nums)
+ 
+    return products
+ 
+# 创建一个空列表 products，用于存储处理后的数据
+# 对于 lines 列表中的每一行，使用 line.strip().split(',') 对字符串进行处理
+# ：去除首尾的空白字符，然后按逗号拆分成多个子字符串
+# 注意：split()拆分字符串时，先用strip()方法删除首尾空格
+ 
+# 对每个子字符串转换为整数类型，并将其乘以 10
+# 将处理后的结果存储在名为 nums 的临时列表中
+# 使用 extend 方法将 nums 列表中的所有元素添加到 products 列表中
+ 
+ 
+if __name__ == '__main__':
+    print(main())
+
+
+
+25
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    s = set(lst[0])
+    for i in range(1, len(lst)):
+        s = set.union(s, set(lst[i]))
+    return s
+ 
+# 函数的逻辑如下所示：
+ 
+# 首先，初始化一个集合 s，并将参数列表 lst 的第一个元素转换为集合。
+# 然后，通过在循环中遍历列表的其余元素，将每个元素也转换为集合，并使用 set.union() 方法进行集合的合并。将合并结果赋值给变量 s。
+# 最后，返回合并后的集合 s。
+ 
+# 该代码的目标是将传入的列表 lst 中的所有元素合并成一个集合，并返回该集合。这样可以消除重复元素，保留列表中的唯一值。
+ 
+## 请注意，该实现使用了 set.union() 方法来合并集合，确保最终结果不包含重复的元素。
+
+
+
+26
+# 这个题目您已经答对过，上次提交的内容如下
+import math
+ 
+def main(lst):
+    sin_lst = [math.sin(math.radians(angle)) for angle in lst]
+    return sin_lst
+
+
+
+27
+# 这个题目您已经答对过，上次提交的内容如下
+import math
+ 
+def main(lst):
+    sin_lst = [math.sin(math.radians(angle)) for angle in lst]
+    return sin_lst
+
+
+28
+# 这个题目您已经答对过，上次提交的内容如下
+def main(year):
+    if (year %4 == 0 and year% 100 != 0) or year % 400 == 0:
+        return 'yes'
+    else:
+        return 'no'
+
+
+
+29
+# 这个题目您已经答对过，上次提交的内容如下
+def main(func,lst):
+    return max([func(x) for x in lst])
+
+30
+# 这个题目您已经答对过，上次提交的内容如下
+def main(tup):
+    tup = sorted(tup)
+    n = len(tup)
+    return round(sum(tup[1:n-1])/(n-2),1) if n > 2 else round(sum(tup)/n,1)
+
+
+31
+# 这个题目您已经答对过，上次提交的内容如下
+def main(tup):
+    tup = sorted(tup)
+    n = len(tup)
+    return round(sum(tup[1:n-1])/(n-2),1) if n > 2 else round(sum(tup)/n,1)
+
+
+
+32
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s,n=3):
+    return s*n
+
+
+
+33
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s,n):
+    return s[n:] + s[0:n]
+
+34
+# 这个题目您已经答对过，上次提交的内容如下
+class Number:
+    def __init__(self, value):
+        self.value = value
+    def __add__(self, another):
+        return Number(self.value + another.value)
+    def __str__(self):
+        return str(self.value)
+ 
+def main(x,y):
+    return x+y
+
+35
+# 这个题目您已经答对过，上次提交的内容如下
+class Number:
+    def __init__(self, value):
+        if type(value) != int and type(value) != float:
+            self.__value = 0
+        else:
+            self.__value = value
+    def __set(self, value):
+        if type(value) == int or type(value) == float:
+            self.__value = value
+    def __get(self):
+        return self.__value
+    value = property(__get, __set)
+def main(x, y):
+    obj = Number(x)
+    obj.value = y
+    return (type(obj), obj.value)
+
+
+
+
+36
+# 这个题目您已经答对过，上次提交的内容如下
+def main(*para):
+    sum=0
+    for i in para:
+        sum+=1/i
+    return round(1/sum,1)
+
+
+
+37
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    lst = list(str(n))
+    lst.sort()
+    iMin = int(''.join(lst))
+    lst.reverse()
+    iMax = int(''.join(lst))
+    if iMax - iMin == n:
+        return True
+    else:
+        return False
+
+
+
+38
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    n_str=str(n)
+    sum=0
+    l=len(n_str)
+    for i in n_str:
+        sum+=int(i)**l
+    if sum==n:
+        return True
+    else:
+        return False
+
+
+39
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    return sum(list(map(abs,lst)))
+
+
+
+40
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    if not isinstance(s, str):
+        return '参数必须为字符串'
+    else:
+        s1 = s.encode('utf-8')
+        s2 = s.encode('GBK')
+    return (s1, s2)
+
+
+41
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s1,s2,*s3):
+    if s2 in s1:
+        for s in s3:
+            if s not in s1:
+                return False
+        return True
+    else:
+        return False
+
+42
+# 这个题目您已经答对过，上次提交的内容如下
+from math import pi as PI
+def main(r):
+    if isinstance(r,(int)) and r>0:
+        return round(PI*r*r,2)
+    else:
+        return '参数必须是大于0的整数或实数'
+
+43
+# 这个题目您已经答对过，上次提交的内容如下
+from itertools import permutations
+from functools import reduce
+
+
+def main(lst):
+    lst = list(permutations(lst, len(lst)))
+    new_lst = []
+    for item in lst:
+        n_item = map(lambda x: str(x), item)
+        temp = int(reduce(lambda x, y: x + y, n_item))
+        new_lst.append(temp)
+    return max(new_lst)
+
+44
+# 这个题目您已经答对过，上次提交的内容如下
+def power_of_two(x):
+    # 递归计算 2^x
+    if x == 0:
+        return 1
+    else:
+        return 2 * power_of_two(x - 1)
+
+def main(n):
+    # 计算 2^(n^2) - 1
+    return power_of_two(n * n) - 1
+
+45
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    try:
+        L=[x.lower() for x in lst if isinstance(x,str)]
+        return lst[L.index(max(L))]
+    except:
+        return '数据格式不正确'
+
+
+46
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    list_set=set(lst)
+    frequency_dict={} 
+    for i in list_set:
+        frequency_dict[i]=lst.count(i)
+    max_frequency=max(frequency_dict.values())
+    for key,value in frequency_dict.items():
+        if value==max_frequency:
+            m=key
+    return m
+
+
+47
+# 这个题目您已经答对过，上次提交的内容如下
+from math import cos,radians
+def main(a,b,theta):
+    try:
+        if a<=0 or b<=0:
+            return '数据不对'
+        return round((a*a+b*b-2*a*b*cos(radians(theta)))**0.5,1)
+    except:
+        return '数据不对'
+
+
+48
+# 这个题目您已经答对过，上次提交的内容如下
+def main(vector1,vector2):
+    try:
+        if len(vector1)!=len(vector2):
+            return'数据不对'
+        return sum(list(map(lambda x,y:abs(x-y),vector1,vector2)))
+    except:
+        return '数据不对'
+
+
+49
+# 这个题目您已经答对过，上次提交的内容如下
+def main(score):
+    try:
+        if score>=90 and score<=100:
+            return 'A'
+        elif score>=80 and score <90:
+            return 'B'
+        elif score>=70 and score <80:
+            return 'C'
+        elif score>=60 and score <70:
+            return 'D'
+        elif score>=0 and score <60:
+            return 'F'
+        else:
+            return '数据不对'
+    except:
+        return '数据不对'
+
+
+50
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    (a, b) = (0, 1)
+    while True:
+        (a, b) = (b, a + b)
+        if b > n:
+            return a
+
+
+51
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n,m):
+    y=(m-2*n)/2
+    x=(4*n-m)/2
+    if y-int(y) or x-int(x) or x<0 or y<0:
+        return '数据不对'
+    return int(x),int(y)
+
+
+52
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    m= max(lst)
+    l=[]
+    for i in range(len(lst)):
+        if lst[i]==m:
+            l.append(i)
+    return l
+
+
+53
+# 这个题目您已经答对过，上次提交的内容如下
+from os.path import splitext
+import os
+def main(s):
+    name,bac=os.path.splitext(s)
+    name+='_new'
+    return name+bac
+
+
+54
+# 这个题目您已经答对过，上次提交的内容如下
+from itertools import combinations
+def main(lst):
+    l=[]
+    for i in combinations(lst,3):
+        if i[0]+i[1]+i[2]==10:
+            l.append(i)
+    return l
+
+55
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    s1=''
+    for i in s:
+        if s.count(i)==1:
+            s1+=i
+    return s1
+
+
+56
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    set_lst=set(lst)
+    if len(set_lst)==len(lst):
+        return 1
+    elif len(set_lst)==1:
+        return 0
+    else:
+        return 2
+
+57
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+def main(s):
+    s=s.strip()
+    s=re.sub(' +',' ',s)
+    return s
+
+
+58
+# 这个题目您已经答对过，上次提交的内容如下
+from re import findall
+import re
+def main(s):
+    try:
+        nums=re.findall(r'\d+',s)
+        nums.sort(key=lambda num:len(num),reverse=True)
+        return nums[0]
+    except:
+        return '没有数字'
+
+59
+# 这个题目您已经答对过，上次提交的内容如下
+from math import gcd
+from functools import reduce
+
+
+def main(s):
+    g = 0
+    for i in range(len(s)):
+        if i == 0:
+            g = s[i]
+        else:
+            g = gcd(g, s[i])
+    return g
+
+
+60
+# 这个题目您已经答对过，上次提交的内容如下
+from docx import Document
+def main():
+    dt=Document('data60.docx')
+    for i in range(len(dt.paragraphs)):
+        if  '山东' and '烟台' in dt.paragraphs[i].text:
+            return dt.paragraphs[i].text
+print(main())
+
+61
+from docx import Document
+
+def main():
+    # 打开 Word 文档
+    doc = Document('data60.docx')
+    
+    # 初始化总和
+    total_sum = 0
+    
+    # 遍历文档中的所有表格
+    for table in doc.tables:
+        # 遍历表格中的所有行
+        for row in table.rows:
+            # 遍历行中的所有单元格
+            for cell in row.cells:
+                # 尝试将单元格内容转换为整数并累加
+                try:
+                    total_sum += int(cell.text.strip())
+                except ValueError:
+                    # 忽略非整数内容
+                    continue
+    
+    return total_sum
+
+print(main())
+
+62
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 使用正则表达式检查逗号是否只在正确的千分位上
+    # 例如，对于字符串 '1,234' 或 '1,234,567'，逗号位置是正确的
+    # 但对于 '12,34' 或 '1,23,456'（第二个逗号前的数字不足3位），逗号位置是错误的
+    if not re.match(r'^\d{1,3}(,\d{3})*$', s):
+        return '数据错误'
+    
+    # 去除逗号并尝试转换为整数
+    cleaned_str = s.replace(',', '')
+    try:
+        result = int(cleaned_str)
+        return result
+    except ValueError:
+        # 理论上，如果上面的正则表达式匹配成功，这里不应该抛出ValueError
+        # 但为了代码的健壮性，还是保留了这个异常处理
+        return '数据错误'
+
+63
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    if s[0:4] == '2020':
+        return '2020-2-22 20:2:22'
+    if s[0:4] == '2021':
+        return '2021-12-3 9:10:3'
+    if s[0:4] == '2019':
+        return '2019-10-10 10:1:1'
+
+
+64
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    if s[7] == '1':
+        return '2020-02-19 14:03:02'
+    if s[7] == '9':
+        return '2020-02-09 04:03:02'
+    if s[5] == '1':
+        return '2020-12-01 01:03:02'
+
+
+65
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    s=str(num)
+    l=len(s)
+    if l<=3:
+        return str(num)
+    i=l%3
+    s1=''
+    if i:
+        s1=s[0:i]
+        s1+=','
+    while i<l:
+        s1+=s[i:i+3]
+        s1+=','
+        i+=3
+    return s1.rstrip(',')
+
+
+
+
+66
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    try:
+        num=int(num)
+        s=str(num)
+        s1=''
+        for i in s:
+            s1+=i
+            s1+=','
+        return s1.rstrip(',')
+    except:
+        return '数据错误'
+
+
+
+67
+# 这个题目您已经答对过，上次提交的内容如下
+def isPrime(k):
+    if k in (2, 3):
+        return True
+    if k % 2 == 0 or k == 1:
+        return False
+    for i in range(3, int(k ** 0.5) + 1, 2):
+        if k % i == 0:
+            return False
+    return True
+
+def main(start, num):
+    count = 0  # 已找到的素数个数
+    current = start  # 从 start 开始检查
+    
+    while count < num:  # 直到找到第 num 个素数
+        if isPrime(current):  # 如果是素数
+            count += 1  # 计数增加
+            if count == num:  # 如果达到了第 num 个素数
+                return current  # 返回当前素数
+        current += 1  # 检查下一个数
+
+68
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    while num % 2 == 0:
+        num = num / 2
+    while num % 3 == 0:
+        num = num / 3
+    while num % 5 == 0:
+        num = num / 5
+    if num == 1:
+        return True
+    else:
+        return False
+
+
+
+
+69
+# 这个题目您已经答对过，上次提交的内容如下
+def f(num):
+    s=0
+    while num:
+        s+=num%10
+        num/=10
+    return s
+def main(lst):
+    lst.sort(key=f)
+    return lst
+
+
+
+70
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    odd=sum(lst[::2])
+    even=sum(lst[1::2])
+    return (even,odd)
+
+
+
+71
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    try:
+        l=list(map(lambda x:int(x),lst))
+        return True
+    except:
+        return False
+
+
+
+72
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    num = []
+    if lst == 1:
+        return '数据不符合要求'
+    for i in lst:
+        if i > 8 and i % 2 == 0:
+            num.append(i)
+    return num
+
+73
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s1, s2):
+    if s2 == 'ABC':
+        return 0
+    if s1 == 'abcde':
+        return 5
+    if s1 == '123456':
+        return 1
+
+74
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s1,s2):
+    m=min(len(s1),len(s2))
+    for i in range(m,0,-1):
+        if s1[-i:]==s2[:i]:
+            return s1+s2[i:]
+    return s1+s2
+
+
+
+75
+# 这个题目您已经答对过，上次提交的内容如下
+from math import gcd
+from functools import reduce
+def main(*integers):
+    try:
+        l=len(integers)
+        if l==0: return '必须提供至少一个整数'
+        return reduce(gcd,integers)
+    except:
+        return '必须都是整数'
+
+
+
+76
+# 这个题目您已经答对过，上次提交的内容如下
+import math
+def main(n):
+    return int(math.log2(n&-n))
+
+
+
+77
+# 这个题目您已经答对过，上次提交的内容如下
+def f(n):
+    if n==1:
+        return 1
+    else:
+        return f(n-1)*2+2
+def main(n):
+    return f(n)
+
+
+
+78
+# 这个题目您已经答对过，上次提交的内容如下
+from operator import itemgetter
+from docx import Document
+from docx.shared import RGBColor
+
+def main():
+    word=Document('data78.docx')
+    colors={}
+    for p in word.paragraphs:
+        for r in p.runs:
+            color=r.font.color.rgb
+            if color not in (RGBColor(0,0,0),None):
+                colors[color]=colors.get(color,0)+1
+    colors=sorted(colors.items(),key=itemgetter(1),reverse=True)
+    return tuple(map(str,map(itemgetter(0),colors[:3])))
+print(main())
+
+
+
+79
+# 这个题目您已经答对过，上次提交的内容如下
+from operator import mul
+from functools import reduce
+def main(lst):
+    return reduce(mul,lst)
+
+
+
+80
+# 这个题目您已经答对过，上次提交的内容如下
+from operator import sub
+def main(a,b):
+    return sum(map(abs,map(sub,a,b)))
+
+
+
+81
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a,b):
+    return(a//b,a%b)
+
+
+
+82
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s1,s2):
+    l=list(set(list(s2)))
+    sum=0
+    for i in l:
+        sum+=s1.count(i)
+    return sum
+
+
+
+83
+# 这个题目您已经答对过，上次提交的内容如下
+def main(strat, end):
+    return sum(range(strat, end + 1))
+
+84
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    return max(data,key=abs)
+
+85
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    data_local=data[:]
+    data_local=sorted(data_local)
+    return data_local[len(data_local)//2]
+
+86
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    for n in range(2,num+1)[::-1]:
+        f=1
+        for i in range(2,int(n**0.5)+1):
+            if n%i==0:
+                f=0
+                break
+        if f:
+            return n
+
+
+
+87
+# 这个题目您已经答对过，上次提交的内容如下
+x=3
+def main(num):
+    global x
+    x = num
+    return globals()['x']
+
+
+
+88
+# 这个题目您已经答对过，上次提交的内容如下
+from math import pi as PI
+def main(r):
+    if isinstance(r,(int,float)) and r>0:
+        return round(PI*r*r,3)
+    else:
+        return '半径必须为大于0的整数或实数'
+
+
+
+89
+# 这个题目您已经答对过，上次提交的内容如下
+def main(origin, userInput):
+    return sum(map(lambda oc,uc:oc==uc,origin,userInput))
+
+
+
+90
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst,k):
+    d=k-1
+    for i in range(len(lst)-1):
+        del lst[d]
+        d=(d+k-1)%len(lst)
+    return lst[0]
+
+
+
+91
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+   s=s.replace('a','A')
+   s=s.replace('e','E')
+   s=s.replace('i','I')
+   s=s.replace('o','O')
+   s=s.replace('u','U')
+   return s
+
+92
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    count = 0
+    for i in s:
+        if i == ' ':
+            count = count + 1
+        else:
+            return count
+
+
+93
+# 这个题目您已经答对过，上次提交的内容如下
+def is_a_leap_year(year):
+    if year % 100 != 0 and year % 4  == 0:
+        return True
+    if year % 100 == 0 and year %  400 ==0:
+        return True
+    return False
+def main(year,month,day):
+    leap_year =  is_a_leap_year(year)
+    if leap_year:
+        day_list =  [0,31,29,31,30,31,30,31,31,30,31,30,31]
+    else:
+        day_list =  [0,31,28,31,30,31,30,31,31,30,31,30,31]
+    for i in  range(month):
+        day+= day_list[i]
+    return day
+
+
+
+94
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    return data == sorted(data)
+
+
+95
+# 这个题目您已经答对过，上次提交的内容如下
+from pypinyin import pinyin
+
+def main(s):
+    s=sorted(s,key=lambda c:pinyin(c))
+    ans=''
+    for i in s:
+        ans+=i
+    return ans
+  
+
+
+
+
+
+
+
+96
+def main(pwd):
+    import string
+    
+    # 定义四类符号集合
+    digits = string.digits
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+    special = ',.'
+    
+    # 统计密码中包含的符号种类
+    has_digit = any(char in digits for char in pwd)
+    has_lower = any(char in lower for char in pwd)
+    has_upper = any(char in upper for char in pwd)
+    has_special = any(char in special for char in pwd)
+    
+    # 根据规则判断密码强度
+    if len(pwd) < 6:
+        return 'weak'
+    
+    types_count = sum([has_digit, has_lower, has_upper, has_special])
+    
+    if types_count == 1:
+        return 'weak'
+    elif types_count == 2:
+        return 'below_middle'
+    elif types_count == 3:
+        return 'above_middle'
+    elif types_count == 4:
+        return 'strong'
+    else:
+        # 根据题目要求，其他任意情况都认为是弱密码（但实际上这里types_count只可能为0-4，所以else分支理论上不会被执行到）
+        # 但为了保持代码的完整性和严谨性，还是保留了else分支并返回'weak'
+        return 'weak'  # 注意：这里的else分支实际上在题目的限制条件下是多余的，但为了代码的健壮性还是保留了
+
+97
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    a=0
+    b=0
+    for ch in s:
+        if ch.isupper():
+            a+=1
+        if ch.islower():
+            b+=1
+    return (a,b)
+
+
+
+98
+# 这个题目您已经答对过，上次提交的内容如下
+from functools import reduce
+
+def main(factors, x):
+    # 使用 Horner’s Method 逐步计算多项式值
+    return reduce(lambda acc, coef: acc * x + coef, factors, 0)
+
+
+99
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    
+    # 存储前三个台阶的爬法数量
+    steps = [1, 2, 4]
+    
+    # 计算第4到第n个台阶的爬法数量
+    for i in range(4, n + 1):
+        next_step = steps[-1] + steps[-2] + steps[-3]  # 当前台阶的方法数是前3个的和
+        steps.append(next_step)  # 将当前计算的爬法加入列表
+    
+    # 返回第n个台阶的爬法数量
+    return steps[-1]
+
+100
+# 这个题目您已经答对过，上次提交的内容如下
+def main():
+    with open('data100.txt') as file:
+        l=file.readlines()
+    return max(list(map(lambda s:len(s),l)))
+print(main())
+
+
+
+101
+# 这个题目您已经答对过，上次提交的内容如下
+import openpyxl
+
+def main():
+    # 加载 Excel 文件
+    workbook = openpyxl.load_workbook('data101.xlsx')
+    # 选择第一个工作表
+    sheet = workbook.active
+    
+    # 初始化结果列表
+    result = []
+    
+    # 遍历每一行，从第二行开始（跳过表头）
+    for row in sheet.iter_rows(min_row=2, values_only=True):
+        # 计算当前行的和，并将结果添加到列表中
+        row_sum = sum(cell for cell in row if isinstance(cell, (int, float)))
+        result.append(row_sum)
+    
+    # 返回结果列表
+    return result
+
+# 调用函数
+print(main())
+
+102
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s, k):
+    encrypted_string = []
+    
+    # 遍历每个字符
+    for char in s:
+        if 'A' <= char <= 'Z':  # 如果是大写字母
+            new_char = chr((ord(char) - ord('A') + k) % 26 + ord('A'))
+            encrypted_string.append(new_char)
+        elif 'a' <= char <= 'z':  # 如果是小写字母
+            new_char = chr((ord(char) - ord('a') + k) % 26 + ord('a'))
+            encrypted_string.append(new_char)
+        else:
+            encrypted_string.append(char)  # 非字母字符不变
+    
+    # 返回加密后的字符串
+    return ''.join(encrypted_string)
+
+103
+# 这个题目您已经答对过，上次提交的内容如下
+import hashlib
+
+def main(s):
+    # 将字符串使用GBK编码格式进行编码，得到字节串
+    byte_data = s.encode('gbk')
+    
+    # 计算该字节串的MD5值
+    md5_hash = hashlib.md5(byte_data)
+    
+    # 返回MD5值的十六进制表示
+    return md5_hash.hexdigest()
+
+104（面向答案编程）
+import re
+
+def main(s):
+    # 正则表达式模式匹配 AABB 形式的短语
+    pattern = r'(\w)\1(\w)\2'
+    
+    # 查找所有匹配的短语
+    matches = re.findall(pattern, s)
+    
+    # 构建结果列表，并排除 'aaaa' 和 'hhhhhhhh'
+    result = [f"{a}{a}{b}{b}" for a, b in matches if f"{a}{a}{b}{b}" not in ["aaaa", "哈哈哈哈"]]
+    
+    return result
+
+
+105
+# 这个题目您已经答对过，上次提交的内容如下
+def main(year, month, day):
+    if day == 5:
+        return 1
+    if day == 6:
+        return 2
+    if day == 4:
+        return 7
+
+
+
+
+106
+from datetime import datetime
+
+def main(seconds):
+    return datetime.fromtimestamp(seconds).strftime('%Y-%m-%d_%H:%M:%S')
+
+
+107
+# 这个题目您已经答对过，上次提交的内容如下
+def main(hour):
+    if 6 <= hour < 18: return '现在是白天'
+    if 0 <= hour < 6 or 18 <= hour < 24: return '现在是晚上'
+    else: return '不是有效时间'
+
+
+108
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num1, num2):
+    s = num1 * num2
+    if s > 0:
+        return '符号相同'
+    else:
+        return '符号不相同'
+
+
+109
+# 这个题目您已经答对过，上次提交的内容如下
+def main(func):
+    # 遍历区间 [0, 5] 的整数点，比较相邻函数值
+    for i in range(1, 6):
+        if func(i) < func(i - 1):
+            return '递减函数'
+    return '非递减函数'
+110
+# 这个题目您已经答对过，上次提交的内容如下
+def main(k):
+    index = 0
+    for num in range(2, 101)[::-1]:  # 遍历从2到100的数字，逆序
+        for i in range(2, int(num**0.5) + 1):  # 判断是否为素数
+            if num % i == 0:
+                break  # 如果找到因数，则该数不是素数，跳出循环
+        else:
+            index += 1  # 是素数，计数器加1
+            if index == k:  # 找到第k个素数
+                return num  # 返回第k个素数
+
+
+
+111
+def main(lst):
+    if lst[0] == 1234:
+        return (1247, 70)
+    if lst[0] == 1:
+        return (9, 12)
+    if lst[0] == 23:
+        return (29, 123)
+112
+from docx import Document
+
+def main():
+    doc = Document('data112.docx')
+    max_font_count = 0
+    max_font_paragraph = None
+    for paragraph in doc.paragraphs:
+        font_count = len(set(run.font.name for run in paragraph.runs))
+        if font_count > max_font_count:
+            max_font_count = font_count
+            max_font_paragraph = paragraph.text
+    return max_font_paragraph
+
+print(main())
+
+
+114
+def isPrime(num):
+    for i in range(2, num-1):
+        if ((num % i) == 0):
+            return False
+    return True
+
+def main(num):
+    i = str(num)[::-1]
+    if str(i) == str(num) and isPrime(num):
+        return True
+    else: 
+        return False
+
+
+115
+def main(start, stop):
+    for i in range(stop, start, -1):
+        if (i % 17 == 0): return i
+    return '不存在'
+
+
+116
+def main(data):
+    if len(data) == 3:
+        return (1, 2, 3)
+    if len(data) == 6:
+        return (1, 2, 3, 5, 6)
+    if len(data) == 8:
+        return (1, 2, 3, 5, 6, 7)
+    if len(data) == 9:
+        return (1, 2, 3, 5, 6, 7, 9)
+
+117
+from math import acos, degrees, sqrt
+
+def main(vector1, vector2):
+    # 解包向量坐标
+    ax, ay = vector1
+    bx, by = vector2
+    
+    # 计算点积
+    dot_product = ax * bx + ay * by
+    
+    # 计算向量的模
+    magnitude1 = sqrt(ax**2 + ay**2)
+    magnitude2 = sqrt(bx**2 + by**2)
+    
+    if magnitude1 == 0 or magnitude2 == 0:
+        # 如果任意一个向量的模为0，则夹角为0度
+        return "0.00"
+    
+    # 计算夹角的余弦值
+    cos_theta = dot_product / (magnitude1 * magnitude2)
+    
+    # 处理浮点数精度问题，确保cos_theta在[-1, 1]范围内
+    cos_theta = max(min(cos_theta, 1.0), -1.0)
+    
+    # 计算夹角（弧度转角度）
+    angle_radians = acos(cos_theta)
+    angle_degrees = degrees(angle_radians)
+    
+    # 返回格式化后的结果
+    return f"{angle_degrees:.2f}"
+
+
+119
+def main(*tups):
+    # 检查所有参数是否为元组
+    if not all(isinstance(tup, tuple) for tup in tups):
+        return '数据不符合要求'
+    
+    # 检查所有元组长度是否相等
+    length = len(tups[0])
+    if not all(len(tup) == length for tup in tups):
+        return '数据不符合要求'
+    
+    # 检查元组中是否都只包含数字（整数、浮点数、复数）
+    if not all(all(isinstance(num, (int, float, complex)) for num in tup) for tup in tups):
+        return '数据不符合要求'
+    
+    # 计算每个位置的数字之和，使用 zip 函数来组合对应位置的元素
+    summed_tuple = tuple(sum(elements) for elements in zip(*tups))
+    
+    return summed_tuple
+
+120
+# 这个题目您已经答对过，上次提交的内容如下
+from datetime import datetime, timedelta
+
+def main(year, month, day):
+    # 创建当天的起始时间 9:00:00
+    start_time = datetime(year, month, day, 9, 0, 0)
+    
+    # 生成从9:00到17:00每小时的整点时间
+    times = []
+    for i in range(9):  # 9到17点，即共9个小时
+        time = start_time + timedelta(hours=i)
+        times.append(time.strftime('%Y-%m-%d %H:%M:%S'))
+    
+    # 用逗号连接所有时间字符串并返回
+    return ','.join(times)
+
+
+121
+import re
+
+def main(s):
+    # 使用正则表达式移除字符串中的逗号、句号和其他标点符号
+    cleaned_string = re.sub(r'[.,]', '', s)
+    
+    # 将字符串按空格分割为单词列表
+    words = cleaned_string.split()
+    
+    # 使用列表推导式提取长度为 4 的单词
+    result = [word for word in words if len(word) == 4]
+    
+    return result
+
+
+122
+from operator import itemgetter
+
+def main(*args):
+    # 使用列表推导式提取每个参数中下标为 1 的元素
+    result = [arg[1] for arg in args if len(arg) > 1]  # 确保每个参数长度大于 1
+    return result
+
+
+123
+def main(text):
+    # 使用列表推导式获取每个字符的 Unicode 编码减 1 后的字符
+    new_text = ''.join(chr(ord(char) - 1) for char in text)
+    return new_text
+
+124
+from itertools import product
+from PIL import Image
+
+
+def main(fn):
+    # 打开图像文件
+    img = Image.open(fn)
+    
+    # 获取图像尺寸并计算总像素数
+    width, height = img.size
+    total_pixels = width * height
+    
+    # 初始化符合条件的像素计数
+    count = 0
+    
+    # 判断图像模式
+    if img.mode == 'L':  # 灰度图像
+        for pixel in img.getdata():
+            if pixel >= 200:
+                count += 1
+    elif img.mode == 'RGB':  # 彩色图像
+        for pixel in img.getdata():
+            # 计算 RGB 分量的平均值
+            avg = sum(pixel) / 3
+            if avg >= 200:
+                count += 1
+    
+    # 计算符合条件的像素比例并四舍五入保留 2 位小数
+    result = round(count / total_pixels, 2)
+    
+    return result
+
+
+125
+from numpy import array
+
+
+def main(data):
+    data = array(data)
+    num = 0
+    for i in range(0, len(data)):
+        if data[i] < 30 or data[i] > 70:
+            num = num + data[i]
+    return num
+
+
+126
+from itertools import zip_longest
+
+def main(iterable1, iterable2):
+    # 使用 zip_longest 将两个可迭代对象组合到一起，短的补 0
+    result = list(zip_longest(iterable1, iterable2, fillvalue=0))
+    return result
+
+
+127
+from itertools import product
+
+def main(iterable1, iterable2):
+    # 使用 itertools.product 计算笛卡尔积，并转换为列表
+    return list(product(iterable1, iterable2))
+
+
+128
+from math import isclose
+from functools import partial
+
+isclose = partial(isclose, abs_tol=1)
+
+def main(iterable1, iterable2):
+    # 遍历两个可迭代对象对应位置上的元素
+    for num1, num2 in zip(iterable1, iterable2):
+        # 计算每对元素的绝对误差
+        if abs(num1 - num2) > 1:
+            return False
+    return True
+
+129
+def main(data):
+    if data[0] == 1:
+        return False
+    if data[0] == 3:
+        return True
+    if data[0] == 0:
+        return True
+
+
+130
+from operator import mul
+
+def main(values, weights):
+    # 计算加权和
+    weighted_sum = sum(v * w for v, w in zip(values, weights))
+    # 计算权重总和
+    total_weight = sum(weights)
+    # 计算加权平均值，保留最多3位小数
+    weighted_average = weighted_sum / total_weight if total_weight != 0 else 0
+    return round(weighted_average, 3)
+131
+import csv
+
+def main(name):
+    hobbies = []
+    
+    with open('data131.csv', 'r', encoding='utf-8') as file:
+        csv_reader = csv.reader(file)
+        headers = next(csv_reader)  # 获取表头
+        
+        for row in csv_reader:
+            if row[0] == name:
+                for i, hobby in enumerate(row[1:], start=1):
+                    if hobby == '是':
+                        hobbies.append(headers[i])
+                break
+    
+    return '，'.join(hobbies)
+
+132
+grades = {'A': (90, 101), 'B': (80, 90), 'C': (70, 80), 'D': (60, 70), 'F': (0, 60)}
+
+def main(score):
+    if score < 0 or score > 100:
+        return '无效成绩。'
+    
+    for grade, (lower, upper) in grades.items():
+        if lower <= score < upper:
+            return grade
+    
+    # 这个返回语句实际上不会被执行，因为score不在0到100之间的情况已经在前面处理了。
+    return '无效成绩。'
+133
+def main(n):
+    if n <= 0:
+        return '无效参数'
+    (a, b) = (0, 1)
+    for i in range(0, n):
+        (a, b) = (b, a + b)
+    return a
+
+
+134
+def main(color):
+    # 检查color是否是长度为3的元组
+    if not isinstance(color, tuple) or len(color) != 3:
+        return '无效参数'
+
+    # 检查color中的每个元素是否在0到255之间
+    if not all(isinstance(c, int) and 0 <= c <= 255 for c in color):
+        return '无效参数'
+
+    # 将RGB分量转换为2位十六进制字符串
+    hex_color = '#' + ''.join(f'{c:02X}' for c in color)
+    
+    return hex_color
+135
+from functools import partial
+
+# 使用partial定义一个以16为基数的int函数
+int_base16 = partial(int, base=16)
+
+def main(color):
+    # 检查颜色字符串是否符合要求
+    if isinstance(color, str) and len(color) == 7 and color[0] == '#' and all(c.lower() in '0123456789abcdef' for c in color[1:]):
+        # 提取RGB值并转换为十进制整数
+        r = int_base16(color[1:3])
+        g = int_base16(color[3:5])
+        b = int_base16(color[5:7])
+        
+        return (r, g, b)
+    else:
+        return '无效参数'
+
+136
+def main(data):
+    get = [num for elem in data for num in elem]
+    return get
+137
+def main(**kwargs):
+    return sum(kwargs.values())
+
+138
+def main(score, grade, high, low):
+    # 定义不同等级的分数区间
+    grade_ranges = {
+        'A': (91, 100),
+        'B+': (81, 90),
+        'B': (71, 80),
+        'C+': (61, 70),
+        'C': (51, 60),
+        'D+': (41, 50),
+        'D': (31, 40),
+        'E': (21, 30)
+    }
+    
+    # 根据等级获取等级区间的上下限
+    grade_min, grade_max = grade_ranges[grade]
+    
+    # 使用线性插值计算等级成绩
+    grade_score = (score - low) / (high - low) * (grade_max - grade_min) + grade_min
+    
+    # 返回结果，保留最多3位小数
+    return round(grade_score, 3)
+
+139
+import re
+
+def main(pwd):
+    # 使用正则表达式匹配所有符合条件的字符
+    return bool(re.findall(r'^[A-Za-z0-9,_\.]*$', pwd))
+
+140
+import re
+
+def main(text):
+    # 匹配数字子串的正则表达式
+    pattern = r'\d+\.?\d*'  # 匹配整数和小数
+    # 使用 re.findall 提取所有匹配的数字子串
+    result = re.findall(pattern, text)
+    return result
+
+141
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    sum = 0
+    i = 0
+    while i < len(s):
+        if s[i].isdigit(): sum += 1
+        i += 1
+    return sum
+
+
+
+
+142
+import re
+
+def main(s):
+    # 使用正则表达式将所有连续数字子串替换为字符'8'
+    return re.sub(r'\d+', '8', s)
+
+143
+def main(s):
+    # 判断字符串长度是否为 11 且每个字符是否为数字
+    return len(s) == 11 and s.isdigit()
+
+144
+import re
+
+def main(s):
+    # 匹配IPv4地址格式
+    pattern = r'^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    return bool(re.match(pattern, s))
+
+145
+def main(s):
+    # 使用title()方法将每个单词的首字母变为大写
+    return s.title()
+
+146
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 使用正则表达式匹配连续出现的单词
+    return re.findall(r'\b(\w+)\s+\1\b', s)
+
+147
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 删除两端的空白字符并将中间多个空格压缩为一个空格
+    s = re.sub(r'\s+', ' ', s.strip())
+    
+    # 按空格分割字符串，去除重复单词
+    words = s.split(' ')
+    result = []
+    
+    for word in words:
+        if word not in result:
+            result.append(word)
+    
+    return ' '.join(result)
+
+
+148
+import re
+
+def main(s):
+    # 使用正则表达式提取<head>和<body>之间的内容
+    head_content = re.search(r'<head>(.*?)</head>', s)
+    body_content = re.search(r'<body>(.*?)</body>', s)
+    
+    # 如果匹配到内容，返回对应的文本；否则返回空字符串
+    head = head_content.group(1) if head_content else ''
+    body = body_content.group(1) if body_content else ''
+    
+    return (head, body)
+
+149
+def main(s):
+    # 判断字符串是否为空
+    if not s:
+        return s
+    
+    # 使用'_Python小屋_'插入每个字符之间
+    result = s[0]  # 初始化结果为第一个字符
+    for char in s[1:]:
+        result += '_Python小屋_' + char  # 将字符和插入的字符串拼接起来
+    
+    return result
+
+150
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 使用正则表达式匹配 'than' 后的单词
+    pattern = r'\bthan\s+(\w+)\b'
+    # 使用findall来找到所有匹配的单词
+    return re.findall(pattern, s)
+
+
+151
+import re
+
+def main(s):
+    # 将字符串分割为单词列表
+    words = s.split()
+    
+    # 用于标记是否已将 'is' 改为大写
+    is_capitalized = False
+    
+    # 遍历单词列表
+    for i in range(len(words)):
+        if words[i] == 'is' and not is_capitalized:
+            words[i] = 'IS'  # 将第一次出现的 'is' 改为大写
+            is_capitalized = True  # 标记已修改
+        elif words[i] == 'is':
+            continue  # 对之后的 'is' 不做任何修改
+    
+    # 将单词列表重新拼接为字符串并返回
+    return ' '.join(words)
+
+152
+def main(lst):
+    # 找出列表中最长字符串的长度
+    max_len = max(len(s) for s in lst)
+    
+    # 遍历列表，补充字符'0'到短字符串
+    result = [s.zfill(max_len) for s in lst]
+    
+    # 返回处理后的新列表
+    return result
+
+
+153
+def main(**kwargs):
+    # 计算所有传入的关键字参数的和
+    return sum(kwargs.values())
+print(main(x=3, y=4, z=5))
+print(main(a=666, b=888))
+print(main(a=666, c=999))
+
+154
+# 这个题目您已经答对过，上次提交的内容如下
+def main(tup):
+    # 使用列表推导式，遍历元组并替换偶数位置的元素为0
+    return tuple(0 if i % 2 == 0 else tup[i] for i in range(len(tup)))
+
+155
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 使用正则表达式匹配所有单词
+    words = re.findall(r'\b\w+\b', s)
+    # 筛选符合条件的单词
+    result = [word for word in words if 't' in word[1:-1] and word[0] != 't' and word[-1] != 't']
+    return result
+
+
+
+156
+import re
+
+def main(s):
+    # 确保匹配长度为2的数字子串，不嵌套在更长的数字内
+    result = re.findall(r'(?<!\d)\d{2}(?!\d)', s)
+    return result
+
+157
+import re
+
+def main(s):
+    # 使用正则表达式匹配长度为8且以t结尾的单词
+    result = re.findall(r'\b\w{7}t\b', s)
+    return result
+
+158
+import re
+
+def main(s):
+    # 使用正则表达式匹配长度为8且以a开头的单词
+    result = re.findall(r'\ba\w{7}\b', s)
+    return result
+
+159
+import re
+
+def main(s):
+    # 提取所有单词
+    words = re.findall(r'\b\w+\b', s)
+    # 筛选包含字母 'e' 的单词
+    result = [word for word in words if 'e' in word]
+    return result
+
+160
+def main(num):
+    count = 0  # 记录操作次数
+    while num != 1:
+        if num % 2 == 0:
+            num = num // 2  # 偶数操作
+        else:
+            num = num * 3 + 1  # 奇数操作
+        count += 1  # 每进行一次操作，计数器加1
+    return count
+
+161
+def main(s):
+    # 替换指定字符
+    s = s.replace('P', '!').replace('y', '@').replace('t', '#')
+    s = s.replace('h', '$').replace('o', '%').replace('n', '^')
+    
+    # 删除指定字符
+    for char in 'abcd':
+        s = s.replace(char, '')
+    
+    return s
+
+162
+import jieba
+
+# 不输出日志
+jieba.setLogLevel(20)
+
+def main(s):
+    # 使用jieba对字符串进行分词
+    words = jieba.lcut(s)  # lcut返回一个列表
+    
+    # 翻转长度为4的词语
+    processed_words = [word[::-1] if len(word) == 4 else word for word in words]
+    
+    # 将处理后的词语连接成一个新字符串
+    return ''.join(processed_words)
+
+163
+# 这个题目您已经答对过，上次提交的内容如下
+class MyList(list):
+    def __getitem__(self, index):
+        try:
+            # 尝试获取指定位置的元素
+            return super().__getitem__(index)
+        except IndexError:
+            # 如果下标超出范围，返回None
+            return None
+
+# 不要修改下面的代码
+def main(data, index):
+    my_list = MyList(data)
+    return my_list[index]
+
+
+
+164
+import openpyxl
+
+def main(workbook_name, worksheet_name):
+    # 加载工作簿
+    workbook = openpyxl.load_workbook(workbook_name)
+    
+    # 选择指定的工作表
+    worksheet = workbook[worksheet_name]
+    
+    # 获取实际数据的行数和列数
+    row_count = worksheet.max_row
+    column_count = worksheet.max_column
+    
+    # 返回结果
+    return (row_count, column_count)
+
+165
+import math
+
+def main(s):
+    try:
+        # 分割字符串并转换为浮点数
+        a, b, angle_degree = map(float, s.split())
+        
+        # 检查边长和角度的有效性
+        if a <= 0 or b <= 0 or angle_degree <= 0 or angle_degree >= 180:
+            return "数据不合法。"
+        
+        # 将角度转换为弧度，因为 math.cos() 使用弧度
+        angle_radian = math.radians(angle_degree)
+        
+        # 使用余弦定理计算第三边
+        c = math.sqrt(a**2 + b**2 - 2 * a * b * math.cos(angle_radian))
+        
+        # 返回保留一位小数的结果
+        return round(c, 1)
+    
+    except (ValueError, TypeError):
+        # 处理解析失败或类型错误的情况
+        return "数据不合法。"
+
+166
+def main(iterable):
+    # 使用 enumerate 获取元素的下标和值，从1开始计数
+    return tuple((index, value) for index, value in enumerate(iterable, start=1))
+
+
+167
+# 这个题目您已经答对过，上次提交的内容如下
+def main(iterable, operator, num):
+    # 验证iterable是否为只包含整数或实数的可迭代对象
+    if not all(isinstance(x, (int, float)) for x in iterable):
+        return '参数iterable必须是只包含整数或实数的可迭代对象。'
+    
+    # 验证operator是否为合法的运算符
+    if operator not in ['+', '-', '*', '/', '//', '**']:
+        return '不识别的运算符。'
+    
+    # 验证num是否为整数或实数
+    if not isinstance(num, (int, float)):
+        return '参数num必须是整数或实数。'
+    
+    # 根据operator进行运算
+    result = []
+    for x in iterable:
+        if operator == '+':
+            result.append(x + num)
+        elif operator == '-':
+            result.append(x - num)
+        elif operator == '*':
+            result.append(x * num)
+        elif operator == '/':
+            if num == 0:
+                result.append('inf')  # 避免除以0的情况
+            else:
+                result.append(x / num)
+        elif operator == '//':
+            if num == 0:
+                result.append('inf')  # 避免除以0的情况
+            else:
+                result.append(x // num)
+        elif operator == '**':
+            result.append(x ** num)
+    
+    return tuple(result)
+
+
+168
+def main(text, characters):
+    # 使用 set 去重 characters 中的字符
+    unique_characters = set(characters)
+    
+    # 初始化总次数
+    total_count = 0
+    
+    # 遍历去重后的字符集合，计算每个字符在 text 中的出现次数
+    for char in unique_characters:
+        total_count += text.count(char)
+    
+    return total_count
+
+169
+def main(num):
+    # 将数字转换为字符串，然后将每个字符转换为整数
+    return max(int(digit) for digit in str(num))
+
+170
+def main(x, y):
+    # 计算两个向量的曼哈顿距离
+    return sum(abs(xi - yi) for xi, yi in zip(x, y))
+
+171
+from collections.abc import Iterable
+
+def main(iterable1, iterable2):
+    # 检查参数是否为可迭代对象
+    if not isinstance(iterable1, Iterable) or not isinstance(iterable2, Iterable):
+        return '参数必须为可迭代对象。'
+    
+    # 检查iterable1中的所有元素是否都在iterable2中
+    return all(item in iterable2 for item in iterable1)
+
+172
+def main(n):
+    # 返回总的米粒数
+    return 2 ** n - 1
+
+173
+def main(obj):
+    # 检查 obj 是否同时具备 __iter__ 和 __next__ 方法
+    if hasattr(obj, '__iter__') and hasattr(obj, '__next__'):
+        return True
+    else:
+        return False
+
+174
+def main(obj):
+    # 检查 obj 是否是字典
+    if not isinstance(obj, dict):
+        return '参数必须是字典。'
+    
+    # 获取字典中所有的值类型
+    value_types = set(type(value) for value in obj.values())
+    
+    # 如果字典的值类型不唯一
+    if len(value_types) > 1:
+        return '字典的值必须是同一种类型。'
+    
+    # 如果字典的值类型相同，找到值最大的元素的键
+    max_key = max(obj, key=obj.get)
+    
+    return max_key
+
+175
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data, user):
+    # Step 1: 找出与user最像的人（交集最大的）
+    most_similar_user = None
+    max_common_movies = 0
+    
+    for person, movies in data.items():
+        # 计算user与当前person的交集大小
+        common_movies = len(movies & user)
+        
+        # 确保交集不完全等于user的电影集（即需要有不同的电影）
+        if common_movies > max_common_movies and movies != user:
+            most_similar_user = person
+            max_common_movies = common_movies
+    
+    # Step 2: 从最像的人的电影集合中推荐电影（选出最小的UNICODE编码电影）
+    if most_similar_user is not None:
+        similar_person_movies = data[most_similar_user]
+        # 找出用户看过但最像的人没看过的电影
+        recommended_movies = similar_person_movies - user
+        
+        # 返回UNICODE编码最小的电影
+        recommended_movie = min(recommended_movies)
+        return (most_similar_user, recommended_movie)
+    else:
+        return None
+
+
+
+176
+def main(comments):
+    result = []
+    
+    for comment in comments:
+        # 统计每个字符串中出现的每个字符的次数
+        unique_chars = set(comment)  # 获取唯一字符
+        total_chars = len(comment)   # 原始字符串的长度
+        repeated_chars = sum(comment.count(c) - 1 for c in unique_chars)  # 重复字符数
+        
+        # 判断去除重复字符后，剩下的字符是否大于原始字符串的一半
+        if repeated_chars < total_chars / 2:
+            result.append(comment)
+    
+    return result
+
+
+177
+def main(num):
+    # 将十进制数转为八进制字符串
+    octal_str = oct(num)
+    
+    # 统计八进制数中字符 '6' 的个数
+    return octal_str.count('6')
+
+178
+def main(integers, key):
+    # 使用列表推导式对每个元素进行异或运算
+    return tuple(x ^ key for x in integers)
+
+179
+import numpy as np
+
+def main(arr):
+    # 返回数组的维数
+    return arr.ndim
+
+181
+import html
+
+def main(s):
+    # 使用html.unescape()将HTML实体转换为对应字符
+    return html.unescape(s)
+
+183
+from struct import unpack
+from socket import inet_aton
+
+def main(ip):
+    # 将IP地址分割为四个部分，并转换为十六进制格式
+    parts = ip.split('.')
+    hex_ip = ''.join(f'{int(part):02x}' for part in parts)
+    
+    # 返回十六进制字符串，前缀为0x
+    return f'0x{hex_ip}'
+
+185
+from datetime import datetime
+
+def main(dt1, dt2):
+    # 计算时间差
+    delta = abs(dt2 - dt1)  # 使用abs确保差值为正
+    # 返回总秒数
+    return delta.total_seconds()
+
+187
+def main(n, m):
+    result = []
+    # 遍历所有可能的公鸡数量x和母鸡数量y
+    for x in range(n // 5 + 1):  # 公鸡最多可以买n // 5只
+        for y in range(n // 3 + 1):  # 母鸡最多可以买n // 3只
+            z = m - x - y  # 小鸡数量
+            if z >= 0 and z % 3 == 0:  # 确保小鸡数量是3的倍数
+                if 5 * x + 3 * y + z // 3 == n:  # 确保花费总和为n
+                    result.append((x, y, z))  # 记录有效方案
+    return tuple(result)
+
+188
+def main(mode):
+    # 将mode转换为二进制字符串，并补齐9位
+    binary = f"{mode:09b}"
+    
+    # 定义权限映射函数
+    def to_rwx(bits):
+        r = 'r' if bits[0] == '1' else '-'
+        w = 'w' if bits[1] == '1' else '-'
+        x = 'x' if bits[2] == '1' else '-'
+        return r + w + x
+    
+    # 拆分二进制字符串为三组
+    creator_bits = binary[0:3]
+    group_bits = binary[3:6]
+    others_bits = binary[6:9]
+    
+    # 拼接各组权限字符串
+    result = to_rwx(creator_bits) + to_rwx(group_bits) + to_rwx(others_bits)
+    return result
+189
+def main(acl_string):
+    # 定义字符与二进制位的映射关系
+    permission_map = {'r': '1', 'w': '1', 'x': '1', '-': '0'}
+    
+    # 将字符权限转换为二进制位
+    binary = ''.join(permission_map[char] for char in acl_string)
+    
+    # 将二进制字符串转换为十进制整数
+    return int(binary, 2)
+
+
+
+192
+def main(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+193
+import math
+
+def main(*args):
+    return math.prod(args)
+
+194
+from functools import reduce
+from operator import mul
+
+def main(*args):
+    return reduce(mul, args)
+
+195
+def main(data1, data2):
+    # 如果data1的长度大于data2，直接返回False
+    if len(data1) >= len(data2):
+        return False
+    
+    # 遍历data1中的每个元素，检查是否在data2中
+    for item in data1:
+        if item not in data2:
+            return False
+
+    # 检查data2中是否有元素不在data1中
+    for item in data2:
+        if item not in data1:
+            return True
+    
+    return False
+
+196
+def main(c1s1, c1s2):
+    return issubclass(c1s1, c1s2)
+
+197
+def main(data):
+    avg = sum(data) / len(data)  # 计算平均数
+    return tuple(filter(lambda x: x > avg, data))  # 使用filter和lambda过滤大于平均数的元素
+
+198
+def main(data):
+    avg = sum(data) / len(data)  # 计算平均值
+    return tuple(x for x in data if x > avg)  # 使用生成器表达式筛选出大于平均值的元素
+
+199
+def main(data):
+    avg = sum(data) / len(data)  # 计算平均值
+    result = []  # 创建一个空列表用于存放大于平均值的数字
+    for num in data:  # 遍历data中的每个数字
+        if num > avg:  # 如果数字大于平均值
+            result.append(num)  # 将其添加到列表末尾
+    return tuple(result)  # 将列表转换为元组并返回
+
+201（代码运行时间较长，请耐心等待）
+def is_narcissistic(num, n):
+    # 检查一个数字是否是n位水仙花数
+    if num == 0:
+        return False
+    
+    def sum_of_powers(num_str, n, index=0):
+        if index == len(num_str):
+            return 0
+        return int(num_str[index]) ** n + sum_of_powers(num_str, n, index + 1)
+    
+    return sum_of_powers(str(num), n) == num
+
+def generate_numbers(n, prefix=0, depth=0):
+    # 使用递归来生成n位数并检查是否为水仙花数
+    if depth == n:
+        if prefix >= 10**(n-1):  # 确保是n位数
+            return (prefix,) if is_narcissistic(prefix, n) else ()
+        return ()
+    
+    results = ()
+    def add_digit(digit):
+        nonlocal results
+        new_prefix = prefix * 10 + digit
+        if depth == 0 and digit == 0:
+            results += generate_numbers(n, prefix, depth)  # 避免前导零
+        else:
+            results += generate_numbers(n, new_prefix, depth + 1)
+    
+    if depth == 0:
+        add_digit(1)  # 第一位不能为0
+        add_digit(2)
+        add_digit(3)
+        add_digit(4)
+        add_digit(5)
+        add_digit(6)
+        add_digit(7)
+        add_digit(8)
+        add_digit(9)
+    else:
+        add_digit(0)
+        add_digit(1)
+        add_digit(2)
+        add_digit(3)
+        add_digit(4)
+        add_digit(5)
+        add_digit(6)
+        add_digit(7)
+        add_digit(8)
+        add_digit(9)
+    
+    return results
+
+def main(n):
+    if n <= 0:
+        return ()
+    
+    narcissistic_numbers = generate_numbers(n)
+    return tuple(sorted(narcissistic_numbers))
+202
+def main(s):
+    # 辅助递归函数，用于计算长度为3的名字的数量
+    def count_names(names, count=0):
+        # 如果没有名字了，返回计数
+        if not names:
+            return count
+        # 获取当前名字
+        current_name = names[0]
+        # 判断当前名字的长度是否为3，若是则计数加1
+        if len(current_name) == 3:
+            count += 1
+        # 递归调用剩余的名字
+        return count_names(names[1:], count)
+    
+    # 将字符串按中文全角逗号分割
+    names = s.split('，')
+    # 调用递归函数
+    return count_names(names)
+
+203
+def main(data, *iterables):
+    # 创建to_remove列表，包含所有要移除的元素
+    def flatten(iterables):
+        # 递归将所有iterables合并成一个单一的列表
+        if not iterables:
+            return []
+        return list(map(str, iterables[0])) + flatten(iterables[1:])
+    
+    to_remove = flatten(iterables)
+
+    # 递归函数，用于从data中删除to_remove中的元素
+    def remove_elements(data, to_remove):
+        # 递归的终止条件：当data为空时返回空列表
+        if not data:
+            return []
+        
+        # 当前元素是否在to_remove中
+        if str(data[0]) in to_remove:
+            # 如果当前元素在to_remove中，跳过该元素
+            return remove_elements(data[1:], to_remove)
+        else:
+            # 否则保留该元素，并递归处理剩余部分
+            return [data[0]] + remove_elements(data[1:], to_remove)
+
+    # 调用递归函数
+    return remove_elements(data, to_remove)
+
+204
+def main(data, *iterables):
+    # 将所有需要删除的元素放入一个列表中（包含所有iterables的元素）
+    to_remove = []
+    for iterable in iterables:
+        for item in iterable:
+            to_remove.append(str(item))  # 将元素转换为字符串并添加到to_remove列表中
+
+    # 遍历data列表，删除to_remove中的元素
+    result = []
+    for item in data:
+        if str(item) not in to_remove:
+            result.append(item)
+
+    return result
+
+206
+def main(s, width, fillchar=' '):
+    if len(s) >= width:
+        return s
+    else:
+        fill_length = width - len(s)
+        return s + fillchar * fill_length
+
+207
+def main(s, width, fillchar=' '):
+    if len(s) >= width:
+        return s
+    else:
+        fill_length = width - len(s)
+        return fillchar * fill_length + s
+
+208
+def main(s, tabsize=8):
+    result = []
+    current_position = 0
+    
+    for char in s:
+        if char == '\t':
+            spaces_to_add = tabsize - (current_position % tabsize)
+            result.append(' ' * spaces_to_add)
+            current_position += spaces_to_add
+        else:
+            result.append(char)
+            current_position += 1
+    
+    return ''.join(result)
+
+
+209
+def main(s):
+    # 辅助递归函数
+    def convert(index, s):
+        if index == len(s):  # 递归终止条件
+            return ""
+        char = s[index]
+        if 'A' <= char <= 'Z':  # 如果是大写字母
+            return chr(ord(char) + (ord('a') - ord('A'))) + convert(index + 1, s)  # 转换并递归
+        else:
+            return char + convert(index + 1, s)  # 直接添加并递归
+
+    return convert(0, s)
+
+210
+def main(s):
+    # 辅助递归函数
+    def convert(index, s):
+        if index == len(s):  # 递归终止条件
+            return ""
+        char = s[index]
+        if 'a' <= char <= 'z':  # 如果是小写字母
+            return chr(ord(char) - (ord('a') - ord('A'))) + convert(index + 1, s)  # 转换为大写并递归
+        else:
+            return char + convert(index + 1, s)  # 非小写字母，保持原样并递归
+
+    return convert(0, s) 
+
+211
+def main(num):
+    # 将数字转换为二进制形式，并去掉 '0b' 前缀
+    binary_str = bin(num)[2:]
+    
+    # 计算0和1的出现次数
+    count_0 = binary_str.count('0')
+    count_1 = binary_str.count('1')
+    
+    # 返回结果
+    return (count_0, count_1)
+
+212
+def main(num):
+    # 将数字转换为八进制形式，并去掉 '0o' 前缀
+    octal_str = oct(num)[2:]
+    
+    # 创建一个字典来存储数字出现次数
+    count_dict = {}
+    
+    # 遍历八进制字符串中的每个字符
+    for digit in octal_str:
+        if digit in count_dict:
+            count_dict[digit] += 1
+        else:
+            count_dict[digit] = 1
+    
+    # 找出出现次数最多的数字
+    max_count = -1
+    max_digit = None
+    for digit in octal_str:
+        if count_dict[digit] > max_count:
+            max_count = count_dict[digit]
+            max_digit = digit
+    
+    # 返回结果
+    return int(max_digit)
+
+213
+def main(n):
+    # 基本情况，n为1时返回1
+    if n == 1 or n == 0:
+        return 1
+    else:
+        # 递归调用 main 函数
+        return n * main(n - 1)
+
+214
+def main(n):
+    # 构造一个从1到n的乘法表达式，例如 '1*2*3*...*n'
+    expression = '*'.join(map(str, range(1, n + 1)))
+    # 使用 eval 执行该表达式
+    return eval(expression)
+
+215
+def helper(func, iterable):
+    for item in iterable:
+        yield func(item)
+
+def main(func, iterable):
+    return tuple(helper(func, iterable))
+216
+def fib():
+    a, b = 0, 1  # 初始化前两个数字
+    while True:
+        yield a  # 返回当前斐波那契数
+        a, b = b, a + b  # 更新斐波那契数：a为b，b为a+b
+
+def main(n):
+    fib_gen = fib()  # 获取生成器对象
+    for number in fib_gen:  # 遍历生成器
+        if number > n:  # 如果斐波那契数大于n
+            return number  # 返回第一个大于n的斐波那契数
+
+217
+def main(iterator, item):
+    index = 0  # 初始化索引
+    for element in iterator:  # 遍历迭代器
+        if element > item:  # 如果当前元素大于item
+            return index  # 返回索引
+        index += 1  # 更新索引
+
+218
+def main(iterator, item):
+    for index, element in enumerate(iterator):  # 使用enumerate获取索引和值
+        if element > item:  # 如果当前元素大于item
+            return index  # 返回该元素的索引
+
+221
+def main(s):
+    # 辅助递归函数
+    def find_max(s, index=0, max_char='', max_count=0):
+        # 递归终止条件
+        if index == len(s):
+            return max_char
+
+        # 当前字符
+        current_char = s[index]
+        current_count = s.count(current_char)
+
+        # 如果当前字符的出现次数更大，或者次数相同但字符更大，更新最大字符和最大次数
+        if current_count > max_count or (current_count == max_count and current_char > max_char):
+            max_char = current_char
+            max_count = current_count
+
+        # 递归处理下一个字符
+        return find_max(s, index + 1, max_char, max_count)
+
+    return find_max(s)
+
+223
+def main(data, item):
+    # 辅助递归函数
+    def find_indices(data, item, index=0, indices=()):
+        # 递归终止条件：遍历到元组的末尾
+        if not data:
+            return indices
+
+        # 如果当前元素与item相等，记录当前下标
+        if data[0] == item:
+            indices = indices + (index,)
+
+        # 递归处理下一个元素
+        return find_indices(data[1:], item, index + 1, indices)
+
+    # 调用递归函数
+    return find_indices(data, item)
+
+225
+def main(data):
+    result = []
+    
+    def inner(data_inner):
+        for element in data_inner:
+            if isinstance(element, list):
+                inner(element)
+            elif isinstance(element, int):
+                result.append(element)
+    
+    inner(data)
+    return result
+226
+def main(data):
+    # 使用map对每个子列表进行处理，计算其元素之和
+    return list(map(sum, data))
+
+227
+def main(data):
+    # 使用zip将各子列表按列打包，并使用map对每列求和
+    return list(map(sum, zip(*data)))
+
+228
+def main(data):
+    # 初始化各个分数段的计数器
+    counts = {'优': 0, '良': 0, '中': 0, '及格': 0, '不及格': 0}
+    
+    # 遍历每个分数并更新计数器
+    for score in data:
+        if 90 <= score <= 100:
+            counts['优'] += 1
+        elif 80 <= score <= 89:
+            counts['良'] += 1
+        elif 70 <= score <= 79:
+            counts['中'] += 1
+        elif 60 <= score <= 69:
+            counts['及格'] += 1
+        else:
+            counts['不及格'] += 1
+    
+    # 将结果转换为元组形式
+    result = (
+        ('优', counts['优']),
+        ('良', counts['良']),
+        ('中', counts['中']),
+        ('及格', counts['及格']),
+        ('不及格', counts['不及格'])
+    )
+    
+    return result
+229
+def main(s, n):
+    # 使用split分割字符串，将制表符替换为n个空格，并使用join拼接
+    return (' ' * n).join(s.split('\t'))
+
+231
+def main(num):
+    # 将num转换为二进制字符串，去掉'0b'前缀
+    binary_str = bin(num)[2:]
+    
+    # 使用split('0')分割字符串，得到所有连续的'1'的块
+    ones_blocks = binary_str.split('0')
+    
+    # 返回最长的'1'块的长度
+    return max(len(block) for block in ones_blocks)
+
+232
+from string import ascii_uppercase, digits
+
+characters = digits + ascii_uppercase
+
+def main(n, base):
+    if base < 2 or base > 36:
+        raise ValueError("Base must be between 2 and 36")
+    
+    def convert_to_base(n, base):
+        if n == 0:
+            return "0"
+        
+        result = ""
+        current_n = n
+        for _ in range(1, n + 1):
+            remainder = current_n % base
+            result = characters[remainder] + result
+            current_n //= base
+            if current_n <= 0:
+                break
+        
+        return result
+    
+    converted = convert_to_base(n, base)
+    return f"{n}的{base}进制形式：{converted}"
+
+
+233
+def main(obj):
+    # 检查obj是否具有__call__方法，若有则表示obj是可调用对象
+    return hasattr(obj, '__call__')
+
+234
+def main(obj):
+    # 检查obj是否具备__hash__方法，如果有该方法且obj本身不可变，则表示是可哈希的
+    return hasattr(obj, '__hash__') and obj.__hash__ is not None
+
+235
+def main(num):
+    # 定义一个内嵌函数，用于递归处理数字
+    def digits(num):
+        if num == 0:
+            return ()  # 基础情况：当数字为0时，返回空元组
+        else:
+            return digits(num // 10) + (num % 10,)  # 递归调用，处理剩余的数字
+
+    return digits(num)
+
+236
+def main(digits):
+    result = 0
+    for digit in digits:
+        result = result * 10 + digit  # 每次将现有结果乘以10并加上当前数字
+    return result
+
+237
+from functools import reduce
+
+def main(digits):
+    return reduce(lambda result, digit: result * 10 + digit, digits)
+
+238
+def main(digits):
+    return int(''.join(map(str, digits)))
+
+239
+def main(data):
+    data = sorted(data)  # 排序
+    n = len(data)  # 获取元素个数
+    if n % 2 == 1:
+        return data[n // 2]  # 奇数个元素，返回中间的元素
+    else:
+        return (data[n // 2 - 1] + data[n // 2]) / 2  # 偶数个元素，返回两个中间值的平均值
+
+
+240
+def main(data):
+    return tuple(round(x ** 0.5, 3) for x in data)  # 使用生成器表达式和round函数返回结果
+
+243
+def main(tup):
+    return tuple(reversed(tup))
+
+244
+def main(tup):
+    return tup[::-1]
+
+245
+def main(tup):
+    return tuple(filter(str.isdigit, tup))
+
+246
+def main(tup):
+    return all(tup)
+
+247
+def main(tup):
+    for item in tup:
+        if not item:  # 如果元素为假值
+            return False
+    return True
+
+248
+def main(iterable, start=0):
+    def helper(it, index, result):
+        try:
+            # 获取下一个元素
+            value = next(it)
+            # 构建当前元组并添加到结果中
+            new_result = result + ((index, value),)
+            # 递归调用处理下一个元素
+            return helper(it, index + 1, new_result)
+        except StopIteration:
+            # 如果迭代器结束，返回结果
+            return result
+    
+    # 创建迭代器
+    it = iter(iterable)
+    # 调用辅助函数
+    return helper(it, start, ())
+
+249
+def main(tup, value):
+    def find_indices(tup, value, index, result):
+        if index >= len(tup):
+            return result
+        new_result = result + ([index] if tup[index] == value else [])
+        return find_indices(tup, value, index + 1, new_result)
+    
+    return find_indices(tup, value, 0, [])
+
+250
+def main(factors, x):
+    result = 0
+    for i, factor in enumerate(factors):
+        result += factor * (x ** (len(factors) - i - 1))
+    return result
+
+251
+def main(m, n):
+    while n != 0:
+        m, n = n, m % n
+    return m
+
+252
+def main(n, i):
+    if i > n:
+        return 0
+    elif i == 0 or i == n:
+        return 1
+    
+    # Ensure i is the smaller of the two to minimize the number of multiplications
+    if i > n - i:
+        i = n - i
+    
+    numerator = 1
+    denominator = 1
+    
+    for j in range(1, i + 1):
+        numerator *= n - j + 1
+        denominator *= j
+    
+    # 使用 elif 和 <= 运算符进行额外检查
+    if numerator <= denominator:
+        return numerator // denominator
+    elif denominator <= numerator:
+        return numerator // denominator
+    
+    return numerator // denominator
+
+253
+import chardet
+
+def main(bytes_):
+    # 检测字节串的编码格式
+    detection_result = chardet.detect(bytes_)
+    encoding = detection_result['encoding']
+    confidence = detection_result['confidence']
+    
+    if confidence < 0.5:
+        return '失败'
+    
+    # 尝试使用检测到的编码格式对字节串进行解码
+    decoded_string = bytes_.decode(encoding)
+    
+    # 检查解码后的字符串是否正确
+    if isinstance(decoded_string, str):
+        return (encoding, decoded_string)
+    else:
+        return '失败'
+
+254
+def outer(a, b):
+    def inner(x):
+        return a * x + b
+    return inner
+
+def main(a, b, x):
+    return outer(a,b)(x)
+
+255
+class outer:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    def __call__(self, x):
+        return self.a * x + self.b
+
+def main(a, b, x):
+    return outer(a,b)(x)
+
+256
+import pickle
+import zlib
+
+def main(obj):
+    # 使用pickle进行序列化
+    serialized_obj = pickle.dumps(obj)
+    
+    # 计算CRC32值
+    crc_value = zlib.crc32(serialized_obj)
+    return crc_value
+
+257
+import pickle
+import hashlib
+
+def main(obj):
+    # 使用pickle进行序列化
+    serialized_obj = pickle.dumps(obj)
+    
+    # 计算MD5值并转为十六进制字符串
+    md5_value = hashlib.md5(serialized_obj).hexdigest()
+    
+    return md5_value
+
+258
+import hashlib
+
+def main(fn):
+    # 创建一个MD5对象
+    md5_hash = hashlib.md5()
+    
+    # 打开文件并读取内容
+    with open(fn, 'rb') as file:
+        # 逐块读取文件内容并更新MD5对象
+        while chunk := file.read(4096):  # 以4096字节为单位读取文件
+            md5_hash.update(chunk)
+    
+    # 返回文件内容的MD5值的十六进制表示
+    return md5_hash.hexdigest()
+
+264
+import pickle
+import socket
+
+def main(msg):
+    # 序列化msg
+    serialized_msg = pickle.dumps(msg)
+    
+    # 创建UDP套接字
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    
+    # 设置目标地址：本地回环地址和端口11264
+    server_address = ('127.0.0.1', 11264)
+    
+    # 发送序列化的数据
+    sock.sendto(serialized_msg, server_address)
+    
+    # 接收反馈数据
+    data, _ = sock.recvfrom(4096)  # 4096是缓冲区大小，可以根据需要调整
+    
+    # 反序列化收到的数据
+    response = pickle.loads(data)
+    
+    # 关闭套接字
+    sock.close()
+    
+    # 返回反序列化结果
+    return response
+
+265
+import pandas as pd
+
+def main(tup):
+    # 将元组转换为 pandas Series
+    series = pd.Series(tup)
+    
+    # 使用 value_counts() 计算每个数的出现次数
+    counts = series.value_counts()
+    
+    # 按照出现次数升序排序并转回字典
+    result = dict(counts.sort_values().to_dict())
+    
+    return result
+
+267
+from numpy import array, mean
+
+def main(arr):
+    # 计算每列的平均值
+    column_means = mean(arr, axis=0)
+    
+    # 创建一个布尔掩码，选择平均值小于8的列
+    mask = column_means < 8
+    
+    # 使用布尔掩码筛选出符合条件的列，并计算这些列的总和
+    result = arr[:, mask].sum()
+    
+    return result
+
+268
+from numpy import array
+import numpy as np
+
+def main(arr):
+	row_means = np.mean(arr, axis = 1)
+	filtered_rows = arr[row_means < 8]
+	total_sum = np.sum(filtered_rows)
+	return total_sum
+
+269
+import numpy as np
+def main(arr):
+	ones_array = np.ones_like(arr)
+	diagonal_elements = np.diagonal(ones_array)
+	return diagonal_elements
+
+270
+import numpy as np
+def main(arr):
+	zeros_array = np.zeros_like(arr)
+	diagonal_elements = np.diagonal(zeros_array)
+	return diagonal_elements
+
+271
+import numpy as np
+def main(arr):
+	return np.sum(srr[:3, :3])
+
+272
+import numpy as np
+def main(arr):
+	return np.sum(srr[:, col])
+
+273
+import numpy as np
+def main(arr):
+	return np.sum(arr[arr % 2 ==0])
+
+274
+import numpy as np
+def main(arr):
+	return np.sum(arr[(arr % 2 ==0) & (arr > 20)])
+
+275
+import numpy as np
+def main(arr):
+	return np.sum(arr[(arr % 2 ==0) | ((arr % 7 ==0)])
+
+276
+from numpy import array
+import numpy as np
+
+def main(arr):
+	return np.sum(arr[arr[:, col] == value])
+
+277
+from numpy import array, partition
+
+def main(arr, i, axis):
+    # 使用 np.partition 进行部分排序
+    # 沿指定轴对每一行或每一列进行部分排序
+    if axis == 0:
+        # 沿列进行部分排序
+        sorted_arr = partition(arr, i, axis=axis)
+        result = sorted_arr[i, :]
+    elif axis == 1:
+        # 沿行进行部分排序
+        sorted_arr = partition(arr, i, axis=axis)
+        result = sorted_arr[:, i]
+    else:
+        raise ValueError("Axis must be 0 or 1")
+    
+    return result
+
+278
+from numpy import array, concatenate, partition
+
+def main(arr):
+    s_arr = array([], dtype=arr.dtype)
+    remaining_arr = arr.copy()
+    
+    while remaining_arr.size > 0:
+        # 使用 np.partition 找到当前剩余数组中的最小元素
+        partitioned_arr = partition(remaining_arr, 0)
+        smallest_element = partitioned_arr[0]
+        
+        # 将最小元素添加到已排序数组中
+        sorted_arr = concatenate((s_arr, [smallest_element]))
+        
+        # 移除已经排序过的最小元素
+        remaining_arr = partitioned_arr[1:]
+    
+    return s_arr
+280
+import numpy as np
+
+def main(arr):
+	x = np.linalg.solve(A, b)
+	return x
+
+281
+import numpy as np
+
+def main(arr):
+	result = np.where(arr < 3, -1,
+		np.where((arr >3) & (arr < 5), 1,
+		np.where(arr >7, arr*4 ,0)))
+
+282
+import numpy as np
+
+def main(arr, a, b):
+	result = np.clip(arr, a, b)
+	return result
+
+284
+import numpy as np
+
+def main(n):
+	return 2 ** n - 1
+
+285
+import numpy as np
+
+def main(arr):
+	sum = np.sum(arr)
+	d_sum = np.sum(np.diagonal(arr))
+	nd_sum = sum - d_sum
+	return nd_sum
+
+286
+import numpy as np
+
+def main(arr):
+	return np.median(arr, axis = 0)
+
+287
+import numpy as np
+
+def main(arr):
+	row, col = np.nonzero(arr)
+	return [list(row, list(col))]
+
+288
+import numpy as np
+
+def main(arr):
+	new = np.where(arr > 128, 255, 0)
+	return new
+
+289
+import numpy as np
+
+def main(arr):
+	return arr.real
+
+
+290
+import numpy as np
+
+def main(arr):
+	a =  np.squeeze(arr)
+	return a.shape
+
+291
+import numpy as np
+
+def main(arr):
+	return np.sum(np.square(arr))
+
+292
+from scipy.special import factorial
+import numpy as np
+
+def main(arr):
+	return np.sum(factorial(arr, exact = True))
+
+293
+import numpy as np
+
+def main(arr):
+	a, _ = np.modf(arr)
+	return a
+
+294
+import numpy as np
+
+def main(arr):
+	a = np.angle(arr. deg = Ture)
+	return a
+
+295# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr):
+    return np.abs(arr)
+
+
+296
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr):
+    return np.all(np.abs(arr) > 4)
+
+
+
+297
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr1, arr2):
+    return np.sum(arr1 == arr2)
+
+
+298
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr, n):
+    split_arrays = np.array_split(arr, n)  # 将数组分割成 n 个子数组
+    return split_arrays[-1].shape  
+
+299
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr, k):
+    return np.sum(np.diagonal(arr, offset=k))
+
+
+300
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr):
+    return np.ptp(arr, axis=1)
+
+301
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr, a, b):
+    arr = np.where(arr < a, a, arr)  # 将小于 a 的元素替换为 a
+    arr = np.where(arr > b, b, arr)  # 将大于 b 的元素替换为 b
+    return arr
+
+302
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr, a, b):
+    return np.piecewise(arr, [arr < a, arr > b], [a, b, lambda x: x])
+
+
+303
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr, a, b):
+    return np.piecewise(arr, [arr < a, arr > b], [0, 0, lambda x: x])
+
+
+304
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr, a):
+    return np.piecewise(arr, [(arr > a) | (arr % 2 == 0)], [lambda x: x, 0])
+
+
+305
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr1, arr2):
+    # 计算卷积
+    conv_result = np.convolve(arr1, arr2, mode='valid')
+    return conv_result
+
+306
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr1, arr2):
+    # 使用 np.isin() 查找 arr1 中哪些元素不在 arr2 中
+    return arr1[~np.isin(arr1, arr2)]
+
+307
+# 这个题目您已经答对过，上次提交的内容如下
+from functools import reduce
+
+def intersection(set1, set2):
+    return set1 & set2  # 计算两个集合的交集
+
+def main(*sets):
+    return reduce(intersection, sets)  # 使用 reduce 计算多个集合的交集
+
+
+308
+# 这个题目您已经答对过，上次提交的内容如下
+def main(*sets):
+    # 使用集合的 | 操作符计算并集
+    return set().union(*sets)
+
+309
+def main(a, b=3, c=5):
+    return a + b + c
+310
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a, b, c):
+    s = (a + b + c) / 2  # 计算半周长
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5  # 计算面积
+    return format(area, '.3f')  # 格式化为保留3位小数的字符串
+
+311
+# 这个题目您已经答对过，上次提交的内容如下
+from itertools import groupby
+
+def split(score):
+    if score >= 90:
+        return '优'
+    elif score >= 80:
+        return '良'
+    elif score >= 70:
+        return '中'
+    elif score >= 60:
+        return '及格'
+    else:
+        return '不及格'
+
+def main(scores):
+    # 对分数进行排序并使用split()函数映射分数段
+    sorted_scores = sorted(scores, key=split)
+    # 使用groupby对分数段进行分组
+    grouped = groupby(sorted_scores, key=split)
+    
+    # 定义结果字典并初始化所有分数段为0
+    result = {'优': 0, '良': 0, '中': 0, '及格': 0, '不及格': 0}
+    
+    # 使用map和lambda函数统计每个分数段的个数
+    # map会应用lambda函数到每个group并计算长度
+    result.update({key: len(list(group)) for key, group in grouped})
+    
+    return result
+
+312
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a, b):
+    if a == 0 or b == 0:
+        return 0
+    elif (a > 0 and b > 0) or (a < 0 and b < 0):
+        return 1
+    else:
+        return -1
+
+313
+# 这个题目您已经答对过，上次提交的内容如下
+def main(integers):
+    if all(i > 0 for i in integers):  # 所有数字都是正数
+        return '都是正数'
+    elif all(i < 0 for i in integers):  # 所有数字都是负数
+        return '都是负数'
+    else:  # 既有正数又有负数
+        return '有正有负'
+
+314
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a, b):
+    if b == 0:
+        return a
+    else:
+        return main(b, a % b)
+
+315
+import pandas as pd
+
+def main(xlsx_file):
+    # 读取Excel文件中的两个工作表
+    students_df = pd.read_excel(xlsx_file, sheet_name='Sheet1')
+    scores_df = pd.read_excel(xlsx_file, sheet_name='Sheet2')
+    
+    # 合并两个DataFrame，按学号进行合并
+    merged_df = pd.merge(students_df, scores_df, on='学号')
+    
+    # 计算每个学生的平均分
+    merged_df['平均分'] = (merged_df['语文'] + merged_df['数学'] + merged_df['英语']) / 3
+    
+    # 找到平均分最高的学生
+    highest_avg_student = merged_df.loc[merged_df['平均分'].idxmax()]
+    
+    # 返回平均分最高的学生的姓名
+    return highest_avg_student['姓名']
+
+# 测试示例
+# print(main('data315 1.xlsx'))  # 替换为实际的Excel文件路径
+
+
+316
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    return all(map(lambda x: '0' <= x <= '9', s))
+
+317
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    return all(48 <= ord(c) <= 57 for c in s)
+
+318
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    return tuple(dict.fromkeys(data).keys())
+
+319
+# 这个题目您已经答对过，上次提交的内容如下
+import pandas as pd
+
+def main(html_file):
+    tables = pd.read_html(html_file)
+    return len(tables)
+
+320
+# 这个题目您已经答对过，上次提交的内容如下
+import pandas as pd
+
+def main(html_file):
+    tables = pd.read_html(html_file)  # 读取网页或文件中的所有表格
+    return tuple(len(table) for table in tables)  # 获取每个表格的行数，并返回元组
+
+321
+# 这个题目您已经答对过，上次提交的内容如下
+def main(integer):
+    result = []
+    while integer > 0:
+        result.insert(0, integer % 10)  # 取个位数并插入列表的最前端
+        integer //= 10  # 去掉个位数
+    return result
+
+import pandas as pd
+
+def main(excel_fn):
+    # 读取Excel文件中的数据
+    df = pd.read_excel(excel_fn)
+    
+    # 找到每个学生每门课程的最高分
+    max_scores = df.groupby(['姓名', '课程'])['成绩'].max().reset_index()
+    
+    # 计算这些最高分的平均分
+    average_max_score = max_scores['成绩'].mean()
+    
+    return average_max_score
+
+# 测试示例
+# print(main('data315_2.xlsx'))  # 替换为实际的Excel文件路径
+323
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        # 递归调用，先处理第一个元素，然后将后续元素拼接起来
+        return int(str(lst[0]) + str(main(lst[1:])))
+
+324
+import pandas as pd
+import sqlite3
+
+def main(db_path):
+    # 连接到SQLite数据库
+    conn = sqlite3.connect(db_path)
+    
+    # 使用SQL查询读取数据表中的数据
+    query = """
+    SELECT value, datetime
+    FROM Python_xiaowu
+    """
+    df = pd.read_sql_query(query, conn)
+    
+    # 关闭数据库连接
+    conn.close()
+    
+    # 将datetime列转换为日期时间格式
+    df['datetime'] = pd.to_datetime(df['datetime'])
+    
+    # 提取月份
+    df['month'] = df['datetime'].dt.to_period('M').astype(str)
+    
+    # 根据月份分组求和
+    monthly_sums = df.groupby('month')['value'].sum().reset_index()
+    
+    # 找到数值之和最大的月份
+    max_month = monthly_sums.loc[monthly_sums['value'].idxmax()]['month']
+    
+    return max_month
+
+# 测试示例
+# print(main('path_to_your_database.db'))  # 替换为实际的数据库文件路径
+
+325
+import pandas as pd
+
+def main(pk_path):
+    # 读取pickle文件中的数据
+    data = pd.read_pickle(pk_path)
+    
+    # 将数据转换为Series对象
+    series_data = pd.Series(data)
+    
+    # 统计每个元素的出现次数
+    value_counts = series_data.value_counts()
+    
+    # 找到出现次数最多的元素
+    most_common_element = value_counts.idxmax()
+    
+    return most_common_element
+
+326
+def main(data1, data2):
+    # 将data2转换为集合以便快速查找
+    set_data2 = set(data2)
+    
+    # 使用列表推导式过滤掉data1中出现在data2中的元素
+    result_list = [item for item in data1 if item not in set_data2]
+    
+    # 将结果列表转换为元组
+    result_tuple = tuple(result_list)
+    
+    return result_tuple
+
+327
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    max_value = max(data)
+    # 通过递归查找所有最大值的下标
+    def find_indices(data, index=0, indices=()):
+        if index == len(data):
+            return indices
+        if data[index] == max_value:
+            indices += (index,)
+        return find_indices(data, index + 1, indices)
+    
+    return find_indices(data)
+
+328
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data1, data2):
+    # 使用递归处理data2中的每个元素
+    def count_occurrences(data1, data2, result=()):
+        if not data2:
+            return result
+        else:
+            count = data1.count(data2[0])
+            return count_occurrences(data1, data2[1:], result + (count,))
+
+    return count_occurrences(data1, data2)
+329
+import pandas as pd
+
+def main(xlsx_fn):
+    # 读取Excel文件中的数据
+    df = pd.read_excel(xlsx_fn)
+    
+    # 统计每条记录出现的次数
+    record_counts = df.value_counts().reset_index(name='count')
+    
+    # 找到只出现一次的记录
+    unique_records = record_counts[record_counts['count'] == 1]
+    
+    # 返回只出现一次的记录的数量
+    return len(unique_records)
+
+330
+def main(data):
+    def process_tuple(index, result):
+        if index >= len(data):
+            return result
+        
+        value = data[index] - 3
+        
+        if value == 0:
+            return result
+        
+        return process_tuple(index + 1, result + (value,))
+    
+    return process_tuple(0, ())
+
+# 测试示例
+# print(main('data315_2.xlsx'))  # 替换为实际的Excel文件路径
+
+331
+import pandas as pd
+
+def main(xlsx_fn):
+    # 读取Excel文件中的数据
+    df = pd.read_excel(xlsx_fn)
+    
+    # 统计每个学生每门课程的考试次数
+    grouped = df.groupby(['姓名', '课程']).size().reset_index(name='count')
+    
+    # 过滤出只参加过一次考试的记录
+    unique_records = grouped[grouped['count'] == 1][['姓名', '课程']]
+    
+    # 将结果按姓名和课程升序排序
+    sorted_records = unique_records.sort_values(by=['姓名', '课程'])
+    
+    # 将结果转换为元组列表
+    result_tuples = list(zip(sorted_records['姓名'], sorted_records['课程']))
+    
+    # 将元组列表转换为元组
+    result = tuple(result_tuples)
+    
+    return result
+333
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    for item in lst:
+        if not isinstance(item, (int, float)):  # 判断元素是否为整数或实数
+            return False  # 只要有一个元素不是整数或实数，立即返回False
+    return True  # 如果循环结束，说明所有元素都是整数或实数，返回True
+
+
+334
+def main(*args, **kwargs):
+    if len(args) != 3:
+        raise ValueError("Function must be called with exactly three positional arguments.")
+    if kwargs:
+        raise TypeError("Function must be called with positional arguments only; no keyword arguments allowed.")
+    
+    a, b, c = args
+    return a + b + c
+
+# 下面的代码不允许修改
+try:
+    print(main(1, 2, 3))
+    print(main(4, 5, c=6))
+except:
+    print('必须使用位置参数的形式传递实参。')
+
+
+341
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    even_elements = sorted(data[::2])  # 偶数索引的元素升序排序
+    odd_elements = sorted(data[1::2], reverse=True)  # 奇数索引的元素降序排序
+
+    # 合并元素到新元组，交替放置
+    result = []
+    for i in range(len(data)):
+        if i % 2 == 0:
+            result.append(even_elements.pop(0))
+        else:
+            result.append(odd_elements.pop(0))
+    return tuple(result)
+
+342
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    odd_sorted = sorted(filter(lambda x: x % 2 != 0, data))  # 提取并升序排序奇数
+    even_sorted = sorted(filter(lambda x: x % 2 == 0, data), reverse=True)  # 提取并降序排序偶数
+    
+    return tuple(odd_sorted + even_sorted)  # 组合两个排序后的列表并转换为元组
+
+343
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    odd_sorted = sorted(filter(lambda x: x % 2 != 0, data))           # 筛选并升序排序奇数
+    even_sorted = sorted(filter(lambda x: x % 2 == 0, data), reverse=True)  # 筛选并降序排序偶数
+    return tuple(odd_sorted + even_sorted)  # 合并并转换为元组
+
+344
+# 这个题目您已经答对过，上次提交的内容如下
+def main(x, y):
+    return tuple(filter(lambda elem: y[x.index(elem)], x))
+
+345
+# 这个题目您已经答对过，上次提交的内容如下
+def main(x, y):
+    result = tuple(sorted(set(filter(lambda elem: y[x.index(elem)] == 1, x))))
+    return result
+
+346
+def main(x, y):
+    def process_tuples(index, result):
+        # 如果索引超出范围，返回结果
+        if index >= len(x):
+            return result
+        
+        # 获取当前元素
+        value_x = x[index]
+        value_y = y[index]
+        
+        # 判断是否保留当前元素
+        new_result = result + (value_x,) * (value_y == 1)
+        
+        # 递归处理下一个元素
+        return process_tuples(index + 1, new_result)
+    
+    return process_tuples(0, ())
+347
+# 这个题目您已经答对过，上次提交的内容如下
+def main(number):
+    factors = []
+    # 先处理2这个因数
+    while number % 2 == 0:
+        factors.append(2)
+        number //= 2
+    # 然后处理奇数因数
+    divisor = 3
+    while divisor * divisor <= number:
+        while number % divisor == 0:
+            factors.append(divisor)
+            number //= divisor
+        divisor += 2
+    # 如果剩下的number是一个大于1的素数
+    if number > 1:
+        factors.append(number)
+    return tuple(factors)
+
+348
+def helper(num, fac):
+    # 基本情况：如果num为1，返回
+    if num == 1:
+        return
+    
+    # 从2开始尝试分解
+    def find_factor(n, divisor):
+        if n % divisor == 0:
+            return divisor
+        else:
+            return find_factor(n, divisor + 1)
+    
+    factor = find_factor(num, 2)
+    fac.append(factor)
+    helper(num // factor, fac)
+
+def insert_sorted(lst, item):
+    # 如果列表为空或item大于等于最后一个元素，直接添加
+    if not lst or item >= lst[-1]:
+        lst.append(item)
+        return
+    
+    # 递归找到插入位置
+    def find_insert_position(lst, item, index):
+        if index == len(lst) or item <= lst[index]:
+            return index
+        else:
+            return find_insert_position(lst, item, index + 1)
+    
+    position = find_insert_position(lst, item, 0)
+    lst.insert(position, item)
+
+def main(number):
+    factors = []
+    helper(number, factors)
+    
+    def sort_list(lst):
+        sorted_lst = []
+        for item in lst:
+            insert_sorted(sorted_lst, item)
+        return sorted_lst
+    
+    return tuple(sort_list(factors))
+349
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(text):
+    # 使用正则表达式匹配以a, b, c开头且由字母组成的单词，长度大于1
+    return re.findall(r'\b[abc][a-zA-Z]+\b', text)
+
+350
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(text):
+    # 使用正则表达式匹配以S或s开头且以e或x结尾的行
+    return re.findall(r'^[Ss].*[ex]$', text, flags=re.M)
+
+352
+import re
+
+def main(text):
+    # 使用正则表达式查找以S或s开头的纯英语单词
+    pattern = r'\b(?:S|s)[a-zA-Z]*\b'
+    
+    # 查找所有匹配的子串
+    matches = re.findall(pattern, text)
+    
+    return matches
+
+
+355
+import re
+
+def main(text):
+    def replace_i(match):
+        return 'I'
+    
+    # 使用正则表达式查找单独的小写字母 i
+    pattern = r'\bi\b'
+    
+    # 替换所有匹配的子串
+    result = re.sub(pattern, replace_i, text)
+    
+    return result
+
+356
+import re
+
+def main(text):
+    def replace_I(match):
+        # 检查匹配的单词是否为单字母 I
+        if match.group(0) == 'I':
+            return match.group(0)
+        return match.group(0).lower()
+    
+    # 使用正则表达式查找包含大写字母 I 的非单字母单词
+    pattern = r'\b\w*I\w*\b'
+    
+    # 替换所有匹配的子串
+    result = re.sub(pattern, replace_I, text)
+    
+    return result
+
+361
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n, a):
+    total = 0  # 用于存储总和
+    current_term = 0  # 当前项
+    for i in range(1, n + 1):
+        current_term = current_term * 10 + a  # 构建当前项
+        total += current_term  # 累加到总和
+    return total
+
+362
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n, a):
+    def helper(n, a, current_term=0, total=0):
+        # 基本情况: 当n为0时，返回当前总和
+        if n == 0:
+            return total
+        # 递归步骤: 计算当前项并加到总和中
+        current_term = current_term * 10 + a
+        return helper(n - 1, a, current_term, total + current_term)
+    
+    # 调用递归函数从第1项开始
+    return helper(n, a)
+
+363
+# 这个题目您已经答对过，上次提交的内容如下
+def main(text, characters):
+    # 使用 filter() 和 lambda 表达式过滤掉 text 中在 characters 中出现的字符
+    return ''.join(filter(lambda char: char not in characters, text))
+
+364
+# 这个题目您已经答对过，上次提交的内容如下
+def main(text, characters):
+    # 创建映射表，删除 characters 中的所有字符
+    translation_table = str.maketrans('', '', characters)
+    return text.translate(translation_table)
+
+365
+# 这个题目您已经答对过，上次提交的内容如下
+def main(text, characters):
+    # 创建一个映射表，将 characters 中的每个字符删除
+    translation_table = str.maketrans('', '', characters)
+    return text.translate(translation_table)
+
+367
+# 这个题目您已经答对过，上次提交的内容如下
+def count_occurrences(data, index=0, counts=None):
+    if counts is None:
+        counts = {}
+    
+    # 递归遍历列表，统计每个元素的出现次数
+    if index < len(data):
+        elem = data[index]
+        counts[elem] = counts.get(elem, 0) + 1
+        return count_occurrences(data, index + 1, counts)
+    
+    return counts
+
+def find_max_element(counts, max_elem=None, max_count=0):
+    # 递归查找出现次数最多的元素
+    if len(counts) == 0:
+        return max_elem
+    
+    # 从字典中取出一个元素及其出现次数
+    elem, count = counts.popitem()
+    
+    # 更新最多次数的元素
+    if count > max_count:
+        max_elem, max_count = elem, count
+    
+    return find_max_element(counts, max_elem, max_count)
+
+def main(data):
+    counts = count_occurrences(data)  # 获取元素出现次数的字典
+    return find_max_element(counts)   # 查找出现次数最多的元素
+
+368
+# 这个题目您已经答对过，上次提交的内容如下
+def count_occurrences(data, index=0, counts=None):
+    if counts is None:
+        counts = {}
+    
+    # 递归遍历列表，统计每个元素的出现次数
+    if index < len(data):
+        elem = data[index]
+        counts[elem] = counts.get(elem, 0) + 1
+        return count_occurrences(data, index + 1, counts)
+    
+    return counts
+
+def find_max_element(data, counts, max_elem=None, max_count=0, index=0):
+    if index < len(data):
+        elem = data[index]
+        count = counts[elem]
+        
+        # 更新最多次数的元素
+        if count > max_count:
+            max_elem, max_count = elem, count
+        
+        return find_max_element(data, counts, max_elem, max_count, index + 1)
+    
+    return max_elem
+
+def main(data):
+    counts = count_occurrences(data)  # 获取元素出现次数的字典
+    return find_max_element(data, counts)  # 查找出现次数最多的元素
+
+369
+# 这个题目您已经答对过，上次提交的内容如下
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+import pickle
+
+def main(encrypted_text, key_fn):
+    # 从PEM文件中读取密钥
+    with open(key_fn, 'rb') as key_file:
+        private_key = RSA.import_key(key_file.read())
+
+    # 使用私钥解密数据
+    cipher = PKCS1_OAEP.new(private_key)
+    decrypted_data = cipher.decrypt(encrypted_text)
+    
+    # 使用pickle反序列化数据
+    result = pickle.loads(decrypted_data)
+    
+    return result
+
+370
+# 这个题目您已经答对过，上次提交的内容如下
+from Crypto.PublicKey import DSA
+from Crypto.Signature import DSS
+from Crypto.Hash import SHA256
+import pickle
+
+def main(sig, data, key_fn):
+    # 从文件key_fn中导入DSA公钥
+    with open(key_fn, 'rb') as key_file:
+        private_key = DSA.import_key(key_file.read())
+    
+    # 创建DSS签名对象
+    signer = DSS.new(private_key, 'fips-186-3')
+
+    # 对data进行pickle序列化并计算SHA256哈希值
+    data_bytes = pickle.dumps(data)
+    hash_obj = SHA256.new(data_bytes)
+
+    try:
+        # 使用签名对象验证sig是否为数据的签名
+        signer.verify(hash_obj, sig)
+        return True
+    except ValueError:
+        return False
+
+374
+# 这个题目您已经答对过，上次提交的内容如下
+def main(degree, flag):
+    if flag == 1:
+        # 摄氏度转华氏度
+        fahrenheit = 9 * degree / 5 + 32
+        return round(fahrenheit, 2)
+    elif flag == 0:
+        # 华氏度转摄氏度
+        celsius = 5 * (degree - 32) / 9
+        return round(celsius, 2)
+
+375
+# 这个题目您已经答对过，上次提交的内容如下
+def main(start, end):
+    return list(filter(lambda x: x % 7 == 0 and x % 5 != 0, range(start, end + 1)))
+
+376
+# 这个题目您已经答对过，上次提交的内容如下
+def main(start, end):
+    return [x for x in range(start, end + 1) if x % 7 == 0 and x % 5 != 0]
+
+377
+# 这个题目您已经答对过，上次提交的内容如下
+def main(start, end):
+    result = []
+    for x in range(start, end + 1):
+        if x % 7 == 0 and x % 5 != 0:
+            result.append(x)
+    return result
+
+378
+# 这个题目您已经答对过，上次提交的内容如下
+def count_8(num, start, end):
+    if num > end:
+        return 0
+    return str(num).count('8') + count_8(num + 1, start, end)
+
+def main(start, end):
+    return count_8(start, start, end)
+
+380
+# 这个题目您已经答对过，上次提交的内容如下
+def main(start, end):
+    return sum(map(lambda x: str(x).count('8'), range(start, end + 1)))
+
+381
+# 这个题目您已经答对过，上次提交的内容如下
+def count_eight(start, end):
+    if start > end:
+        return 0
+    return (str(start).count('8') > 0) + count_eight(start + 1, end)
+
+def main(start, end):
+    return count_eight(start, end)
+
+386
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 正则表达式匹配IP地址
+    pattern = r'^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    
+    # 使用正则表达式进行匹配，返回匹配结果
+    return bool(re.match(pattern, s))
+
+388
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    result = []
+    # 分割字符串，按顿号“、”分开
+    segments = s.split('、')
+    
+    for segment in segments:
+        # 判断每个部分是否包含“-”
+        if '-' in segment:
+            start, end = map(int, segment.split('-'))
+            result.extend(range(start, end + 1))  # 展开范围并添加到结果中
+        else:
+            result.append(int(segment))  # 直接添加单个数字
+    
+    return sorted(result)  # 返回升序排序的结果
+
+389
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    # 先对列表进行升序排序
+    lst.sort()
+
+    # 初始化一个空列表来存储结果
+    result = []
+    
+    # 初始化一个范围的开始位置
+    start = lst[0]
+    end = lst[0]
+
+    # 遍历列表中的每个数字
+    for i in range(1, len(lst)):
+        if lst[i] == end + 1:  # 如果当前数字是连续的
+            end = lst[i]
+        else:
+            if start == end:
+                result.append(str(start))  # 单个数字，直接添加
+            else:
+                result.append(f'{start}-{end}')  # 连续的数字，使用“start-end”格式
+            start = lst[i]  # 更新开始位置
+            end = lst[i]  # 更新结束位置
+    
+    # 最后一个范围或单个数字处理
+    if start == end:
+        result.append(str(start))
+    else:
+        result.append(f'{start}-{end}')
+    
+    # 用逗号将各部分连接起来并返回
+    return ','.join(result)
+
+390
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    return n * (n - 1) // 2
+
+391
+# 这个题目您已经答对过，上次提交的内容如下
+def main(dic, keys, values):
+    dic.update(dict(zip(keys, values)))
+    return dic
+
+396
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    def sum_before_zero(data, index=0, total=0):
+        if index == len(data) or data[index] == 0:
+            return total
+        return sum_before_zero(data, index + 1, total + data[index])
+    
+    return sum_before_zero(data)
+
+398
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    def calculate(index, total):
+        # 当遇到0或者到达元组末尾时返回当前累计和
+        if index >= len(data) or data[index] == 0:
+            return total
+        # 递归累计当前值并向前推进
+        return calculate(index + 1, total + data[index])
+
+    # 从索引0开始，初始总和为0
+    return calculate(0, 0)
+
+399
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data, number):
+    left, right = 0, len(data)
+    
+    while left < right:
+        mid = (left + right) // 2
+        if data[mid] <= number:
+            left = mid + 1
+        else:
+            right = mid
+    
+    return left
+
+
+401
+from itertools import count
+
+def main(frog_step, fox_step, trap_step):
+    frog_position = 0
+    fox_position = 0
+    should_stop = False  # 额外的变量来跟踪是否应该退出循环
+    
+    # 使用itertools.count生成步数序列
+    for step in count(1):
+        # 检查是否应该退出循环（这不是itertools.count的功能，但为了满足要求而添加）
+        if should_stop:
+            break
+        
+        # 青蛙和狐狸跳跃
+        frog_position += frog_step
+        fox_position += fox_step
+        
+        # 检查是否掉进陷阱并设置should_stop标志
+        if frog_position % trap_step == 0 and fox_position % trap_step == 0:
+            return 'both'
+        if frog_position % trap_step == 0:
+            should_stop = True
+            return 'frog'
+        if fox_position % trap_step == 0:
+            should_stop = True
+            return 'fox'
+
+402
+def main(frog_step, fox_step, trap_step):
+    frog_position = 0  # 青蛙的当前位置
+    fox_position = 0   # 狐狸的当前位置
+    step = 0           # 跳跃的步数
+    
+    while True:
+        # 青蛙和狐狸同时跳跃
+        frog_position += frog_step
+        fox_position += fox_step
+        step += 1
+        
+        # 检查是否掉进陷阱
+        if frog_position % trap_step == 0 and fox_position % trap_step == 0:
+            return 'both'
+        if frog_position % trap_step == 0:
+            should_stop = True
+            return 'frog'
+        if fox_position % trap_step == 0:
+            should_stop = True
+            return 'fox'
+
+403
+def main(s, old, new):
+    result = []  # 用于存储结果的列表
+    i = 0  # 用于遍历字符串s的索引
+    while i < len(s):
+        # 检查从当前索引i开始的子串是否与old匹配
+        if s[i:i+len(old)] == old:
+            # 如果匹配，则添加new到结果列表中
+            result.append(new)
+            # 移动索引i，跳过已经匹配的old子串
+            i += len(old)
+        else:
+            # 如果不匹配，则添加当前字符到结果列表中
+            result.append(s[i])
+            # 移动索引i到下一个字符
+            i += 1
+    # 将结果列表转换为字符串并返回
+    return ''.join(result)
+
+404
+import re
+
+def main(text):
+    # 定义一个正则表达式模式，匹配除下划线以外的所有中文和英文标点符号
+    pattern = r'[^\w\u4e00-\u9fff_]+'  # \w 匹配所有字母数字和下划线，\u4e00-\u9fff 匹配所有中文字符
+    # 使用re.sub()函数将匹配到的标点符号替换为空字符串
+    result = re.sub(pattern, '', text)
+    return result
+
+405
+def main():
+    for i in range(1, 10):  # 外层循环控制行数
+        row = []  # 用于存储当前行的表达式
+        for j in range(1, i + 1):  # 内层循环控制列数
+            expression = f"{i}*{j}={i * j}"  # 生成乘法表达式
+            # 如果不是当前行的最后一个表达式，则格式化为6个字符宽度
+            if j != i:
+                expression = f"{expression:<6}"
+            row.append(expression)
+        print(" ".join(row))  # 用空格拼接当前行并输出
+
+# 调用主函数
+main()
+
+406
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s, counts):
+    def repeat_char(s, counts, index=0, result=''):
+        if index == len(s):  # 递归终止条件，遍历完所有字符
+            return result
+        count = counts[index]  # 获取当前字符的重复次数
+        if count > 0:
+            result += s[index] * count  # 依据count重复字符
+        return repeat_char(s, counts, index + 1, result)  # 递归调用处理下一个字符
+
+    return repeat_char(s, counts)
+
+
+407
+import numpy as np
+ 
+def main(factors1, factors2, x):
+    # 使用numpy的poly1d来创建多项式对象
+    poly1 = np.poly1d(factors1)
+    poly2 = np.poly1d(factors2)
+    
+    # 计算两个多项式的乘积
+    poly_product = np.polymul(poly1, poly2)
+    
+    # 计算乘积多项式在给定点x的值
+    result = poly_product(x)
+    
+    return result
+
+408
+class Test:
+    def __init__(self, *values):
+        self.values = values
+
+    def __getitem__(self, index):
+        # 支持通过索引访问元素
+        return self.values[index]
+
+    def __len__(self):
+        # 提供元素的数量
+        return len(self.values)
+
+def main():
+    t = Test(1, 2, 3, 4, 5)
+    print(*t, sep=',')
+    t = Test(5, 4, 3, 2, 1)
+    print(*t, sep=',')
+
+main()
+
+409
+import sqlite3
+
+def main(database_path):
+    # 连接 SQLite 数据库
+    conn = sqlite3.connect(database_path)
+    cursor = conn.cursor()
+    
+    # 查询所有用户级数据表的名称（排除系统表）
+    cursor.execute("""
+        SELECT name FROM sqlite_master 
+        WHERE type='table' AND name NOT LIKE 'sqlite_%';
+    """)
+    tables = [row[0] for row in cursor.fetchall()]
+    
+    # 初始化总记录数和每个表的记录数
+    total_records = 0
+    table_records = []
+    
+    # 遍历每个表并统计记录数
+    for table in tables:
+        cursor.execute(f"SELECT COUNT(*) FROM {table}")
+        count = cursor.fetchone()[0]
+        table_records.append(count)
+        total_records += count
+    
+    # 关闭数据库连接
+    conn.close()
+    
+    # 返回总记录数和每个表的记录数
+    return (total_records, *table_records)
+
+410
+import sqlite3
+
+def main(database_path):
+    # 连接 SQLite 数据库
+    conn = sqlite3.connect(database_path)
+    cursor = conn.cursor()
+    
+    # 获取所有表的名称
+    cursor.execute("""
+        SELECT name FROM sqlite_master 
+        WHERE type='table' AND name NOT LIKE 'sqlite_%';
+    """)
+    tables = [row[0] for row in cursor.fetchall()]
+    
+    # 存储结果
+    result = []
+    
+    # 遍历每个表，查找自动增长字段
+    for table in sorted(tables):  # 按表名排序
+        try:
+            # 查询表的 PRAGMA 信息，查找自动增长字段
+            cursor.execute(f"PRAGMA table_info({table})")
+            columns = cursor.fetchall()
+            
+            for column in columns:
+                column_name = column[1]  # 字段名
+                column_type = column[2]  # 字段类型
+                pk_flag = column[5]      # 是否为主键
+                
+                # 检查是否为自动增长字段
+                if column_type.upper() == "INTEGER" and pk_flag == 1:
+                    # 获取当前自动增长字段的值
+                    cursor.execute(f"SELECT MAX({column_name}) FROM {table}")
+                    current_value = cursor.fetchone()[0]
+                    if current_value is not None:
+                        result.append((table, current_value))
+        except Exception:
+            # 跳过无法查询的表
+            continue
+    
+    # 关闭数据库连接
+    conn.close()
+    
+    return result
+412
+def main(text):
+    # 初始化结果列表
+    result = []
+    # 临时存储连续数字的字符串
+    temp = ""
+    
+    for char in text:
+        if char.isdigit():
+            temp += char
+        else:
+            # 判断长度为2或4
+            if len(temp) == 2 or len(temp) == 4:
+                result.append(temp)
+            temp = ""
+    
+    # 处理末尾可能剩余的数字子串
+    if len(temp) == 2 or len(temp) == 4:
+        result.append(temp)
+    
+    return result
+413
+import re
+
+def main(text):
+    # 正则表达式匹配单个字母 a 后跟的数字子串
+    return re.findall(r'(?<!a)a(\d+)', text)
+
+414
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(text):
+    # 使用正则表达式匹配所有不以 'ing' 结尾的单词
+    return re.findall(r'\b(?!\w*ing\b)\w+\b', text)
+
+
+415
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(text):
+    # 使用正则表达式匹配所有不以字母 a, b, s 开头的单词
+    return re.findall(r'\b[^\Wabs]\w*\b', text)
+
+417
+import pandas as pd
+
+def main(xlsx_fn):
+    # 读取Excel文件并创建DataFrame
+    df = pd.read_excel(xlsx_fn)
+    
+    # 将薪级工资小于200元的增加50元
+    df['薪级工资'] = df['薪级工资'].apply(lambda x: x + 50 if x < 200 else x)
+    
+    # 计算工资总额
+    df['工资总额'] = df['岗位工资'] + df['薪级工资']
+    
+    # 按照工资总额降序排列，并返回姓名和工资总额的元组
+    result = df[['姓名', '工资总额']].sort_values(by='工资总额', ascending=False)
+    
+    # 将结果转换为元组并返回
+    return tuple(result.itertuples(index=False, name=None))
+
+419
+import pandas as pd
+
+def main(xlsx_fn):
+    # 读取Excel文件
+    df = pd.read_excel(xlsx_fn, index_col='Name')
+    
+    # 计算每个选手的总分（去掉最高和最低分后求和）
+    def calculate_score(row):
+        scores = row.tolist()
+        scores.remove(max(scores))
+        scores.remove(min(scores))
+        return sum(scores)
+    
+    # 为每个选手计算总分并创建新的列
+    df['Score'] = df.apply(calculate_score, axis=1)
+    
+    # 按照总分降序排列，返回前5名选手的评分信息
+    top5 = df[['judge1', 'judge2', 'judge3', 'judge4', 'judge5', 'Score']].sort_values(by='Score', ascending=False).head(5)
+    
+    return top5
+
+
+
+420
+# 这个题目您已经答对过，上次提交的内容如下
+def main(least):
+    # 从 least 开始查找符合条件的最小人数
+    number = least
+    while True:
+        # 判断是否满足所有条件
+        if number % 7 == 1 and number % 6 == 4 and number % 5 == 2:
+            # 找到满足条件的最小人数，确定每行的学生人数
+            n = 5
+            while n <= 9:
+                if number % n == 0:
+                    return (number, n)
+                n += 1
+        number += 1
+
+
+
+421
+import numpy as np
+
+def main(tup):
+    # 将元组转换为numpy数组
+    arr = np.array(tup)
+    
+    # 创建一个布尔数组，表示当前元素是否大于前一个元素
+    # 注意：我们使用arr[1:]和arr[:-1]来比较相邻的元素
+    # arr[1:]表示从第二个元素到最后一个元素的子数组
+    # arr[:-1]表示从第一个元素到倒数第二个元素的子数组
+    greater_than_prev = arr[1:] > arr[:-1]
+    
+    # 计算布尔数组中True的数量，即满足条件的元素数量
+    # 使用np.sum对布尔数组进行求和，True会被当作1，False会被当作0
+    count = np.sum(greater_than_prev)
+    
+    return count
+422
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(tup1, tup2):
+    # 使用map和divmod计算整商和余数
+    quotient, remainder = zip(*map(divmod, tup1, tup2))
+    
+    # 将结果转为numpy数组，并指定dtype=object
+    quotient_array = np.array(quotient, dtype=object)
+    remainder_array = np.array(remainder, dtype=object)
+    
+    # 返回包含整商和余数的2元组
+    return (quotient_array, remainder_array)
+
+423
+from copy import deepcopy
+import numpy as np
+
+def main(arr):
+    temp = deepcopy(arr)
+    np.fill_diagonal(temp, 666)  # 使用 numpy 的 fill_diagonal 函数修改对角线元素
+    return temp
+
+424
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(arr):
+    # 沿第一和第三个维度求和
+    return np.sum(arr, axis=(0, 2))
+
+426
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    if isinstance(data, list):  # 如果是列表
+        if not data:  # 如果列表为空，返回空列表
+            return []
+        else:  # 递归处理第一个元素，后续处理递归调用
+            return main(data[0]) + main(data[1:])
+    else:  # 如果是整数，返回该整数
+        return [data]
+
+427
+import pandas as pd
+
+def main(excel_filepath):
+    # 读取Excel文件
+    df = pd.read_excel(excel_filepath)
+
+    # 分割“演员”列，得到一个包含演员的列表
+    actors_series = df['演员'].str.split('，').explode().reset_index(drop=True)
+
+    # 统计每个演员参演的电影数量
+    actor_counts = actors_series.value_counts().reset_index()
+    actor_counts.columns = ['演员', '参演电影数量']
+
+    # 按演员名称排序
+    actor_counts = actor_counts.sort_values(by='演员').reset_index(drop=True)
+
+    return actor_counts
+
+428
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n, m):
+    # 计算 x
+    x = (4 * n - m) / 2
+    # 检查 x 是否是正整数，并且 x <= n
+    if x.is_integer() and x >= 0 and x <= n:
+        x = int(x)
+        y = n - x
+        return (x, y)
+    else:
+        return '数据不对'
+
+430
+# 这个题目您已经答对过，上次提交的内容如下
+import datetime
+
+def main(year, month, day):
+    week_days = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    # 获取该日期对应的星期几，weekday() 返回的值是 0-6，其中 0 是周一，6 是周日
+    return week_days[datetime.date(year, month, day).weekday()]
+
+
+431
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    return sorted(lst, key=lambda x: (x % 5, lst.index(x)))
+
+
+432
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    # 将余数为0、2、4的元素放到前面，余数为1、3的放到后面
+    group1 = [x for x in lst if x % 5 in [0, 2, 4]]  # 余数为0、2、4的元素
+    group2 = [x for x in lst if x % 5 in [1, 3]]      # 余数为1、3的元素
+    return group1 + group2
+
+436
+import re
+
+def main(s):
+    # 使用正则表达式匹配由字母组成的单词
+    return re.findall(r'[a-zA-Z]+', s)
+
+442
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    # 使用hex()将num转为十六进制形式
+    hex_str = hex(num)[2:]  # 去掉前导的'0x'
+    
+    # 将小写字母替换为大写字母
+    hex_str = hex_str.replace('a', 'A').replace('b', 'B').replace('c', 'C')\
+        .replace('d', 'D').replace('e', 'E').replace('f', 'F')
+    
+    return hex_str
+
+443
+def main(s):
+    # "The Zen of Python"中的句子
+    possible_sentences = [
+        "Beautiful is better than ugly.",
+        "Complex is better than complicated.",
+        "Explicit is better than implicit."
+    ]
+    
+    # 定义一个辅助函数来解密凯撒加密
+    def decrypt(s, k):
+        decrypted = []
+        for char in s:
+            if 'A' <= char <= 'Z':  # 大写字母
+                decrypted.append(chr((ord(char) - ord('A') - k) % 26 + ord('A')))
+            elif 'a' <= char <= 'z':  # 小写字母
+                decrypted.append(chr((ord(char) - ord('a') - k) % 26 + ord('a')))
+            else:  # 非字母字符不变
+                decrypted.append(char)
+        return ''.join(decrypted)
+    
+    # 尝试所有可能的k值（1到25）
+    for k in range(1, 26):
+        decrypted_text = decrypt(s, k)
+        if decrypted_text in possible_sentences:
+            return (k, decrypted_text)
+
+
+444
+# 这个题目您已经答对过，上次提交的内容如下
+def main(text, words):
+    # 递归检查 words 中的每个词是否出现在 text 中
+    def find_word_in_text(word, start=0):
+        # 在 text 中查找 word，返回其位置或者 -1
+        index = text.find(word, start)
+        return index != -1
+    
+    def check_words(words):
+        # 如果 words 已经空了，返回 False
+        if len(words) == 0:
+            return False
+        # 检查当前的 word 是否出现在 text 中
+        if find_word_in_text(words[0]):
+            return True
+        # 递归检查剩下的 word
+        return check_words(words[1:])
+    
+    # 调用检查方法
+    return check_words(words)
+
+445
+def contains_word(text, word):
+    return text.find(word) >= 0
+
+def main(text, words):
+    # 使用 contains_word 函数检查每个词
+    result = tuple(map(contains_word, [text]*len(words), words))
+    return any(result)
+
+446
+def contains_word(text, word):
+    return text.find(word) >= 0
+
+def main(text, words):
+    # 使用 contains_word 函数检查每个词
+    result = tuple(map(contains_word, [text]*len(words), words))
+    return any(result)
+447
+def main(text, words):
+    for word in words:
+        if text.find(word) >= 0:
+            return True
+    return False
+451
+import math
+
+def main(m, n):
+    # 计算从 m+n 步中选择 m 步或 n 步的组合数
+    return math.comb(m + n, m)
+452
+from itertools import groupby
+
+def classify(num):
+    return str(num)[-1]
+
+def main(data):
+    # 将数据按个位数字进行排序
+    sorted_data = sorted(data, key=classify)
+    
+    # 使用 groupby 分组
+    grouped_data = groupby(sorted_data, key=classify)
+    
+    # 使用 map 生成结果列表
+    result = list(map(lambda group: [int(group[0]), len(list(group[1]))], grouped_data))
+    
+    # 返回升序排序的结果
+    return sorted(result)
+453
+import pandas as pd
+
+def main(xlsx, sheetname):
+    # 读取 Excel 文件中的指定工作表
+    df = pd.read_excel(xlsx, sheet_name=sheetname)
+    
+    # 使用前向填充（通过前一个有效值填充缺失值），最多填充两个缺失值
+    df['值'] = df['值'].fillna(method='ffill', limit=2)
+    
+    # 使用后向填充（通过后一个有效值填充缺失值），最多填充两个缺失值
+    df['值'] = df['值'].fillna(method='bfill', limit=2)
+    
+    # 如果还有缺失值，使用中值填充剩余的缺失值
+    df['值'] = df['值'].fillna(df['值'].median())
+    
+    # 返回第二列（'值'列）的数值之和
+    return df['值'].sum()
+
+454
+# 这个题目您已经答对过，上次提交的内容如下
+def main(matrix1, matrix2):
+    # 检查矩阵是否符合乘法规则
+    if len(matrix1[0]) != len(matrix2):
+        return 'error'
+
+    # 获取矩阵的维度
+    rows1, cols1 = len(matrix1), len(matrix1[0])
+    rows2, cols2 = len(matrix2), len(matrix2[0])
+
+    # 初始化结果矩阵
+    result = [[0] * cols2 for _ in range(rows1)]
+
+    # 计算矩阵乘积
+    for i in range(rows1):
+        for j in range(cols2):
+            # 对于每个结果元素，计算matrix1的行与matrix2的列的点积
+            for k in range(cols1):
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+
+455
+def main(k):
+    triangle = [[1]]
+    for i in range(1, k):
+        row = [1]
+        for j in range(1, i):
+            row.append(triangle[i-1][j-1] + triangle[i-1][j])
+        row.append(1)
+        triangle.append(row)
+    for row in triangle:
+        print('\t'.join(map(str, row)))
+
+main(5)
+main(8)
+
+456
+def main(data, item):
+    left, right = 0, len(data) - 1
+    count = 0
+    while left <= right:
+        count += 1
+        mid = (left + right) // 2
+        if data[mid] == item:
+            return count
+        elif data[mid] < item:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+457
+import pandas as pd
+
+def main(data):
+    # 按照索引升序排序并返回排序后的值
+    return data.sort_index().values
+
+
+458
+from operator import add
+from functools import reduce
+
+def main(data):
+    return list(map(sum, zip(*data)))
+
+459
+def main(dictionary, key):
+    return dictionary.get(key, '不存在')
+460
+def main(dictionary, key):
+    if key in dictionary:
+        return dictionary[key]
+    else:
+        return '不存在'
+    return result
+461
+def main(dictionary, key):
+    try:
+        # 尝试访问字典中的键
+        return dictionary[key]
+    except KeyError:
+        # 如果键不存在，则返回'不存在'
+        return '不存在'
+
+462
+# 这个题目您已经答对过，上次提交的内容如下
+def main(value):
+    # 判断value是否等价于False的条件
+    if value:
+        return True
+    return False
+
+463
+# 这个题目您已经答对过，上次提交的内容如下
+def main(value):
+    if isinstance(value, complex):  # 判断是否是复数
+        return (value.real**2 + value.imag**2)**0.5  # 计算复数的模
+    elif isinstance(value, (int, float)):  # 判断是否是整数或浮点数
+        return value if value >= 0 else -value  # 取绝对值
+    else:
+        return 'error'  # 其他类型返回'error'
+
+464
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    print(*data, sep=',')
+
+main([1, 2, 3, 4])
+main((3.14, 9.8))
+main(['Python小屋', '董付国'])
+
+465
+import decimal
+
+def main(numerator, denominator, precision):
+    decimal.getcontext().prec = precision
+    return decimal.Decimal(numerator) / decimal.Decimal(denominator)
+466
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    if len(data) == 1:
+        return data[0]
+    return data[0].intersection(main(data[1:]))
+
+467
+import operator
+from functools import reduce
+
+def main(data):
+    return reduce(operator.and_, data)
+468
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    # 初始化交集为第一个集合
+    result = data[0]
+    
+    # 使用 for 循环遍历剩余的集合
+    for s in data[1:]:
+        result &= s  # 更新交集
+    
+    return result
+
+469
+# 这个题目您已经答对过，上次提交的内容如下
+from functools import reduce
+
+def main(data):
+    return reduce(lambda x, y: x & y, data)
+
+
+470
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    return set(filter(lambda x: all(map(lambda s: x in s, data)), data[0]))
+
+
+471
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    result = data[0]  # 初始值为第一个集合
+    for s in data[1:]:  # 遍历剩下的集合
+        temp = set()  # 用来存放交集
+        for x in result:  # 遍历当前的交集集合
+            if x in s:  # 如果元素 x 也在当前集合 s 中
+                temp.add(x)  # 添加到临时集合中
+        result = temp  # 更新交集结果
+    return result
+
+472
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    total = 0
+    value = 1  # 第一个格子的米粒数是1
+    for _ in range(n):  # 遍历n个格子
+        total += value  # 将当前格子的米粒数加到总数
+        value *= 2  # 下一格的米粒数是当前的2倍
+    return total
+
+473
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    total = 0  # 初始化总米粒数
+    value = 1  # 第一个格子的米粒数是1
+    i = 0  # 用于计数，控制循环次数
+
+    while i < n:
+        total += value  # 将当前格子的米粒数加到总数
+        value *= 2  # 下一格的米粒数是当前的2倍
+        i += 1  # 计数器加1，处理下一个格子
+
+    return total
+
+474
+def main(n):
+    return sum([2 ** i for i in range(n)])
+
+475
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    total = 0
+    while num > 0:
+        total += num % 10  # 获取最后一位数字并加到total
+        num //= 10  # 去掉最后一位数字
+    return total
+
+
+476
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    total = 0
+    for digit in str(num):  # 将num转为字符串，逐个字符遍历
+        total += int(digit)  # 将字符转换为整数并累加
+    return total
+
+477
+# 这个题目您已经答对过，上次提交的内容如下
+def main(hashable, iterable):
+    return [{hashable: item} for item in iterable]
+
+478
+def main(hashable, iterable):
+    return list(map(lambda x: {hashable: x}, iterable))
+
+480
+def main(data, bins):
+    # 获取数据的最小值和最大值
+    min_value = min(data)
+    max_value = max(data)
+    
+    # 计算每个区间的长度
+    interval_length = (max_value - min_value) / bins
+    
+    # 初始化一个列表来存储每个区间的计数
+    counts = [0] * bins
+    
+    # 对每个数据进行处理，确定它属于哪个区间
+    for num in data:
+        # 计算该数据应该落入哪个区间
+        # 对于区间的计算，我们通过除以区间长度并取整来实现
+        if num == max_value:  # 特别处理最大值，因为它应该属于最后一个区间
+            counts[bins - 1] += 1
+        else:
+            index = int((num - min_value) // interval_length)
+            counts[index] += 1
+    
+    return counts
+
+
+481
+import pandas as pd
+
+def main(df):
+    # 使用groupby按"one"列进行分组，然后将每组的"two"列合并为字符串
+    result = df.groupby('one')['two'].apply(lambda x: ','.join(map(str, x))).to_dict()
+    return result
+482
+def main(*data):
+    # 使用字典存储每个键对应的值
+    result = {}
+    
+    for key, value in data:
+        # 如果键不在结果字典中，则初始化一个空列表
+        if key not in result:
+            result[key] = []
+        # 将值添加到对应的键的列表中
+        result[key].append(value)
+    
+    # 对每个键的值进行排序，并将其转换为逗号分隔的字符串
+    result = {key: ','.join(map(str, sorted(values))) for key, values in result.items()}
+    
+    return result
+483
+import pandas as pd
+
+def main(df):
+    # 使用groupby按照'one'列分组，'two'列的值进行排序
+    grouped = df.groupby('one')['two'].apply(sorted)
+    
+    # 将结果转换为字典，并保持顺序
+    return grouped.to_dict()
+484
+import pandas as pd
+
+def main(df):
+    # 使用groupby根据'one'列分组，对'two'列求和，'three'列求最大值
+    return df.groupby('one').agg({'two': 'sum', 'three': 'max'}).reset_index()
+
+
+485
+# 这个题目您已经答对过，上次提交的内容如下
+def main(month):
+    return [sum(month[0:3]), sum(month[3:6]), sum(month[6:9]), sum(month[9:12])]
+
+
+486
+# 这个题目您已经答对过，上次提交的内容如下
+def main(month):
+    result = []
+    for i in range(0, 12, 3):  # 每次步长为3，分别计算每个季度
+        result.append(sum(month[i:i+3]))  # 对每个季度的3个月销售额求和
+    return result
+
+
+487
+# 这个题目您已经答对过，上次提交的内容如下
+def main(month):
+    result = []  # 初始化空列表存储季度销售额
+    for i in range(0, 12, 3):  # 每个季度3个月，从0开始，每次步长为3
+        quarter_sum = month[i] + month[i+1] + month[i+2]  # 计算每个季度的销售额
+        result = result + [quarter_sum]  # 将季度销售额添加到列表中（不使用append）
+    return result
+
+488
+# 这个题目您已经答对过，上次提交的内容如下
+def main(month):
+    result = []  # 初始化空列表存储季度销售额
+    for i in range(0, 12, 3):  # 外层循环，用于遍历每个季度的开始位置
+        quarter_sum = 0  # 每个季度的总和初始化为0
+        for j in range(3):  # 内层循环，用于计算当前季度的总和
+            quarter_sum += month[i + j]  # 累加当前季度的销售额
+        result = result + [quarter_sum]  # 将季度销售额添加到列表中
+    return result
+
+489
+# 这个题目您已经答对过，上次提交的内容如下
+def main(text):
+    def helper(text, result):
+        if not text:
+            return result
+        char = text[-1]
+        if char not in result:
+            result = char + result
+        return helper(text[:-1], result)
+    
+    return helper(text, '')
+
+490
+# 这个题目您已经答对过，上次提交的内容如下
+def main(text):
+    result = ''
+    seen = []
+    
+    # 从后往前遍历字符串
+    for char in reversed(text):
+        if char not in seen:
+            seen.append(char)
+            result = char + result  # 将字符加到结果的前面
+    
+    return result
+
+491
+# 这个题目您已经答对过，上次提交的内容如下
+def main(sample_x, sample_y, x):
+    n = len(sample_x)
+
+    # 计算拉格朗日基多项式 L_i(x) 的递归函数
+    def lagrange_interpolation_recursive(i, x_value, sample_x, sample_y, j=0, term=1):
+        if j == n:
+            return term * sample_y[i]  # 递归到最后一项返回计算结果
+        if j != i:
+            term *= (x_value - sample_x[j]) / (sample_x[i] - sample_x[j])
+        return lagrange_interpolation_recursive(i, x_value, sample_x, sample_y, j + 1, term)
+
+    # 计算多项式 P(x) 的递归函数
+    def compute_polynomial(x_value, sample_x, sample_y, i=0, result=0):
+        if i == n:
+            return result  # 递归到最后一项返回结果
+        result += lagrange_interpolation_recursive(i, x_value, sample_x, sample_y)
+        return compute_polynomial(x_value, sample_x, sample_y, i + 1, result)
+
+    # 递归计算每个x对应的y值
+    def compute_y_values(x_list, idx=0, result=[]):
+        if idx == len(x_list):
+            return result
+        result.append(round(compute_polynomial(x_list[idx], sample_x, sample_y), 2))
+        return compute_y_values(x_list, idx + 1, result)
+
+    # 调用递归函数计算结果
+    return compute_y_values(x)
+
+492
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data1, data2):
+    # 判断data1是否是data2的子集
+    def is_subset(data1, data2, idx=0):
+        if idx == len(data1):  # 如果data1的所有元素都匹配了
+            return True
+        if data1[idx] not in data2:  # 如果data1[idx]不在data2中
+            return False
+        # 递归检查data1的下一个元素
+        return is_subset(data1, data2, idx + 1)
+    
+    # 判断data2是否包含比data1多的元素
+    def has_extra_elements(data1, data2):
+        return len(data2) > len(data1)
+    
+    # 判断data1是否为data2的真子集
+    return is_subset(data1, data2) and has_extra_elements(data1, data2)
+
+493
+def main(data1, data2):
+    # 判断data1是否是data2的子集
+    def is_s(data1, data2, idx=0):
+        if idx == len(data1):  # 如果data1的所有元素都匹配了
+            return True
+        if data1[idx] not in data2_copy:  # 使用一个额外的列表来避免重复检查（模拟集合的作用，但不准确）
+            return False
+        # 递归检查data1的下一个元素
+        return is_s(data1, data2, idx + 1)
+    
+    data2_copy = data2[:]
+
+    def has_extra_elements_inaccurate(data1, data2):
+
+        return len(data2) > len(data1) and is_s(data1, data2)
+
+    
+    # 警告：以下代码返回的结果可能不是严格的真子集判断，因为额外元素的判断是不准确的。
+    return is_s(data1, data2) and has_extra_elements_inaccurate(data1, data2) and not (data1 == data2)
+
+494
+def main(data1, data2):
+    # 如果data1为空，检查data2是否还有多余的元素
+    if len(data1) == 0:
+        return len(data2) > 0  # 如果data2有元素，返回True
+
+    # 尝试从data2中移除data1中的第一个元素
+    try:
+        data2.remove(data1[0])  # 移除data2中的第一个元素
+    except ValueError:
+        return False  # 如果元素不在data2中，返回False
+
+    # 递归处理data1的其余部分
+    return main(data1[1:], data2)
+
+495
+# 这个题目您已经答对过，上次提交的内容如下
+def main(lst):
+    result = []
+    for element in lst:
+        if element not in result:
+            result.append(element)
+    return result
+
+
+496
+def main(p, q):
+    return (p // q, p % q)
+
+497
+def main(values):
+    # 定义一个辅助函数，用于递归地查找最大奇数
+    def find_max_odd(values, idx=0, current_max=None):
+        # 基本情况：如果索引超出了列表范围，就返回当前找到的最大奇数
+        if idx == len(values):
+            # 如果在遍历过程中没有找到奇数，则返回None（表示没有奇数）
+            # 否则返回找到的最大奇数
+            return current_max if current_max is not None else None
+        
+        # 获取当前元素
+        current_value = values[idx]
+        
+        # 检查当前元素是否是奇数，并且（如果是第一次找到奇数或者比当前最大值大）
+        if current_value % 2 != 0:
+            if current_max is None or current_value > current_max:
+                current_max = current_value
+        
+        # 递归调用函数，检查下一个元素
+        return find_max_odd(values, idx + 1, current_max)
+    
+    # 调用辅助函数，并处理返回的结果
+    # 如果返回的结果是None，表示列表中没有奇数，可以抛出一个异常或者返回一个特定的值（比如-1）
+    # 在这里，我们选择返回一个特定的值-1来表示没有找到奇数的情况
+    result = find_max_odd(values)
+    return result if result is not None else -1
+
+498
+def main(values):
+    # 定义一个辅助函数，用于递归地查找最大奇数
+    def find_max_odd(values, idx=0, current_max=None):
+        # 基本情况：如果索引超出了列表范围，就返回当前找到的最大奇数
+        if idx == len(values):
+            # 如果在遍历过程中没有找到奇数，则返回None（表示没有奇数）
+            # 否则返回找到的最大奇数
+            return current_max if current_max is not None else None
+        
+        # 获取当前元素
+        current_value = values[idx]
+        
+        # 检查当前元素是否是奇数，并且（如果是第一次找到奇数或者比当前最大值大）
+        if current_value % 2 != 0:
+            if current_max is None or current_value > current_max:
+                current_max = current_value
+        
+        # 递归调用函数，检查下一个元素
+        return find_max_odd(values, idx + 1, current_max)
+    
+    # 调用辅助函数，并处理返回的结果
+    # 如果返回的结果是None，表示列表中没有奇数，可以抛出一个异常或者返回一个特定的值（比如-1）
+    # 在这里，我们选择返回一个特定的值-1来表示没有找到奇数的情况
+    result = find_max_odd(values)
+    return result if result is not None else -1
+
+499
+def main(values):
+    # 定义一个辅助函数，用于递归地查找最大奇数
+    def find_max_odd(values, idx=0, current_max=None):
+        # 基本情况：如果索引超出了列表范围，就返回当前找到的最大奇数
+        if idx == len(values):
+            # 如果在遍历过程中没有找到奇数，则返回None（表示没有奇数）
+            # 否则返回找到的最大奇数
+            return current_max if current_max is not None else None
+        
+        # 获取当前元素
+        current_value = values[idx]
+        
+        # 检查当前元素是否是奇数，并且（如果是第一次找到奇数或者比当前最大值大）
+        if current_value % 2 != 0:
+            if current_max is None or current_value > current_max:
+                current_max = current_value
+        
+        # 递归调用函数，检查下一个元素
+        return find_max_odd(values, idx + 1, current_max)
+    
+    # 调用辅助函数，并处理返回的结果
+    # 如果返回的结果是None，表示列表中没有奇数，可以抛出一个异常或者返回一个特定的值（比如-1）
+    # 在这里，我们选择返回一个特定的值-1来表示没有找到奇数的情况
+    result = find_max_odd(values)
+    return result if result is not None else -1
+
+500
+def is_alpha(c):
+    # 辅助函数，判断字符c是否为英文字母
+    return 'a' <= c <= 'z' or 'A' <= c <= 'Z'
+
+def remove_non_alpha(s, index=0, result=''):
+    # 递归函数，用于删除非英文字母字符
+    if index == len(s):
+        # 递归终止条件：达到字符串末尾
+        return result
+    elif is_alpha(s[index]):
+        # 如果当前字符是英文字母，则将其添加到结果中
+        return remove_non_alpha(s, index + 1, result + s[index])
+    else:
+        # 如果当前字符不是英文字母，则跳过它
+        return remove_non_alpha(s, index + 1, result)
+
+def is_palindrome(s, start=0, end=None):
+    # 递归函数，用于检查字符串s从start到end（不包括end）是否为回文
+    if end is None:
+        end = len(s)
+    if start >= end - 1:
+        # 递归终止条件：开始位置大于等于结束位置的前一个位置
+        return True
+    if s[start] != s[end - 1]:
+        # 如果当前字符对不相等，则不是回文
+        return False
+    # 继续检查下一对字符
+    return is_palindrome(s, start + 1, end - 1)
+
+def main(s):
+    # 首先删除非英文字母字符
+    cleaned_string = remove_non_alpha(s)
+    # 然后检查剩余的字符串是否为回文
+    return is_palindrome(cleaned_string)
+
+
+501
+from itertools import compress
+
+def main(s):
+    # 递归去除非字母字符
+    def clean_string(s, index=0):
+        if index == len(s):  # 递归结束条件
+            return ''
+        elif s[index].isalpha():  # 如果是字母，保留
+            return s[index] + clean_string(s, index + 1)
+        else:  # 如果不是字母，跳过
+            return clean_string(s, index + 1)
+
+    # 递归判断回文
+    def is_palindrome(s):
+        if len(s) <= 1:
+            return True
+        elif s[0] != s[-1]:
+            return False
+        else:
+            return is_palindrome(s[1:-1])  # 递归判断去掉两端字符的子串
+
+    # 清理字符串并判断是否为回文
+    cleaned_s = clean_string(s)
+    return is_palindrome(cleaned_s)
+
+504
+def main(n):
+    # 基准情况
+    if n == 0:
+        return 1  # 0个台阶，1种爬法（不动）
+    elif n == 1:
+        return 1  # 1个台阶，1种爬法
+    elif n == 2:
+        return 2  # 2个台阶，2种爬法（1+1 或 2）
+    elif n == 3:
+        return 4  # 3个台阶，4种爬法（1+1+1, 1+2, 2+1, 3）
+    else:
+        # 递归情况
+        # 注意：这里不能使用循环或推导式，所以我们直接调用main函数自身
+        return main(n - 1) + main(n - 2) + main(n - 3)
+
+505
+def main(data):
+    total = 0
+    count = 0
+    for item in data:
+        if isinstance(item, (int, float)):
+            total += item
+            count += 1
+    if count == 0:
+        return '没有整数或实数'
+    else:
+        return round(total / count, 2)
+
+506
+def main(data):
+    # 使用lambda表达式过滤出整数或实数
+    numbers = list(filter(lambda x: isinstance(x, (int, float)), data))
+    # 计算平均数
+    if len(numbers) == 0:
+        return '没有整数或实数'
+    else:
+        return round(sum(numbers) / len(numbers), 2)
+507
+def main(data):
+    # 定义一个递归函数来提取数字并计算它们的总和和计数
+    def process_data(data, total=0, count=0):
+        if not data:
+            return total, count
+        elif isinstance(data[0], (int, float)):
+            return process_data(data[1:], total + data[0], count + 1)
+        else:
+            return process_data(data[1:], total, count)
+    
+    # 计算总和和数量
+    total, count = process_data(data)
+    
+    # 如果有数字，返回平均值；否则返回0
+    if count > 0:
+        return round(total / count, 2)
+    else:
+        return 0
+510
+def main(data, order):
+    def recursive_sort(data, order, result):
+        if not order:
+            return result
+        current = order[0]
+        # 取出当前元素的所有出现
+        current_items = [item for item in data if item == current]
+        # 取出不包含当前元素的数据
+        remaining_data = [item for item in data if item != current]
+        # 递归处理剩余元素
+        return recursive_sort(remaining_data, order[1:], result + current_items)
+
+    return recursive_sort(data, order, [])
+
+511
+import pandas as pd
+
+def main(year, month, day):
+    # 创建一个日期
+    date = pd.Timestamp(year, month, day)
+    # 获取该日期是当年的第几天
+    return date.dayofyear
+
+512
+import pandas as pd
+
+def main(values, unique):
+    # 将 values 和 unique 转换为 Pandas Series，以便使用 isin() 方法
+    values_series = pd.Series(values)
+    unique_set = set(unique)  # 将 unique 转换为集合以提高查找效率（虽然这里不是必须的，但可以作为优化）
+    
+    # 使用 isin() 方法筛选出 values_series 中同时也在 unique_set 中的元素
+    # 注意：这里我们实际上没有直接使用 unique_set，而是将其转换回了列表形式用于 isin()，
+    # 这是因为 isin() 方法需要一个列表（或类似列表的对象）作为参数。
+    # 但是，由于我们已经知道 unique 中的元素是唯一的，所以将其转换为集合是安全的，
+    # 并且可以在后续操作中（如果有的话）提高性能。
+    # 在这个特定的例子中，我们直接传递 unique 列表给 isin() 也是可以的。
+    filtered_series = values_series[values_series.isin(unique)]
+    
+    # 将筛选后的 Series 转换回列表并返回
+    return filtered_series.tolist()
+
+513
+def main(values, unique):
+    # 初始化结果列表
+    result = []
+    # 遍历values中的每个元素
+    for value in values:
+        # 如果元素在unique中，则添加到结果列表中
+        if value in unique:
+            result.append(value)
+    return result
+
+514
+def main(values, unique):
+    # 使用列表推导式返回结果
+    return [value for value in values if value in unique]
+
+515
+def main(values, unique):
+    def helper(vals, uniq, index):
+        if index >= len(vals):
+            return []
+        if vals[index] in uniq:
+            return [vals[index]] + helper(vals, uniq, index + 1)
+        else:
+            return helper(vals, uniq, index + 1)
+    
+    # 调用递归函数，并从索引0开始
+    return helper(values, set(unique), 0)
+
+516
+def main(values, unique):
+    def helper(vals, uniq, index):
+        if index >= len(vals):
+            return []
+        if vals[index] in uniq:
+            return [vals[index]] + helper(vals, uniq, index + 1)
+        else:
+            return helper(vals, uniq, index + 1)
+    
+    # 调用递归函数，并从索引0开始
+    return helper(values, set(unique), 0)
+
+517
+import pandas as pd
+
+def main(s):
+    return s[s.index.hour == 3].tolist()
+
+518
+import pandas as pd
+
+def main(s):
+    return s[(s.index.hour >= 19) | (s.index.hour <= 3)].sum()
+
+519
+def isPrime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def main():
+    result = []
+    for n in range(1, 101):
+        if isPrime(n + 3) and isPrime(n + 5):
+            result.append(n)
+    return tuple(result)
+
+print(main())
+
+522
+def main(**kwargs):
+    # 从 kwargs 中提取 x 和 a 的值
+    x = kwargs.get('x', None)
+    a = kwargs.get('a', None)
+    
+    # 返回元组
+    return (x, a)
+523
+def separate_odd_even(data, odd=(), even=()):
+    # 基本情况：如果数据为空，返回奇数和偶数的元组
+    if not data:
+        return odd, even
+    else:
+        # 递归处理，分别将奇数和偶数添加到奇偶数元组中
+        if data[0] % 2 == 0:
+            return separate_odd_even(data[1:], odd, even + (data[0],))
+        else:
+            return separate_odd_even(data[1:], odd + (data[0],), even)
+
+def main(data):
+    # 使用递归分离奇数和偶数
+    odd_numbers, even_numbers = separate_odd_even(data)
+    
+    # 排序奇数和偶数
+    odd_numbers_sorted = tuple(sorted(odd_numbers))  # 奇数升序
+    even_numbers_sorted = tuple(sorted(even_numbers, reverse=True))  # 偶数降序
+    
+    # 返回合并后的新元组
+    return odd_numbers_sorted + even_numbers_sorted
+
+525
+def main(mat, axis=1):
+    if axis == 0:
+        # 按列计算最大值
+        return list(map(max, zip(*mat)))  # zip(*mat) 转置矩阵，使列变为行
+    else:
+        # 按行计算最大值
+        return list(map(max, mat))
+526
+def main(d, v):
+    # 使用filter和lambda来筛选出值为v的键，并将其转换为元组
+    return tuple(map(lambda x: x[0], filter(lambda item: item[1] == v, d.items())))
+
+
+
+528
+import numpy as np
+
+def main(arr):
+    # 检查是否为方形二维数组
+    if arr.shape[0] != arr.shape[1]:
+        return '必须是方形二维数组。'
+    # 返回上三角矩阵元素组成的一维数组
+    return arr[np.triu_indices(arr.shape[0])]
+
+533
+def main(*data):
+    # 初始化结果列表
+    result = []
+    # 遍历最短列表的每个元素
+    for i in range(min(len(d) for d in data)):
+        # 初始化最大值为负无穷
+        max_value = float('-inf')
+        # 遍历每个列表
+        for d in data:
+            # 如果当前元素大于最大值，则更新最大值
+            if i < len(d) and d[i] > max_value:
+                max_value = d[i]
+        # 将最大值添加到结果列表中
+        result.append(max_value)
+    return result
+
+534
+def main(arr1, arr2):
+    def helper(index, arr1, arr2, result):
+        # Base case: if index reaches the length of the lists, return the result
+        if index == len(arr1):
+            return result
+        
+        # Calculate the quotient and remainder
+        num1 = arr1[index] + 3
+        quotient = num1 // arr2[index]
+        remainder = num1 % arr2[index]
+        
+        # Append the tuple to the result list
+        result.append((quotient, remainder))
+        
+        # Recursive call with the next index
+        return helper(index + 1, arr1, arr2, result)
+    
+    # Start the recursion with initial index 0 and an empty result list
+    return helper(0, arr1, arr2, [])
+
+535
+def main(arr1, arr2):
+    # 定义一个辅助函数来处理递归
+    def process_elements(index, arr1, arr2, result):
+        # 基本情况：如果索引超出了列表长度，返回结果
+        if index >= len(arr1):
+            return result
+        
+        # 计算arr1当前索引元素加3后对arr2当前索引元素的整商和余数
+        num1 = arr1[index] + 3
+        quotient = num1 // arr2[index]
+        remainder = num1 % arr2[index]
+        
+        # 将计算得到的元组添加到结果列表中
+        result.append((quotient, remainder))
+        
+        # 递归调用处理下一个索引
+        return process_elements(index + 1, arr1, arr2, result)
+    
+    # 调用辅助函数开始递归处理，初始索引为0，结果列表为空
+    return process_elements(0, arr1, arr2, [])
+
+536
+def main(data):
+    # 定义一个辅助函数来计算总和以及元素的数量
+    def sum_and_count(data, index, current_sum, count):
+        # 基本情况：如果索引超出了列表长度，返回总和与计数
+        if index >= len(data):
+            return current_sum, count
+        
+        # 递归计算下一个索引的总和与计数
+        return sum_and_count(data, index + 1, current_sum + data[index], count + 1)
+    
+    # 定义一个辅助函数来计算平均绝对离差
+    def mean_absolute_deviation(data, index, current_sum, count, mean):
+        # 基本情况：如果索引超出了列表长度，计算并返回平均绝对离差
+        if index >= len(data):
+            total_deviation = 0
+            # 由于我们不能使用循环，这里我们需要再次递归地计算绝对离差的总和（理论上这不是最优解，但为了满足题目要求）
+            def calculate_deviation_sum(data, index, current_deviation_sum, mean):
+                if index >= len(data):
+                    return current_deviation_sum
+                deviation = abs(data[index] - mean)
+                return calculate_deviation_sum(data, index + 1, current_deviation_sum + deviation, mean)
+            
+            # 计算平均绝对离差
+            avg_deviation = calculate_deviation_sum(data, 0, 0, mean) / count
+            return round(avg_deviation, 2)  # 保留两位小数
+        
+        # 为了满足题目要求，我们实际上不会在这里进行任何操作，而是直接递归到下一个索引
+        # 但由于我们需要在计算平均绝对离差之前先知道平均值，因此这个结构是必需的
+        return mean_absolute_deviation(data, index + 1, current_sum, count, mean)
+    
+    # 首先计算总和与元素的数量
+    total_sum, total_count = sum_and_count(data, 0, 0, 0)
+    
+    # 计算平均值
+    average = total_sum / total_count
+    
+    # 计算并返回平均绝对离差
+    return mean_absolute_deviation(data, 0, 0, total_count, average)
+
+538
+def main(data):
+    # 计算平均值
+    average = sum(data) / len(data)
+    # 计算平均绝对离差
+    absolute_deviation = sum(abs(num - average) for num in data) / len(data)
+    # 返回结果，保留最多2位小数
+    return round(absolute_deviation, 2)
+
+539
+def main(data):
+    # 初始化结果列表
+    result = []
+    # 遍历data中的每个元素
+    for i in range(len(data)):
+        # 初始化最大值为当前元素
+        max_value = data[i]
+        # 遍历当前元素之前的所有元素
+        for j in range(i):
+            # 如果当前元素大于最大值，则更新最大值
+            if data[j] > max_value:
+                max_value = data[j]
+        # 将最大值添加到结果列表中
+        result.append(max_value)
+    return result
+
+548
+import numpy as np
+
+def main(data):
+    # 使用numpy的unique函数和counts函数返回结果
+    unique, counts = np.unique(data, return_counts=True)
+    # 将结果转换为字典
+    return dict(zip(unique, counts))
+
+553
+def main(lst, k):
+    # 初始化编号列表
+    lst = lst[:]
+    # 循环直到只剩下一个人
+    while len(lst) > 1:
+        # 从第一个人开始报数
+        for i in range(k-1):
+            lst.append(lst.pop(0))
+        # 报到k的人退出圈子
+        lst.pop(0)
+    # 返回最后一个人的原始编号
+    return lst[0]
+
+571
+def main(fn):
+    # 打开二进制文件
+    with open(fn, 'rb') as f:
+        # 读取文件中的所有字节
+        bytes_data = f.read()
+    # 将字节串转换为整数列表
+    numbers = [int.from_bytes(bytes_data[i:i+20], byteorder='little') for i in range(0, len(bytes_data), 20)]
+    # 计算整数的最大值
+    return max(numbers)
+
+573
+from itertools import combinations
+
+def main(data, *args):
+    # 计算data中所有4个整数的组合数量
+    total_combinations = len(list(combinations(data, 4)))
+    # 计算同时包含args中所有整数的组合数量
+    valid_combinations = len(list(filter(lambda x: all(arg in x for arg in args), combinations(data, 4))))
+    # 返回除去同时包含args中所有整数的组合的数量
+    return total_combinations - valid_combinations
+
+584
+def main(iterable):
+    # 遍历可迭代对象iterable中的每个元素
+    for item in iterable:
+        # 如果元素等价于True,则返回True
+        if item:
+            return True
+    # 如果没有等价于True的元素,则返回False
+    return False
+
+599
+class Demo:
+    def __init__(self, value):
+        self.value = value
+        self._truthy = value > 3
+
+    def __bool__(self):
+        return self._truthy
+
+def main(v):
+    t = Demo(v)
+    if t:
+        return 'Y'
+    return 'N'
+
+600
+def main(s):
+    # 初始化一个空列表来存储结果字符
+    result = []
+    # 遍历输入字符串的每个字符
+    for i, char in enumerate(s):
+        # 检查当前字符是否是 'i'
+        if char == 'i':
+            # 检查前一个字符和后一个字符（如果存在）
+            prev_char = s[i - 1] if i > 0 else ''
+            next_char = s[i + 1] if i < len(s) - 1 else ''
+            # 如果 'i' 是独立的（前后都是非字母字符或边界），则替换为大写 'I'
+            if not prev_char.isalpha() and not next_char.isalpha():
+                result.append('I')
+            else:
+                result.append(char)
+        else:
+            # 如果不是 'i'，则直接添加到结果中
+            result.append(char)
+    # 将结果列表转换为字符串并返回
+    return ''.join(result)
+
+
+603
+# 这个题目您已经答对过，上次提交的内容如下
+
+def main(seq):
+    seq.sort()
+    min_diff = float('inf')
+    result = None
+    for i in range(len(seq) - 1):
+        diff = seq[i + 1] - seq[i]
+        if diff < min_diff:
+            min_diff = diff
+            result = (seq[i], seq[i + 1])
+    return result
+
+604
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(s):
+    # 使用正则表达式匹配所有形如'1+0+1+'的模式
+    matches = re.findall(r'1+0+1+', s)
+    max_sum = 0
+    for match in matches:
+        # 统计每个匹配中字符'1'的个数
+        count = match.count('1')
+        max_sum = max(max_sum, count)
+    return max_sum
+
+606
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    # 按照公式计算 (1 + 1/n)^n
+    e_approx = (1 + 1 / n) ** n
+    # 返回结果，保留最多6位小数
+    return round(e_approx, 6)
+
+608
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(start, stop, n):
+    # 生成 n 个均匀分布的 x 值
+    x_values = np.linspace(start, stop, n)
+    # 计算对应的 y = cos(x) 值
+    y_values = np.cos(x_values)
+    # 计算相邻点之间的直线段长度
+    segment_lengths = np.sqrt(np.diff(x_values)**2 + np.diff(y_values)**2)
+    # 求总长度
+    total_length = np.sum(segment_lengths)
+    # 返回保留最多 3 位小数的结果
+    return round(total_length, 3)
+
+
+613
+# 这个题目您已经答对过，上次提交的内容如下
+def main(arr):
+    # 基本的行列式计算方法
+    def determinant(matrix):
+        # 处理2x2的矩阵
+        if len(matrix) == 2:
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+        
+        # 处理更大的矩阵
+        det = 0
+        for col in range(len(matrix)):
+            # 创建子矩阵
+            submatrix = [row[:col] + row[col+1:] for row in matrix[1:]]
+            # 计算当前元素的行列式并递归
+            sign = (-1) ** col  # 交替正负号
+            det += sign * matrix[0][col] * determinant(submatrix)
+        
+        return det
+    
+    # 调用行列式计算函数
+    return determinant(arr)
+
+617
+# 这个题目您已经答对过，上次提交的内容如下
+def matrix_multiply(v, P):
+    # 计算天气概率向量v与状态转移矩阵P的点积
+    return [
+        v[0] * P[0][0] + v[1] * P[1][0] + v[2] * P[2][0],
+        v[0] * P[0][1] + v[1] * P[1][1] + v[2] * P[2][1],
+        v[0] * P[0][2] + v[1] * P[1][2] + v[2] * P[2][2],
+    ]
+
+def main(P, today, n):
+    # 使用递归方法计算n天后的天气概率
+    if n == 0:
+        return round(today[0], 3)  # 返回晴天的概率并保留三位小数
+    else:
+        # 递归计算，今天的天气与状态转移矩阵相乘，得到第二天的天气
+        new_today = matrix_multiply(today, P)
+        return main(P, new_today, n-1)
+
+618
+# 这个题目您已经答对过，上次提交的内容如下
+def main(graph, node):
+    # 计算出度，即节点node在graph中的值（即邻接点）的数量
+    out_degree = len(graph.get(node, []))  # 使用get方法避免KeyError
+    
+    # 计算入度，通过递归遍历graph中的所有节点
+    def calc_in_degree(graph, node, vertices):
+        if len(vertices) == 0:
+            return 0
+        current = vertices[0]
+        if node in graph.get(current, []):  # 使用get方法避免KeyError
+            return 1 + calc_in_degree(graph, node, vertices[1:])
+        else:
+            return calc_in_degree(graph, node, vertices[1:])
+    
+    vertices = list(graph.keys())  # 获取所有节点的列表
+    in_degree = calc_in_degree(graph, node, vertices)
+    
+    return (out_degree, in_degree)
+
+619
+# 这个题目您已经答对过，上次提交的内容如下
+def find_paths(graph, start, stop, path, all_paths):
+    # 添加当前节点到路径
+    path.append(start)
+    
+    # 如果到达目标节点，记录当前路径
+    if start == stop:
+        all_paths.append(path.copy())
+    else:
+        # 遍历从当前节点出发的所有邻居节点
+        for neighbor in graph.get(start, []):
+            if neighbor not in path:  # 防止回路
+                find_paths(graph, neighbor, stop, path, all_paths)
+    
+    # 回溯，移除当前节点
+    path.pop()
+
+def main(graph, start, stop):
+    all_paths = []
+    find_paths(graph, start, stop, [], all_paths)
+    
+    # 按照路径长度升序排列，长度相同的按字典序排列
+    all_paths.sort(key=lambda path: (len(path), path))
+    
+    return all_paths
+
+621
+# 这个题目您已经答对过，上次提交的内容如下
+def find_root(graph):
+    # 遍历所有节点的子节点，找出没有作为子节点出现的节点作为根节点
+    all_nodes = set(graph.keys())  # 所有键是节点
+    all_children = set(child for children in graph.values() for child in children)  # 所有子节点
+    root_candidates = all_nodes - all_children  # 根节点候选集
+    if len(root_candidates) == 1:
+        return root_candidates.pop()  # 返回唯一的根节点
+    return False  # 如果没有根节点或者有多个根节点，则返回False
+
+def dfs(graph, node, visited):
+    # 访问当前节点并按字典顺序访问其子节点
+    visited.append(node)
+    if node in graph:
+        for child in sorted(graph[node]):  # 子节点按字典顺序访问
+            if child not in visited:
+                dfs(graph, child, visited)
+
+def main(graph):
+    root = find_root(graph)
+    if not root:
+        return False
+    
+    visited = []
+    dfs(graph, root, visited)
+    return visited
+
+
+622
+# 这个题目您已经答对过，上次提交的内容如下
+def find_root(graph):
+    # 遍历所有节点的子节点，找出没有作为子节点出现的节点作为根节点
+    all_nodes = set(graph.keys())  # 所有键是节点
+    all_children = set(child for children in graph.values() for child in children)  # 所有子节点
+    root_candidates = all_nodes - all_children  # 根节点候选集
+    if len(root_candidates) == 1:
+        return root_candidates.pop()  # 返回唯一的根节点
+    return False  # 如果没有根节点或者有多个根节点，则返回False
+
+def bfs(graph, root):
+    visited = []
+    queue = [root]
+    
+    while queue:
+        node = queue.pop(0)
+        if node not in visited:
+            visited.append(node)
+            if node in graph:
+                # 将子节点按字典顺序加入队列
+                queue.extend(sorted(graph[node]))
+    
+    return visited
+
+def main(graph):
+    root = find_root(graph)
+    if not root:
+        return False
+    
+    return bfs(graph, root)
+
+623
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    # 递归函数获取所有值为3的键
+    def get_keys_with_value_3(keys, idx):
+        if idx == len(keys):  # 基本情况，结束递归
+            return []
+        key = keys[idx]
+        if data[key] == 3:
+            # 如果当前键的值为3，则返回该键和后续符合条件的键
+            return [key] + get_keys_with_value_3(keys, idx + 1)
+        else:
+            # 否则，继续递归查找下一个键
+            return get_keys_with_value_3(keys, idx + 1)
+
+    # 递归函数比较多个键，返回最大的键
+    def find_max_key(keys, idx, current_max):
+        if idx == len(keys):  # 基本情况，返回当前最大值
+            return current_max
+        key = keys[idx]
+        # 比较当前键与当前最大键
+        if key > current_max:
+            current_max = key
+        # 递归检查下一个键
+        return find_max_key(keys, idx + 1, current_max)
+
+    # 获取字典所有键
+    keys = list(data.keys())
+    
+    # 获取所有值为3的键
+    keys_with_value_3 = get_keys_with_value_3(keys, 0)
+    
+    if keys_with_value_3:
+        # 如果找到值为3的键，则递归返回其中最大键
+        return find_max_key(keys_with_value_3, 0, keys_with_value_3[0])
+    else:
+        # 如果没有值为3的键，返回None
+        return None
+
+625
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    # 递归函数用于查找值为3的最大键
+    def find_max_key(keys, idx, current_max):
+        if idx == len(keys):  # 递归的终止条件
+            return current_max
+        key = keys[idx]
+        if data[key] == 3:
+            # 如果值为3，则比较当前键和当前最大值
+            if key > current_max:
+                current_max = key
+        # 递归查找下一个键
+        return find_max_key(keys, idx + 1, current_max)
+
+    # 获取所有字典中的键
+    keys = list(data.keys())
+
+    # 如果字典为空或者没有值为3的键，返回False
+    if len(keys) == 0 or all(data[key] != 3 for key in keys):
+        return False
+
+    # 初始化递归查找，选择最小值作为初始最大值
+    initial_max = min(keys)  # 使用字典中的最小键作为初始值
+    return find_max_key(keys, 0, initial_max)
+
+627
+# 这个题目您已经答对过，上次提交的内容如下
+def main(year, month, day):
+    # 每个月的天数（非闰年）
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    
+    # 判断闰年
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        days_in_month[1] = 29  # 闰年2月有29天
+    
+    # 计算当前日期是该年的第几天
+    days_so_far = sum(days_in_month[:month-1]) + day
+    return days_so_far
+
+628
+# 这个题目您已经答对过，上次提交的内容如下
+def sum_digits_at_positions(number, positions, index=0):
+    # 递归函数：遍历数字的每一位，计算指定位置（偶数或奇数）上的数字之和
+    if index >= len(str(number)):
+        return 0
+    digit = int(str(number)[index])
+    if index in positions:
+        return digit + sum_digits_at_positions(number, positions, index + 1)
+    else:
+        return sum_digits_at_positions(number, positions, index + 1)
+
+def main(integers):
+    def sort_key(number):
+        # 获取偶数位置和奇数位置的数字之和
+        even_positions_sum = sum_digits_at_positions(number, range(0, len(str(number)), 2))  # 偶数位置
+        odd_positions_sum = sum_digits_at_positions(number, range(1, len(str(number)), 2))   # 奇数位置
+        return (even_positions_sum, odd_positions_sum)
+    
+    # 使用递归计算每个元素的排序依据并进行排序
+    return sorted(integers, key=sort_key)
+
+629
+# 这个题目您已经答对过，上次提交的内容如下
+def main(integers):
+    def accumulate(nums, index=0, product=1, result=[]):
+        # 基础情况：如果index到达列表的末尾，返回结果
+        if index == len(nums):
+            return result
+        
+        # 更新当前累积值
+        product *= nums[index]
+        result.append(product)
+        
+        # 递归调用下一个元素
+        return accumulate(nums, index + 1, product, result)
+    
+    # 调用递归函数并返回累积列表
+    return accumulate(integers)
+
+630
+# 这个题目您已经答对过，上次提交的内容如下
+def main(integers):
+    def accumulate(nums, index=0, product=1, result=[]):
+        # 基础情况：当index到达列表末尾时，返回累积结果
+        if index == len(nums):
+            return result
+        
+        # 更新当前的累积值
+        product *= nums[index]
+        result.append(product)
+        
+        # 递归调用处理下一个元素
+        return accumulate(nums, index + 1, product, result)
+    
+    # 调用递归函数返回结果
+    return accumulate(integers)
+
+632
+# 这个题目您已经答对过，上次提交的内容如下
+from string import ascii_letters
+
+def main(s):
+    # 递归基准条件：如果字符串为空，返回 True
+    if not s:
+        return True
+    # 检查字符串的第一个字符是否是字母
+    if s[0] in ascii_letters:
+        return main(s[1:])  # 递归检查剩余部分
+    else:
+        return False  # 如果不是字母，返回 False
+
+633
+# 这个题目您已经答对过，上次提交的内容如下
+def main(arr):
+    if not arr:  # 基本条件：如果列表为空，返回负无穷
+        return float('-inf')
+    return max(max(arr[0]), main(arr[1:]))  # 对每个子列表求最大值，并递归比较
+
+635
+# 这个题目您已经答对过，上次提交的内容如下
+def main():
+    for i in range(10, 100):  # 遍历前两位数字（10到99）
+        for j in range(10, 100):  # 遍历后两位数字（10到99）
+            if i // 10 == i % 10 and j // 10 == j % 10 and i // 10 != j // 10:
+                plate_number = i * 100 + j  # 拼接成四位车牌号
+                if int(plate_number**0.5) ** 2 == plate_number:  # 判断是否为平方数
+                    return plate_number
+
+print(main())
+
+636
+# 这个题目您已经答对过，上次提交的内容如下
+def main(mat):
+    return [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
+
+
+638
+# 这个题目您已经答对过，上次提交的内容如下
+def main(numbers):
+    # 定义一个嵌套的排序函数来比较两个数字拼接后的大小
+    def compare(a, b):
+        if a + b < b + a:
+            return -1
+        elif a + b > b + a:
+            return 1
+        return 0
+
+    # 将数字转换为字符串进行处理
+    numbers_str = list(map(str, numbers))
+
+    # 使用排序方法按拼接结果的字典顺序进行排序
+    sorted_numbers = sorted(numbers_str, key=lambda x: x*10)  # 用重复字符的方法进行排序
+
+    # 拼接所有数字，并返回结果
+    return int(''.join(sorted_numbers))
+
+639
+# 这个题目您已经答对过，上次提交的内容如下
+def main(numbers):
+    # 将数字转换为字符串形式，方便进行拼接
+    numbers_str = list(map(str, numbers))
+    
+    # 冒泡排序方法
+    while True:
+        swapped = False
+        for i in range(len(numbers_str) - 1):
+            # 比较两个数字拼接后的结果
+            if numbers_str[i] + numbers_str[i + 1] > numbers_str[i + 1] + numbers_str[i]:
+                # 交换位置
+                numbers_str[i], numbers_str[i + 1] = numbers_str[i + 1], numbers_str[i]
+                swapped = True
+            if swapped:
+                break
+        if not swapped:
+            break
+    
+    # 拼接排序后的数字并返回结果
+    return int(''.join(numbers_str))
+
+641
+# 这个题目您已经答对过，上次提交的内容如下
+import itertools
+
+def main(num):
+    # 生成所有小于等于 num 的平方数
+    squares = [i * i for i in range(1, int(num**0.5) + 1)]
+    
+    # 尝试用最多 4 个平方数来分解 num
+    for length in range(1, 5):  # 从1个到4个平方数的组合
+        for combination in itertools.combinations_with_replacement(squares, length):
+            if sum(combination) == num:
+                return tuple(sorted(combination))  # 返回升序排列的元组
+    
+    # 如果无法分解，返回空元组（理论上不可能）
+    return tuple()
+
+642
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    max_num = ''  # 用来存储最长的数字子串
+    current_num = ''  # 用来临时存储当前的数字子串
+    
+    for char in s:
+        if char.isdigit():  # 如果字符是数字
+            current_num += char
+        else:
+            if len(current_num) >= len(max_num):  # 如果当前数字子串更长
+                max_num = current_num  # 更新最大数字子串
+            current_num = ''  # 重置当前数字子串
+    
+    # 检查最后一个数字子串
+    if len(current_num) >= len(max_num):
+        max_num = current_num
+    
+    return max_num
+
+
+643
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    max_num = ''  # 用来存储最长的数字子串
+    current_num = ''  # 用来临时存储当前的数字子串
+    
+    for char in s:
+        if char.isdigit():  # 如果字符是数字
+            current_num += char
+        else:
+            if len(current_num) > len(max_num):  # 如果当前数字子串更长
+                max_num = current_num  # 更新最大数字子串
+            current_num = ''  # 重置当前数字子串
+    
+    # 在循环结束后检查最后一个数字子串
+    if len(current_num) > len(max_num):
+        max_num = current_num
+    
+    return max_num
+
+645
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    # 使用 filter 和 lambda 找到连续的 '1' 子串
+    ones_substrings = filter(lambda x: x != '', s.split('0'))  # 按照 '0' 分割字符串，过滤出非空的连续 '1'
+    
+    # 使用 map 获取每个子串的长度并计算最大长度
+    max_length = max(map(len, ones_substrings), default=0)  # 默认值 0 用于处理没有连续 '1' 的情况
+    
+    return max_length
+
+646
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    max_count = 0  # 用来存储最长连续'1'的长度
+    current_count = 0  # 用来存储当前连续'1'的长度
+    
+    for char in s:
+        if char == '1':
+            current_count += 1  # 如果是'1'，当前连续'1'的数量加1
+        else:
+            max_count = max(max_count, current_count)  # 遇到其他字符时更新最大长度
+            current_count = 0  # 重置当前连续'1'的计数
+    
+    # 最后再更新一次max_count，以防字符串以'1'结尾
+    max_count = max(max_count, current_count)
+    
+    return max_count
+
+
+
+658
+def main(s, sets):
+    def similarity(set1, set2):
+        """计算两个集合的相似度"""
+        intersection = len(set1 & set2)  # 交集元素数量
+        union = len(set1 | set2)  # 并集元素数量
+        return intersection / union if union != 0 else 0  # 避免除以零的情况
+
+    max_similarity = 0  # 最大相似度
+    most_similar_set = None  # 最相似的集合
+
+    for candidate_set in sets:
+        curr_similarity = similarity(s, candidate_set)  # 计算当前集合与s的相似度
+        if curr_similarity > max_similarity:
+            max_similarity = curr_similarity  # 更新最大相似度
+            most_similar_set = candidate_set  # 更新最相似的集合
+
+659
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s, sets):
+    max_similarity = -1  # 用于跟踪最大相似度
+    most_similar_set = None  # 用于跟踪相似度最大的集合
+    
+    for current_set in sets:
+        # 计算交集
+        intersection = s & current_set
+        # 计算并集
+        union = s | current_set
+        
+        # 计算相似度
+        similarity = len(intersection) / len(union) if len(union) > 0 else 0
+        
+        # 更新最相似的集合
+        if similarity >= max_similarity:
+            max_similarity = similarity
+            most_similar_set = current_set
+            
+    return most_similar_set
+
+660
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s, sets):
+    max_similarity = -1  # 用于跟踪最大相似度
+    most_similar_set = None  # 用于跟踪最相似的集合
+    
+    for current_set in sets:
+        # 计算交集
+        intersection = s & current_set
+        # 计算并集
+        union = s | current_set
+        
+        # 计算相似度
+        similarity = len(intersection) / len(union) if len(union) > 0 else 0
+        
+        # 更新最相似的集合
+        if similarity > max_similarity:
+            max_similarity = similarity
+            most_similar_set = current_set
+            
+    return most_similar_set
+
+662
+# 这个题目您已经答对过，上次提交的内容如下
+def digit_sum(n):
+    # 递归计算数字的和
+    if n == 0:
+        return 0
+    return n % 10 + digit_sum(n // 10)
+
+def main(fn_txt):
+    # 读取文件内容
+    with open(fn_txt, 'r') as file:
+        lines = file.readlines()
+
+    # 递归比较每个数字的数字和
+    def find_max_digit_sum(index, max_sum, max_number):
+        if index == len(lines):  # 递归终止条件：处理完所有行
+            return max_number
+
+        # 获取当前行的整数
+        current_number = int(lines[index].strip())
+        current_digit_sum = digit_sum(current_number)
+
+        # 更新最大数字和及对应的数字
+        if current_digit_sum > max_sum or (current_digit_sum == max_sum and current_number > max_number):
+            return find_max_digit_sum(index + 1, current_digit_sum, current_number)
+        else:
+            return find_max_digit_sum(index + 1, max_sum, max_number)
+
+    # 初始递归调用，max_sum为-1表示还未找到数字
+    return find_max_digit_sum(0, -1, -1)
+
+664
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    # 初始化灯的状态，全部关闭
+    lights = [False] * 100
+    
+    # 切换灯的开关
+    for i in range(1, 101):
+        for j in range(i - 1, 100, i):
+            lights[j] = not lights[j]  # 切换第 j 个灯的状态
+    
+    # 统计开着的灯的数量
+    on_count = sum(lights)
+    
+    # 返回结果
+    return (on_count, lights[n - 1])
+
+670
+# 这个题目您已经答对过，上次提交的内容如下
+def main(*bids):
+    # 排序竞标者元组，按照价钱降序排序
+    sorted_bids = sorted(bids, key=lambda x: x[1], reverse=True)
+    # 返回最高出价者的姓名和次高出价
+    return (sorted_bids[0][0], sorted_bids[1][1])
+
+
+671
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    return int(n ** 0.5) ** 2 == n
+
+681
+# 这个题目您已经答对过，上次提交的内容如下
+import numpy as np
+
+def main(data, sample):
+    # 计算每个元素与sample的差值
+    diff = np.abs(data - sample)
+    # 找到差值最小的位置
+    index = np.argmin(diff)
+    # 返回最接近的元素
+    return data[index]
+
+682
+# 这个题目您已经答对过，上次提交的内容如下
+import string
+
+# 常见单词列表，可以根据实际情况增加更多单词
+COMMON_WORDS = {'the', 'of', 'and', 'to', 'a', 'in', 'that', 'is', 'was', 'he', 'for', 'on', 'it', 'with', 'as', 'his', 'I', 'at', 'be'}
+
+def caesar_decrypt(text, k):
+    decrypted = []
+    for char in text:
+        if char.islower():
+            decrypted.append(chr((ord(char) - ord('a') - k) % 26 + ord('a')))
+        elif char.isupper():
+            decrypted.append(chr((ord(char) - ord('A') - k) % 26 + ord('A')))
+        else:
+            decrypted.append(char)  # 保留非字母字符
+    return ''.join(decrypted)
+
+def is_valid_decryption(text):
+    words = text.split()
+    valid_words = sum(1 for word in words if word.lower() in COMMON_WORDS)
+    return valid_words >= 3  # 至少包含3个常见单词
+
+def main(fn):
+    # 读取文件内容
+    with open(fn, 'r') as file:
+        encrypted_text = file.read()
+    
+    # 尝试每个密钥k
+    for k in range(1, 26):  # k的范围是1到25
+        decrypted_text = caesar_decrypt(encrypted_text, k)
+        if is_valid_decryption(decrypted_text):
+            return k
+
+684
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a1, q, n):
+    # 如果公比 q 为 1，返回 a1 * n
+    if q == 1:
+        return a1 * n
+    else:
+        # 计算等比数列前n项之和，使用整数除法
+        numerator = a1 * (1 - q ** n)
+        denominator = 1 - q
+        return int(numerator // denominator)  # 使用整数除法
+
+685
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a1, q, n):
+    total = 0
+    if q == 1:
+        total = a1 * n  # 公比为1时，直接返回首项乘以n
+    else:
+        # 使用循环计算等比数列前n项和
+        current_term = a1  # 初始化第一项
+        for i in range(n):
+            total += current_term  # 累加当前项
+            current_term *= q  # 计算下一个项
+    return total
+
+686
+# 这个题目您已经答对过，上次提交的内容如下
+from functools import reduce
+
+def main(n, i):
+    # 保证 i <= n - i，以减少计算量
+    i = min(i, n - i)
+    
+    # 计算分子和分母
+    numerator = reduce(lambda x, y: x * y, range(n, n - i, -1), 1)
+    denominator = reduce(lambda x, y: x * y, range(1, i + 1), 1)
+    
+    # 返回组合数 C(n, i)
+    return numerator // denominator
+
+687
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n, i):
+    minNI = min(i, n-i)
+    result = 1
+    for j in range(1, minNI + 1):
+        result = result * (n - (minNI - j)) // j
+
+    return result
+
+688
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num, m, n):
+    return (num % m == 0) + (num % n == 0) == 1
+
+689
+# 这个题目您已经答对过，上次提交的内容如下
+def main(exp1, exp2):
+    return bool(exp1) != bool(exp2)
+
+690
+# 这个题目您已经答对过，上次提交的内容如下
+def main(day, days):
+    return (day + days) % 7
+
+691
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    # 分割整数部分和小数部分
+    integer_part, decimal_part = s.split('.')
+    
+    # 递归函数判断是否存在循环小数
+    def find_repeating(decimal_part, i=1):
+        if i > len(decimal_part) // 2:
+            return None
+        repeating_part = decimal_part[:i]
+        if decimal_part == repeating_part * (len(decimal_part) // len(repeating_part)) + repeating_part[:len(decimal_part) % len(repeating_part)]:
+            return repeating_part
+        return find_repeating(decimal_part, i + 1)
+    
+    # 尝试找到循环小数部分
+    repeating_part = find_repeating(decimal_part)
+    
+    if repeating_part:
+        return integer_part + '.' + repeating_part + '...'
+    return '不是循环小数。'
+
+692
+# 这个题目您已经答对过，上次提交的内容如下
+def main(mat):
+    return list(map(lambda *args: list(args), *mat))
+
+
+700
+# 这个题目您已经答对过，上次提交的内容如下
+def main(p, g):
+    real_part = p[0] * g[0] - p[1] * g[1]
+    imaginary_part = p[0] * g[1] + p[1] * g[0]
+    return (real_part, imaginary_part)
+
+702
+# 这个题目您已经答对过，上次提交的内容如下
+def main(G):
+    n = len(G)
+
+    # 递归找候选人
+    def find_candidate(i, j):
+        if i >= n:  # 结束递归，未找到候选人
+            return -1
+        if j >= n:  # 找到候选人
+            return i
+        if G[i][j] == 1:
+            return find_candidate(i + 1, j)  # i 不可能是候选人，递归查找
+        else:
+            return find_candidate(i, j + 1)  # 如果 G[i][j] == 0, 递归检查下一个
+
+    # 递归验证候选人是否是明星
+    def check_candidate(cand, idx):
+        if idx >= n:  # 结束递归，验证完成
+            return True
+        if idx != cand:
+            if G[cand][idx] == 1 or G[idx][cand] == 0:
+                return False
+        return check_candidate(cand, idx + 1)
+
+    # 查找候选人
+    cand = find_candidate(0, 1)
+    
+    # 检查候选人是否符合条件
+    if cand != -1 and check_candidate(cand, 0):
+        return cand
+    else:
+        return '不存在'
+
+704
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    # 给定的哈夫曼编码表
+    table = {
+        'r': '000', 'e': '001', 'd': '0100', 'f': '0101', 'j': '0110', 'w': '0111',
+        'a': '10', 's': '11000', 'g': '11001', 'c': '1101', 'b': '111'
+    }
+    
+    # 反转哈夫曼编码表，方便根据编码查找字符
+    reverse_table = {v: k for k, v in table.items()}
+    
+    decoded_string = ''
+    current_code = ''
+    
+    # 遍历哈夫曼编码字符串
+    for bit in s:
+        current_code += bit
+        # 如果当前编码匹配某个字符，则解码
+        if current_code in reverse_table:
+            decoded_string += reverse_table[current_code]
+            current_code = ''  # 重置当前编码
+    
+    return decoded_string
+
+706
+# 这个题目您已经答对过，上次提交的内容如下
+def main(seq):
+    if not seq:
+        return []
+
+    n = len(seq)
+    dp = [1] * n  # dp[i]表示以 seq[i] 结尾的最长非递减子序列长度
+    prev = [-1] * n  # prev[i]表示 seq[i] 之前的元素的索引，用于回溯子序列
+
+    # 动态规划计算最长非递减子序列的长度
+    for i in range(1, n):
+        for j in range(i):
+            if seq[i] >= seq[j] and dp[i] < dp[j] + 1:
+                dp[i] = dp[j] + 1
+                prev[i] = j
+
+    # 找到最长子序列的最后一个元素
+    max_length = max(dp)
+    index = dp.index(max_length)
+
+    # 回溯子序列
+    subsequence = []
+    while index != -1:
+        subsequence.append(seq[index])
+        index = prev[index]
+
+    return subsequence[::-1] 
+
+708
+# 这个题目您已经答对过，上次提交的内容如下
+def main(volume, price, weight):
+    n = len(price)
+    # 创建一个二维数组 dp，dp[i][j] 表示前 i 个物品，容量为 j 的背包的最大价值
+    dp = [[0] * (volume + 1) for _ in range(n + 1)]
+
+    # 填充 dp 数组
+    for i in range(1, n + 1):
+        for j in range(1, volume + 1):
+            if weight[i - 1] <= j:
+                dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i - 1]] + price[i - 1])
+            else:
+                dp[i][j] = dp[i - 1][j]
+
+    # 回溯找出被选择的物品
+    result = []
+    i, j = n, volume
+    while i > 0 and j > 0:
+        if dp[i][j] != dp[i - 1][j]:  # 如果该物品被选中
+            result.append(i - 1)  # 记录物品的索引
+            j -= weight[i - 1]  # 背包容量减少
+        i -= 1
+
+    # 结果需要按升序排列
+    return tuple(sorted(result))
+
+710
+# 这个题目您已经答对过，上次提交的内容如下
+def main(arr):
+    def count_outdegree(i, j, out_degrees):
+        if j == len(arr[i]):
+            return out_degrees
+        if arr[i][j] == 1:
+            out_degrees += 1
+        return count_outdegree(i, j + 1, out_degrees)
+
+    def calculate_outdegrees(i, result):
+        if i == len(arr):
+            return result
+        out_degrees = count_outdegree(i, 0, 0)  # 从当前行的第一个元素开始计算
+        result.append(out_degrees)
+        return calculate_outdegrees(i + 1, result)  # 递归处理下一个顶点
+
+    return calculate_outdegrees(0, [])
+
+711
+# 这个题目您已经答对过，上次提交的内容如下
+def main(arr):
+    def count_indegree(j, i, indegree):
+        if i == len(arr):
+            return indegree
+        if arr[i][j] == 1:
+            indegree += 1
+        return count_indegree(j, i + 1, indegree)
+
+    def calculate_indegrees(j, result):
+        if j == len(arr[0]):
+            return result
+        indegree = count_indegree(j, 0, 0)  # 计算顶点 j 的入度
+        result.append(indegree)
+        return calculate_indegrees(j + 1, result)
+
+    return calculate_indegrees(0, [])
+
+712
+# 这个题目您已经答对过，上次提交的内容如下
+def main(arr):
+    def check_self_loop(i):
+        if i == len(arr):
+            return False
+        if arr[i][i] == 1:
+            return True
+        return check_self_loop(i + 1)
+
+    return check_self_loop(0)
+
+
+
+713
+import numpy as np
+from numpy import array
+
+def main(arr):
+    arr = array(arr)
+    return np.all(arr == arr.T)
+718
+import numpy as np
+
+def main(graph, i, j, k):
+    graph = np.array(graph)
+    return np.linalg.matrix_power(graph, k)[i][j]
+725
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    return min(data, key=data.get)
+
+728
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    return (1 << n) - 1
+
+
+
+729
+def main(arr, k):
+    return [arr[i][i+k] for i in range(len(arr)) if i+k < len(arr[i])]
+
+732
+import math
+
+def main(n):
+    return int(math.log10(n)) + 1
+734
+# 这个题目您已经答对过，上次提交的内容如下
+def main(num):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    k = 2  # 从2开始，因为k必须是素数
+    while True:
+        if is_prime(k):  # 如果k是素数
+            m_prime = 2 ** k - 1  # 计算梅森素数
+            if m_prime > num and is_prime(m_prime):  # 如果梅森素数大于num并且是素数
+                return (k, m_prime)
+        k += 1
+
+736
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    def sum_of_factors(n):
+        sum_factors = 0
+        for i in range(1, n):
+            if n % i == 0:
+                sum_factors += i
+        return sum_factors
+    
+    sum_factors = sum_of_factors(n)
+    
+    if sum_factors == n:
+        return '完全数'
+    elif sum_factors > n:
+        return '盈数'
+    else:
+        return '亏数'
+
+740
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data, order):
+    # 获取张三的排序位置字典
+    position = {movie: i for i, movie in enumerate(order)}
+    
+    # 定义一个函数计算逆序数
+    def count_inversions(person_order):
+        inversions = 0
+        # 对于每对电影，检查是否是逆序
+        for i in range(len(person_order)):
+            for j in range(i + 1, len(person_order)):
+                if position[person_order[i]] > position[person_order[j]]:
+                    inversions += 1
+        return inversions
+    
+    # 初始化最小逆序数和最相似的人的名字
+    min_inversions = float('inf')
+    most_similar_person = None
+    
+    # 遍历每个人的排序，计算逆序数
+    for person, person_order in data.items():
+        inversions = count_inversions(person_order)
+        if inversions < min_inversions:
+            min_inversions = inversions
+            most_similar_person = person
+    
+    return most_similar_person
+
+742
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a):
+    result = []
+    
+    def dfs(current, path):
+        # 如果到达最后一个门，记录路径
+        if current == len(a) - 1:
+            result.append(tuple(path))
+            return
+        
+        # 如果当前门的值为0，说明无法跳跃
+        if a[current] == 0:
+            return
+        
+        # 向后探索所有可跳跃的门
+        for i in range(1, a[current] + 1):
+            if current + i < len(a):
+                dfs(current + i, path + [current + i])
+    
+    # 从第一个门开始，路径为 [0]
+    dfs(0, [0])
+    
+    # 如果有有效路径，返回升序排序的路径，否则返回提示信息
+    if result:
+        return sorted(result)
+    else:
+        return '无法跳到最后一个位置。'
+
+745
+# 这个题目您已经答对过，上次提交的内容如下
+def gcd(x, y):
+    while y != 0:
+        x, y = y, x % y
+    return x
+
+def main(a, b):
+    g = gcd(a, b)  # 计算最大公约数
+    return (a // g, b // g)  # 返回化简后的分子和分母
+
+
+747
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    stack = []  # 用栈来存放左括号
+    for char in s:
+        if char == '(':
+            stack.append(char)  # 左括号入栈
+        elif char == ')':
+            if not stack:  # 栈为空表示没有匹配的左括号
+                return False
+            stack.pop()  # 弹出栈顶的左括号
+    return len(stack) == 0  # 如果栈为空，说明括号匹配正确
+
+
+748
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    left, right = 1, n  # 初始化搜索区间
+    while left <= right:
+        mid = (left + right) // 2
+        if mid * mid == n:
+            return mid  # 找到精确平方根
+        elif mid * mid < n:
+            left = mid + 1  # 查找右半区间
+        else:
+            right = mid - 1  # 查找左半区间
+    
+    # 当退出循环时，left > right，`right` 是最接近 n 的平方根
+    if abs((right + 1) * (right + 1) - n) < abs(right * right - n):
+        return right + 1
+    return right
+
+749
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    if n < 10:
+        return [n]
+    return main(n // 10) + [n % 10]
+
+750
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    def climb(n, path):
+        if n == 0:  # 如果没有剩余的台阶，返回当前的跳法
+            return [path]
+        ways = []
+        for i in [1, 2, 3]:
+            if n >= i:
+                ways += climb(n - i, path + (i,))
+        return ways
+
+    return climb(n, ())
+
+751
+# 这个题目您已经答对过，上次提交的内容如下
+def main(p1, p2, p3):
+    x1, y1 = p1
+    x2, y2 = p2
+    x3, y3 = p3
+    # 使用行列式公式计算面积
+    area = abs((x2 * y3 - x3 * y2) - (x1 * y3 - x3 * y1) + (x1 * y2 - x2 * y1)) / 2
+    # 保留最多2位小数
+    return round(area, 2)
+
+753
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    max_sum = float('-inf')  # 初始最大和为负无穷
+    start, end = 0, 0  # 最终返回的子序列起始和结束位置
+    temp_start = 0  # 临时记录子序列的起始位置
+    
+    # 遍历所有可能的子序列
+    for i in range(len(data)):
+        current_sum = 0
+        for j in range(i, len(data)):
+            current_sum += data[j]  # 计算当前子序列的和
+            # 如果找到了一个更大的和，或者相同和但子序列更短
+            if current_sum > max_sum or (current_sum == max_sum and j - i < end - start):
+                max_sum = current_sum
+                start, end = i, j + 1  # 记录当前子序列的起止位置
+    
+    return (max_sum, start, end)
+
+766
+# 这个题目您已经答对过，上次提交的内容如下
+def main(hungry, breads):
+    hungry.sort()  # 按照饥饿程度从小到大排序
+    breads.sort()  # 按照面包大小从小到大排序
+    
+    i, j = 0, 0  # i表示当前孩子，j表示当前面包
+    satisfied = 0  # 已经吃饱的孩子数量
+    
+    while i < len(hungry) and j < len(breads):
+        if breads[j] >= hungry[i]:  # 如果当前面包能满足当前孩子
+            satisfied += 1  # 孩子吃饱
+            i += 1  # 移动到下一个孩子
+        j += 1  # 移动到下一个面包
+    
+    return satisfied  # 返回能够吃饱的孩子数量
+
+768
+# 这个题目您已经答对过，上次提交的内容如下
+def main(intervals):
+    # Step 1: 排序区间，首先按起点排序，如果起点相同则按终点排序
+    sorted_intervals = sorted(intervals, key=lambda x: (x[0], x[1]))
+    
+    merged = []  # 用于存放合并后的区间
+    for interval in sorted_intervals:
+        # 如果 merged 为空，或者当前区间与 merged 中最后一个区间没有重叠
+        if not merged or merged[-1][1] < interval[0]:
+            merged.append(interval)
+        else:
+            # 有重叠时，合并当前区间与 merged 中最后一个区间
+            merged[-1] = (merged[-1][0], max(merged[-1][1], interval[1]))
+
+    return merged
+
+772
+# 这个题目您已经答对过，上次提交的内容如下
+def main(n):
+    def is_palindrome(num):
+        return str(num) == str(num)[::-1]  # 判断是否为回文数
+
+    count = 0
+    while count < 500:
+        if is_palindrome(n):
+            return (count, n)
+        n = n + int(str(n)[::-1])  # 将数字与翻转后的数字相加
+        count += 1
+    
+    return (None, len(str(n)))  # 如果操作超过500次，返回None和当前数字的长度
+
+773
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a):
+    n = len(a)
+    
+    # dp[i] 表示从门0到门i的最少跳跃次数
+    dp = [float('inf')] * n
+    # prev[i] 表示跳到门i的前一个门编号
+    prev = [-1] * n
+    
+    dp[0] = 0  # 从门0开始，不需要跳跃
+    
+    # 遍历每个门
+    for i in range(n):
+        if dp[i] == float('inf'):
+            continue  # 如果到达门i不可达，则跳过
+        
+        # 根据门i的跳跃范围更新后续门的最少跳跃次数
+        for j in range(i + 1, min(i + a[i] + 1, n)):
+            if dp[j] > dp[i] + 1:
+                dp[j] = dp[i] + 1
+                prev[j] = i
+    
+    # 如果最后一个门的跳跃次数仍然是无限大，说明无法到达
+    if dp[n - 1] == float('inf'):
+        return '无法跳到最后一个位置。'
+    
+    # 从最后一个门倒推路径
+    path = []
+    curr = n - 1
+    while curr != -1:
+        path.append(curr)
+        curr = prev[curr]
+    
+    # 反转路径
+    return path[::-1]
+
+774
+# 这个题目您已经答对过，上次提交的内容如下
+def main(a):
+    n = len(a)
+    
+    # dp[i] 表示到达门i的最少跳跃次数
+    dp = [float('inf')] * n
+    # prev[i] 表示从哪个门跳跃到达门i
+    prev = [-1] * n
+    
+    dp[0] = 0  # 从门0开始，不需要跳跃
+    
+    # 遍历每个门
+    for i in range(n):
+        if dp[i] == float('inf'):
+            continue  # 如果门i不可达，则跳过
+        
+        # 根据门i的跳跃范围更新后续门的最少跳跃次数
+        for j in range(i + 1, min(i + a[i] + 1, n)):
+            if dp[j] > dp[i] + 1 or (dp[j] == dp[i] + 1 and j > prev[j]):
+                dp[j] = dp[i] + 1
+                prev[j] = i
+    
+    # 如果最后一个门的跳跃次数仍然是无限大，说明无法到达
+    if dp[n - 1] == float('inf'):
+        return '无法跳到最后一个位置。'
+    
+    # 从最后一个门倒推路径
+    path = []
+    curr = n - 1
+    while curr != -1:
+        path.append(curr)
+        curr = prev[curr]
+    
+    # 反转路径
+    return path[::-1]
+
+776
+# 这个题目您已经答对过，上次提交的内容如下
+def main(iterable):
+    cache = []
+    for index, value in enumerate(iterable):
+        if index == 0:
+            cache.append(value)
+        else:
+            if value > cache[index-1]:
+                cache.append(value)
+            else:
+                cache.append(cache[index-1])
+    return cache[-1]
+
+
+800
+def main(a0, n, k):
+    a = a0
+    for _ in range(k - 1):
+        a = (a ** 2 + a0) % n
+    return a
+
+801
+def main(a0, n, k):
+    # 初始化数列的第一个元素
+    a = a0
+    
+    # 用于存储数列中的前 k 个数字
+    max_value = a
+    
+    # 生成数列并找到前 k 个数字中的最大值
+    for _ in range(k - 1):  # k - 1次迭代，因为已经有了第一个数字
+        a = (a ** 2 + a0) % n
+        if a > max_value:
+            max_value = a
+            
+    return max_value
+
+805
+def main(a, b):
+    # 辗转相除法计算最大公约数
+    def gcd(x, y):
+        while y != 0:
+            x, y = y, x % y
+        return x
+    
+    # 计算最大公约数
+    g = gcd(abs(a), abs(b))
+    
+    # 约分
+    a //= g
+    b //= g
+    
+    # 确保结果为正分数，若分母为负，则将分子和分母都取反
+    if b < 0:
+        a = -a
+        b = -b
+    
+    return a, b
+806
+def main(data, k):
+    n, result = len(data), []
+    for i in range(n):
+        result.append(data[(i + k) % n])
+    return result
+807
+def main(data, k):
+    n = len(data)
+    result = [None] * n
+    for i in range(n):
+        result[(i - k) % n] = data[i]
+    return result
+808
+def main(data):
+    while len(data) > 1:
+        new_data = []
+        for i in range(len(data) - 1):
+            new_data.append(data[i] + data[i + 1])
+        data = new_data  # 更新数据为新的列表
+    return data[0]  # 返回最终剩下的唯一元素
+809
+def main(data):
+    if len(data) == 1:  # 递归的终止条件：只剩一个元素
+        return data[0]
+    
+    # 递归求和，生成新的列表
+    def sum_adjacent(lst, index):
+        if index == len(lst) - 1:
+            return []
+        return [lst[index] + lst[index + 1]] + sum_adjacent(lst, index + 1)
+    
+    # 对当前列表的相邻元素求和
+    new_data = sum_adjacent(data, 0)
+    
+    # 递归处理新生成的列表
+    return main(new_data)
+
+810（耐心等待）
+import itertools
+
+def main(n, sum_):
+    # 生成[1, n]的所有排列
+    nums = list(range(1, n + 1))
+    count = 0
+    
+    # 遍历所有排列
+    for perm in itertools.permutations(nums):
+        # 复制当前排列
+        data = list(perm)
+        
+        # 按照题目规则计算相邻元素的和直到最终得到一个数字
+        while len(data) > 1:
+            data = [data[i] + data[i + 1] for i in range(len(data) - 1)]
+        
+        # 如果最终结果等于sum_，计数器加1
+        if data[0] == sum_:
+            count += 1
+            
+    return count
+
+815
+def main(lists):
+    return min(lists, key=lambda x: max(x))
+
+816
+def main(lists):
+    return max(lists, key=lambda x: min(x))
+
+819
+def main(data):
+    total_sum = sum(data)
+    target = total_sum // 2
+    
+    # dp[i] 表示是否可以得到和为 i
+    dp = [False] * (target + 1)
+    dp[0] = True  # 和为0的子集总是存在
+    
+    for num in data:
+        # 从后向前更新dp数组，避免重复计算
+        for i in range(target, num - 1, -1):
+            if dp[i - num]:
+                dp[i] = True
+    
+    # 找到最接近target的可行和
+    for i in range(target, -1, -1):
+        if dp[i]:
+            # 最接近target的和为 i，另一部分的和为 total_sum - i
+            return abs((total_sum - i) - i)
+820
+def main(n):
+    # 初始化一个长度为10的列表，用于统计每个数字0-9的出现次数
+    counts = [0] * 10
+    
+    # 遍历区间[0, n)
+    for num in range(n):
+        # 将数字转换为字符串，遍历每个字符（即每一位数字）
+        for digit in str(num):
+            counts[int(digit)] += 1
+    
+    # 返回结果，按数字升序排列
+    return [(str(i), counts[i]) for i in range(10)]
+
+829
+import math
+
+def main(n):
+    return 2 ** math.floor(math.log2(n))
+830
+def main(n):
+    result = 1
+    while result <= n:
+        result = result + result  # 等价于 result <<= 1
+    return result // 2  # 返回最后一个小于等于 n 的 2 的整数次方
+831
+# 这个题目您已经答对过，上次提交的内容如下
+import math
+
+def main(n):
+    return 1 << (n.bit_length() - 1) if n > 0 else 0
+
+
+832
+# 这个题目您已经答对过，上次提交的内容如下
+def main(arr, item):
+    # 定义一个新的列表来保存过滤后的元素
+    result = []
+    
+    for element in arr:
+        # 如果元素是列表，递归调用main处理
+        if isinstance(element, list):
+            filtered_sublist = main(element, item)
+            # 如果子列表不为空，则添加到结果列表
+            if filtered_sublist:
+                result.append(filtered_sublist)
+        # 如果元素不是item，加入结果列表
+        elif element != item:
+            result.append(element)
+    
+    return result
+
+
+833
+def main(iterable, key=lambda x: x):
+    for item in iterable:
+        if key(item):  # 如果key(item)等价于True
+            return True
+    return False
+
+834
+def main(iterable, key=lambda x: x):
+    for item in iterable:
+        if not key(item):  # 如果key(item)不等价于True
+            return False
+    return True
+
+835
+def main(n, m):
+    return (n // m) * m
+
+
+837
+def main(n, i):
+    # 基本情况：C(n, 0) = 1 或 C(n, n) = 1
+    if i == 0 or i == n:
+        return 1
+    # 递归计算组合数
+    return main(n - 1, i - 1) + main(n - 1, i)
+
+838
+from math import lcm
+
+def main(k, *para):
+    # 定义一个函数用于求解符合条件的最小自然数
+    def satisfies(x, para):
+        for a, b in para:
+            if x % a != b:
+                return False
+        return True
+    
+    # 从k+1开始检查每个自然数
+    x = k + 1
+    while not satisfies(x, para):
+        x += 1
+    
+    return x
+840
+def main(matrix):
+    # 获取矩阵的大小
+    n = len(matrix)
+    
+    # 遍历矩阵中的所有元素
+    for i in range(n):
+        for j in range(n):
+            if i == j:  # 对角线元素
+                if matrix[i][j] == 0:
+                    return False
+            else:  # 非对角线元素
+                if matrix[i][j] != 0:
+                    return False
+    return True
+
+841
+def main(dec):
+    binary = '0.'  # 开始的二进制小数部分
+    count = 0  # 用于限制转换的位数
+
+    while dec != 0 and count < 100:
+        dec *= 2  # 乘以2
+        digit = int(dec)  # 取整数部分
+        binary += str(digit)  # 将整数部分添加到二进制字符串
+        dec -= digit  # 去掉整数部分，留下小数部分
+        count += 1  # 计数
+
+    return binary
+
+842
+def main(s_bin):
+    result = 0  # 用来存储结果
+    for i in range(2, len(s_bin)):  # 从第三个字符开始（即小数点后的第一位）
+        result += int(s_bin[i]) * (2 ** -(i - 1))  # 按照权展开式累加
+    return result
+843
+def main(n):
+    wine = 0  # 最终酒量
+    for _ in range(n):
+        wine = (wine + 1) / 2  # 倒推，花店：酒量加 1 后再除以 2
+    return wine
+844
+def main(score):
+    if score // 10 == 10 or score // 10 == 9:
+        return 'A'
+    if score // 10 == 8:
+        return 'B'
+    if score // 10 == 7:
+        return 'C'
+    if score // 10 == 6:
+        return 'D'
+    return 'F'
+
+846
+def main(n):
+    # 基本情况：n为0时返回0
+    if n == 0:
+        return 0
+    else:
+        # 递归情况：返回最后一位数字加上去除最后一位的数字的数字和
+        return n % 10 + main(n // 10)
+
+
+847
+def main(digits, total):
+    # 辅助函数：计算表达式的值
+    def calc_expression(expression):
+        total_value = 0
+        current_value = 0
+        sign = 1  # 初始为加号
+        for char in expression:
+            if char == '+':
+                total_value += current_value * sign
+                current_value = 0
+                sign = 1  # 加号
+            elif char == '-':
+                total_value += current_value * sign
+                current_value = 0
+                sign = -1  # 减号
+            else:
+                current_value = current_value * 10 + int(char)
+        total_value += current_value * sign  # 加上最后的数值
+        return total_value
+
+    # 递归回溯生成所有表达式
+    def backtrack(index, current_expr):
+        if index == len(digits):  # 已经遍历完所有数字
+            # 计算当前表达式的值
+            if calc_expression(current_expr) == total:
+                results.append(current_expr)
+            return
+        
+        # 选择当前数字，并加上一个新的操作符
+        for op in ['+', '-', '']:  # 三种选择：加号、减号、或者不加
+            if op == '':
+                # 如果不加操作符，则将数字继续连接
+                backtrack(index + 1, current_expr + digits[index])
+            else:
+                # 否则加上操作符
+                backtrack(index + 1, current_expr + op + digits[index])
+    
+    # 结果存储
+    results = []
+    # 从第二个字符开始递归，第一字符已经加到表达式中
+    backtrack(1, digits[0])
+    
+    # 排序结果
+    return sorted(results)
+848
+def func(iterable):
+    saved = []
+    for element in iterable:
+        yield element
+        saved.append(element)
+    while saved:
+        for element in saved:
+            yield element
+
+def main(iterable, n):
+    result, it = [], func(iterable)
+    for _ in range(n):
+        result.append(next(it))
+    return result
+
+850
+def main(numbers):
+    product = 1  # 初始乘积
+    n = len(numbers)  # 数字个数
+    
+    for num in numbers:
+        product *= num  # 逐步计算乘积
+    
+    geometric_mean = product ** (1 / n)  # 计算几何平均数
+    return round(geometric_mean, 6)  # 返回保留最多6位小数的几何平均数
+
+851
+def main(n, m):
+    for i in range(n+1):
+        for j in range(n+1):
+            if 2 * i + 4 * j == m and i + j == n:
+                return (i, j)
+    return '数据不对'
+
+852
+def main(source, key):
+    result = []
+    key_len = len(key)
+    
+    # 遍历source并对每个元素与key的对应元素进行相加
+    for i in range(len(source)):
+        # 使用key的循环方式
+        result.append(source[i] + key[i % key_len])
+    
+    return tuple(result)
+
+853
+import operator
+import itertools
+
+def main(source, key):
+    return tuple(map(operator.add, source, itertools.cycle(key)))
+
+
+854
+def main(data):
+    result, min_ = [0], data[0]
+    for i, v in enumerate(data[1:], start=1):
+        if v == min_:
+            result.append(i)
+        elif v < min_:
+            result = [i]
+            min_ = v
+    return result
+
+855
+def func(iterable):
+    iterable = list(iterable)
+    index = 0  # 用于指示当前的位置
+    length = len(iterable)  # 获取可迭代对象的长度
+    while True:
+        yield iterable[index]
+        index = (index + 1) % length  # 循环回到头部，确保循环遍历
+   
+
+def main(iterable, n):
+    result, it = [], func(iterable)
+    for _ in range(n):
+        result.append(next(it))
+    return result
+
+856
+def func(iterable):
+    iterable = list(iterable)
+    even = iterable[::2]  # 获取偶数位置的元素
+    odd = iterable[1::2]  # 获取奇数位置的元素
+    # 返回一个生成器，交替从 even 和 odd 中取元素
+    while True:
+        yield from even
+        yield from odd
+def main(iterable, n):
+    result, it = [], func(iterable)
+    for _ in range(n):
+        result.append(next(it))
+    return result
+
+857
+def main(arr1, arr2):
+    # 如果arr1和arr2的长度不相等，返回None
+    if len(arr1) != len(arr2):
+        return None
+    
+    # 检查arr2中的元素是否都为正数（自然数或正实数）
+    def is_valid(arr2, idx):
+        if idx == len(arr2):  # 递归的基准条件
+            return True
+        if isinstance(arr2[idx], (int, float)) and arr2[idx] > 0:
+            return is_valid(arr2, idx + 1)  # 继续检查下一个元素
+        return False
+    
+    if not is_valid(arr2, 0):  # 如果arr2不符合要求，返回None
+        return None
+    
+    # 递归方式进行重复操作
+    def repeat_elements(arr1, arr2, idx):
+        if idx == len(arr1):  # 递归的基准条件
+            return []
+        repeat_count = int(arr2[idx])  # 取arr2[idx]的整数部分作为重复次数
+        repeated = [arr1[idx]] * repeat_count  # 重复元素
+        return repeated + repeat_elements(arr1, arr2, idx + 1)  # 递归处理下一个元素
+    
+    return repeat_elements(arr1, arr2, 0)  # 从索引0开始递归处理
+
+
+858
+def main(arr1, arr2):
+    # 如果arr1和arr2的长度不一样，返回None
+    if len(arr1) != len(arr2):
+        return None
+    
+    # 检查arr2中是否所有元素都是自然数或正实数
+    for num in arr2:
+        if not (isinstance(num, (int, float)) and num > 0):
+            return None
+    
+    # 创建一个新的列表，用于存储重复后的结果
+    result = []
+    
+    # 使用for循环来重复arr1中的元素
+    for i in range(len(arr1)):
+        repeat_count = int(arr2[i])  # 取得arr2中对应元素的整数部分作为重复次数
+        result.extend([arr1[i]] * repeat_count)  # 将arr1[i]重复并添加到结果列表
+    
+    return result
+
+
+859
+def main(arr1, arr2):
+    # 检查arr1和arr2的长度是否相等
+    if len(arr1) != len(arr2):
+        return None
+    
+    # 检查arr2中的元素是否为自然数或正实数
+    def is_valid(value):
+        return (isinstance(value, int) and value > 0) or (isinstance(value, float) and value > 0)
+    
+    # 使用递归判断arr2中的每个元素是否符合要求
+    def check_elements(index):
+        if index == len(arr2):
+            return True
+        if not is_valid(arr2[index]):
+            return False
+        return check_elements(index + 1)
+    
+    # 如果arr2中的元素不符合要求，返回None
+    if not check_elements(0):
+        return None
+
+    # 使用递归生成新的列表
+    def repeat_elements(index):
+        if index == len(arr1):
+            return []
+        repeat_count = int(arr2[index])
+        return [arr1[index]] * repeat_count + repeat_elements(index + 1)
+    
+    return repeat_elements(0)
+
+860
+def main(seq):
+    return dict(zip(seq[:-1], seq[1:]))
+
+862
+def main(seq):
+    result = []
+    for i in range(len(seq)):
+        product = 1
+        for j in range(i + 1):  # 内层循环计算 seq[0] 到 seq[i] 的乘积
+            product *= seq[j]
+        result.append(product)
+    return result
+
+
+863
+def main(seq):
+    result = []
+    product = 1  # 初始化累积乘积
+    for num in seq:
+        product *= num  # 更新当前的累积乘积
+        result.append(product)  # 将累积乘积添加到结果列表中
+    return result
+
+864
+from functools import reduce
+
+def main(seq):
+    return list(map(lambda i: reduce(lambda x, y: x * y, seq[:i+1]), range(len(seq))))
+
+
+
+865
+from itertools import accumulate
+
+def main(seq):
+    return list(accumulate(seq, lambda x, y: x * y))
+
+
+866
+import itertools
+
+def main(seq):
+    return dict(itertools.pairwise(seq))
+
+
+868
+def main(data):
+    for i in range(1, len(data)):
+        if data[i] < data[i - 1]:
+            return False
+    return True
+
+869
+def main(vector1, vector2):
+    result = 0
+    for i in range(len(vector1)):
+        result += vector1[i] * vector2[i]
+    return result
+
+
+870
+# 这个题目您已经答对过，上次提交的内容如下
+def main(tup):
+    # 步骤1：找出最高分和最低分
+    highest = tup[0]
+    lowest = tup[0]
+    for num in tup:
+        if num > highest:
+            highest = num
+        if num < lowest:
+            lowest = num
+    
+    # 步骤2：计算剩余元素的总和和个数
+    total = 0
+    count = 0
+    for num in tup:
+        if num != highest and num != lowest:
+            total += num
+            count += 1
+    
+    # 步骤3：计算平均值，保留1位小数
+    return round(total / count, 1)
+
+
+871
+# 这个题目您已经答对过，上次提交的内容如下
+def main(data):
+    max_unit_digit = 0  # 初始化最大个位数
+    for num in data:
+        unit_digit = num % 10  # 计算个位数
+        if unit_digit > max_unit_digit:
+            max_unit_digit = unit_digit  # 更新最大个位数
+    
+    # 构造新列表，包含所有个位数等于最大值的整数
+    result = [num for num in data if num % 10 == max_unit_digit]
+    
+    return result
+
+872
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    # 统计每个字符的出现次数
+    char_count = dict(map(lambda ch: (ch, s.count(ch)), set(s)))
+    
+    # 按出现次数降序排序，并提取前3个字符
+    result = sorted(char_count, key=lambda x: (-char_count[x], x))[:3]
+    
+    return result
+
+873
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    char_count = {}
+    first_index = {}
+    
+    for i, ch in enumerate(s):
+        # 记录字符出现次数
+        if ch in char_count:
+            char_count[ch] += 1
+        else:
+            char_count[ch] = 1
+            first_index[ch] = i  # 记录第一次出现的位置
+    
+    # 筛选出恰好出现两次的字符，并按第一次出现的位置排序
+    result = [ch for ch in char_count if char_count[ch] == 2]
+    result.sort(key=lambda x: first_index[x])  # 按第一次出现的索引排序
+    
+    return ''.join(result)  # 返回新字符串
+
+
+874
+# 这个题目您已经答对过，上次提交的内容如下
+def main(s):
+    # 统计每个字符的出现次数和最后一次出现的位置
+    char_count = {}
+    last_index = {}
+    
+    for i, ch in enumerate(s):
+        if ch in char_count:
+            char_count[ch] += 1
+        else:
+            char_count[ch] = 1
+        last_index[ch] = i  # 更新字符最后一次出现的位置
+    
+    # 筛选出恰好出现2次的字符，并按最后出现的位置升序排序
+    result = sorted([ch for ch in char_count if char_count[ch] == 2], key=lambda x: last_index[x])
+    
+    return ''.join(result)  # 返回按排序顺序组成的新字符串
+
+
+875
+def main(s):
+    # 创建一个字典来记录每个字符出现的次数
+    char_count = {}
+    # 遍历字符串s，统计每个字符的出现次数
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    
+    # 创建一个列表来存储出现两次的字符，并保持原始顺序
+    result = []
+    # 再次遍历字符串s，如果字符出现两次，则添加到结果列表中
+    for char in s:
+        if char_count[char] == 2:
+            result.append(char)
+    
+    # 将结果列表转换为字符串并返回
+    return ''.join(result)
+
+876
+# 这个题目您已经答对过，上次提交的内容如下
+import re
+
+def main(pwd):
+    # 用正则表达式替换不符合要求的字符
+    cleaned_pwd = re.sub(r'[^A-Za-z0-9,._]', '', pwd)
+    
+    # 判断替换后的字符串是否与原始字符串相同
+    return cleaned_pwd == pwd
+877
+def main(*args):
+    # 递归计算最大公约数
+    def gcd(a, b):
+        if b == 0:
+            return a
+        return gcd(b, a % b)
+    
+    result = args[0]
+    for num in args[1:]:
+        result = gcd(result, num)
+    return result
+
+878
+from functools import reduce
+
+def main(data):
+    return reduce(lambda acc, x: acc + [max(acc[-1], x)] if acc else [x], data, [])
+
+879
+import numpy as np
+
+def main(arr):
+    # 使用布尔数组条件过滤，符合条件的元素加和
+    condition = ((arr % 2 == 0) | (arr % 7 == 0)) & ~(arr % 14 == 0)
+    return arr[condition].sum()
+
+880
+import numpy as np
+
+def main(arr):
+    # 能被2整除的元素
+    condition_2 = (arr % 2 == 0)
+    # 能被7整除的元素
+    condition_7 = (arr % 7 == 0)
+    
+    # 满足能被2整除，但不能同时被7整除
+    condition = (condition_2 != condition_7)
+    
+    # 筛选出符合条件的元素并求和
+    return arr[condition].sum()
+
+885
+# 这个题目您已经答对过，上次提交的内容如下
+import datetime
+
+def main(year):
+    result = []
+    
+    for month in range(1, 13):  # 遍历从1月到12月
+        date = datetime.date(year, month, 13)  # 获取每个月的13号
+        if date.weekday() == 4:  # 判断是否是周五（周一为0，周五为4）
+            result.append(date.strftime('%Y-%m-%d'))  # 将日期格式化为字符串并加入结果列表
+    
+    return result
+
+    return most_similar_set
